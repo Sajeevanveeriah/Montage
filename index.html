@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montage — Personal Knowledge Base</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/theme.js"></script>
+</head>
+<body data-page="index">
+
+<nav class="navbar">
+  <a href="./index.html" class="nav-brand">Montage</a>
+  <ul class="nav-links">
+    <li><a href="./index.html" class="active">Home</a></li>
+    <li><a href="./mathematics.html">Maths</a></li>
+    <li><a href="./physics.html">Physics</a></li>
+    <li><a href="./engineering.html">Engineering</a></li>
+    <li><a href="./cs-ai-ml.html">CS/AI/ML</a></li>
+    <li><a href="./personal-dev.html">Personal Dev</a></li>
+    <li><a href="./career-finance.html">Career</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="search-wrap">
+      <input type="search" id="search-input" class="search-input" placeholder="Search all topics…" autocomplete="off">
+      <div id="search-dropdown" class="search-dropdown"></div>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">◑</button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <section class="hero">
+    <h1>Your <span>Knowledge</span> Base</h1>
+    <p>Six curated reference documents synthesised from hundreds of STEM and personal development resources.</p>
+  </section>
+
+  <div class="cards-grid">
+    <a class="card" href="./mathematics.html">
+      <div class="card-icon">∑</div>
+      <div class="card-title">Mathematics</div>
+      <div class="card-desc">Pure maths from calculus to topology</div>
+      <div class="card-meta"><span>32 topics</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./physics.html">
+      <div class="card-icon">⚛</div>
+      <div class="card-title">Physics</div>
+      <div class="card-desc">Classical to quantum, relativity, astrophysics</div>
+      <div class="card-meta"><span>38 topics</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./engineering.html">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Engineering</div>
+      <div class="card-desc">Electronics, power, RF, mechanical, industrial</div>
+      <div class="card-meta"><span>30 topics</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./cs-ai-ml.html">
+      <div class="card-icon">💻</div>
+      <div class="card-title">CS / AI / ML</div>
+      <div class="card-desc">Algorithms, Python, deep learning, LLMs</div>
+      <div class="card-meta"><span>28 topics</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./personal-dev.html">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">Personal Dev</div>
+      <div class="card-desc">Habits, mindset, learning, wellbeing</div>
+      <div class="card-meta"><span>26 topics</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="./career-finance.html">
+      <div class="card-icon">📈</div>
+      <div class="card-title">Career &amp; Finance</div>
+      <div class="card-desc">Strategy, communication, money, leadership</div>
+      <div class="card-meta"><span>24 topics</span><span class="arrow">→</span></div>
+    </a>
+  </div>
+
+  <footer>Sajeevan Veeriah · Montage · 2026</footer>
+</div>
+
+<script src="./assets/search.js"></script>
+</body>
+</html>
