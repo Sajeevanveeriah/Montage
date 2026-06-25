@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS / AI / ML — Montage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/theme.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="./index.html" class="nav-brand">Montage</a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./mathematics.html">Maths</a></li>
+    <li><a href="./physics.html">Physics</a></li>
+    <li><a href="./engineering.html">Engineering</a></li>
+    <li><a href="./cs-ai-ml.html" class="active">CS/AI/ML</a></li>
+    <li><a href="./personal-dev.html">Personal Dev</a></li>
+    <li><a href="./career-finance.html">Career</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="search-wrap">
+      <input type="search" id="search-input" class="search-input" placeholder="Search this page…" autocomplete="off">
+    </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">◑</button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+<div class="section-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-title">Sections</div>
+    <nav>
+      <a href="#dsa">Data Structures &amp; Algorithms</a>
+      <a href="#python">Python</a>
+      <a href="#devops">Systems and DevOps</a>
+      <a href="#ml">Machine Learning</a>
+      <a href="#deep-learning">Deep Learning</a>
+      <a href="#rl">Reinforcement Learning</a>
+      <a href="#llms">LLMs and AI Infrastructure</a>
+      <a href="#research">Research Methods</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <h1 class="page-title">CS / AI / ML</h1>
+    <p class="page-subtitle">Algorithms, Python, deep learning, LLMs — 28 topics</p>
+
+    <div id="no-results-msg" class="no-results-msg">No subsections match your search.</div>
+
+    <!-- DSA -->
+    <section class="content-section" id="dsa">
+      <h2>Data Structures and Algorithms</h2>
+
+      <div class="subsection" id="dsa-roadmap">
+        <h3>DSA Roadmap</h3>
+        <ol>
+          <li>Arrays and Strings</li>
+          <li>Linked Lists (singly, doubly, circular)</li>
+          <li>Stacks and Queues</li>
+          <li>Hash Tables</li>
+          <li>Trees (binary, BST, AVL, segment)</li>
+          <li>Heaps and Priority Queues</li>
+          <li>Graphs (BFS, DFS, Dijkstra, A*)</li>
+          <li>Dynamic Programming</li>
+          <li>Divide and Conquer</li>
+          <li>Greedy Algorithms</li>
+          <li>Computational Geometry</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="algorithm-categories">
+        <h3>Algorithm Categories</h3>
+        <ul>
+          <li><strong>Supervised:</strong> Linear/Logistic Regression, SVM, Decision Tree, Random Forest, Gradient Boosting, KNN, Naive Bayes, Neural Networks</li>
+          <li><strong>Unsupervised:</strong> K-Means, DBSCAN, Hierarchical Clustering, PCA, t-SNE, Autoencoders, GANs</li>
+          <li><strong>Reinforcement:</strong> Q-Learning, SARSA, DQN, PPO, A3C, SAC</li>
+          <li><strong>Statistical:</strong> Bayesian Inference, HMM, Gaussian Processes, Kalman Filters, MCMC</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PYTHON -->
+    <section class="content-section" id="python">
+      <h2>Python</h2>
+
+      <div class="subsection" id="python-types">
+        <h3>Python Data Types</h3>
+        <p>Numeric: <code>int</code>, <code>float</code>, <code>complex</code>. Sequence: <code>list</code>, <code>tuple</code>, <code>range</code>. Text: <code>str</code>. Binary: <code>bytes</code>, <code>bytearray</code>. Mapping: <code>dict</code>. Set: <code>set</code>, <code>frozenset</code>. Boolean: <code>bool</code>. None: <code>NoneType</code>.</p>
+      </div>
+
+      <div class="subsection" id="python-lists">
+        <h3>List Operations</h3>
+        <pre><code>lst.append(x)      # add to end
+lst.insert(i, x)   # insert at index
+lst.extend(iter)   # concatenate
+lst.remove(x)      # remove first occurrence
+lst.pop(i)         # remove and return at index
+lst.index(x)       # find first index of x
+lst.count(x)       # count occurrences
+lst.sort()         # sort in place
+lst.reverse()      # reverse in place
+lst.copy()         # shallow copy
+lst.clear()        # remove all elements
+[f(x) for x in lst if cond]  # list comprehension</code></pre>
+      </div>
+
+      <div class="subsection" id="python-advanced">
+        <h3>Advanced Python Patterns</h3>
+        <ul>
+          <li><strong>Decorators:</strong> Functions that wrap other functions — <code>@property</code>, <code>@staticmethod</code>, <code>@functools.wraps</code></li>
+          <li><strong>Generators:</strong> <code>yield</code> produces values lazily; <code>yield from</code> delegates to sub-generator</li>
+          <li><strong>Context managers:</strong> <code>__enter__</code>/<code>__exit__</code> protocol; <code>with</code> statement ensures cleanup</li>
+          <li><strong>Metaclasses:</strong> Classes whose instances are classes — used in ORMs, API frameworks</li>
+          <li><strong>Async/await:</strong> <code>async def</code> + <code>await</code> for cooperative concurrency; <code>asyncio.gather()</code> for parallel tasks</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="numpy">
+        <h3>NumPy Key Functions</h3>
+        <pre><code>np.array(), np.zeros(), np.ones(), np.eye()
+np.linspace(), np.arange(), np.random.randn()
+np.dot(), np.matmul(), np.linalg.inv()
+np.linalg.eig(), np.linalg.svd()
+np.sum(), np.mean(), np.std(), np.var()
+np.max(), np.min(), np.argmax(), np.argmin()
+np.reshape(), np.transpose(), np.squeeze()
+np.concatenate(), np.vstack(), np.hstack()
+np.where(), np.clip(), np.abs(), np.sqrt()
+np.fft.fft(), np.convolve()</code></pre>
+      </div>
+
+      <div class="subsection" id="pandas">
+        <h3>Pandas Functions</h3>
+        <pre><code># Reading
+pd.read_csv(), pd.read_excel(), pd.read_json()
+
+# Selection
+df['col'], df[['a','b']], df.loc[], df.iloc[]
+
+# Cleaning
+df.dropna(), df.fillna(), df.drop_duplicates()
+df.rename(), df.astype(), df.replace()
+
+# Filtering
+df[df['col'] > val], df.query("col > val")
+
+# Aggregation
+df.groupby('col').agg({'val': 'sum'})
+df.pivot_table(), df.resample()
+
+# Joining
+pd.merge(df1, df2, on='key', how='left')
+pd.concat([df1, df2], axis=0)</code></pre>
+      </div>
+
+      <div class="subsection" id="python-vs-cpp">
+        <h3>Python vs C++ Comparison</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Dimension</th><th>Python</th><th>C++</th></tr>
+            <tr><td>Speed</td><td>Interpreted, slower</td><td>Compiled, very fast</td></tr>
+            <tr><td>Memory</td><td>Managed (GC)</td><td>Manual</td></tr>
+            <tr><td>Use cases</td><td>ML, data, scripting</td><td>Systems, games, embedded</td></tr>
+            <tr><td>Syntax</td><td>Simple, readable</td><td>Verbose, complex</td></tr>
+            <tr><td>Community</td><td>Data science / AI</td><td>Systems / game dev</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVOPS -->
+    <section class="content-section" id="devops">
+      <h2>Systems and DevOps</h2>
+
+      <div class="subsection" id="linux-fs">
+        <h3>Linux File System</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Directory</th><th>Purpose</th></tr>
+            <tr><td><code>/</code></td><td>Root of the file system</td></tr>
+            <tr><td><code>/bin</code></td><td>Essential binaries (ls, cp, mv)</td></tr>
+            <tr><td><code>/etc</code></td><td>System configuration files</td></tr>
+            <tr><td><code>/home</code></td><td>User home directories</td></tr>
+            <tr><td><code>/var</code></td><td>Variable data: logs, spools, temp files</td></tr>
+            <tr><td><code>/tmp</code></td><td>Temporary files (cleared on reboot)</td></tr>
+            <tr><td><code>/usr</code></td><td>User programs and libraries</td></tr>
+            <tr><td><code>/lib</code></td><td>Shared libraries for /bin and /sbin</td></tr>
+            <tr><td><code>/dev</code></td><td>Device files (disks, terminals, etc.)</td></tr>
+            <tr><td><code>/proc</code></td><td>Virtual FS for kernel and process info</td></tr>
+            <tr><td><code>/mnt</code></td><td>Mount points for temporary filesystems</td></tr>
+            <tr><td><code>/opt</code></td><td>Optional third-party software</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="git-commands">
+        <h3>12 Essential Git Commands</h3>
+        <pre><code>git init          # Initialise a new repository
+git clone &lt;url&gt;   # Clone remote repository locally
+git status        # Show working tree status
+git add &lt;files&gt;   # Stage changes for commit
+git commit -m ""  # Commit staged changes
+git push          # Push commits to remote
+git pull          # Fetch and merge remote changes
+git branch        # List / create branches
+git checkout -b   # Create and switch to new branch
+git merge &lt;branch&gt;# Merge branch into current
+git rebase        # Reapply commits on top of another
+git log --oneline # Compact commit history</code></pre>
+        <p><strong>How Git works:</strong> Working tree → <code>git add</code> → Staging area → <code>git commit</code> → Local repo → <code>git push</code> → Remote repo.</p>
+      </div>
+
+      <div class="subsection" id="docker">
+        <h3>Docker Architecture</h3>
+        <ul>
+          <li><strong>Daemon:</strong> Background service managing containers</li>
+          <li><strong>Images:</strong> Immutable layered templates built from Dockerfiles</li>
+          <li><strong>Containers:</strong> Running instances of images; isolated via namespaces and cgroups</li>
+          <li><strong>Volumes:</strong> Persistent storage outside container lifecycle</li>
+          <li><strong>Networks:</strong> Bridge (default), host, overlay (multi-node)</li>
+          <li><strong>Compose:</strong> <code>docker-compose.yml</code> defines multi-container apps declaratively</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="kubernetes">
+        <h3>Kubernetes Integrations</h3>
+        <ul>
+          <li><strong>Prometheus:</strong> Metrics collection and alerting</li>
+          <li><strong>Istio:</strong> Service mesh — mTLS, canary deployments, traffic management</li>
+          <li><strong>ArgoCD:</strong> GitOps continuous delivery — syncs cluster state with Git</li>
+          <li><strong>Velero:</strong> Backup and disaster recovery for cluster resources</li>
+          <li><strong>KEDA:</strong> Kubernetes Event-Driven Autoscaling — scales on queue depth, cron, metrics</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="sql">
+        <h3>MySQL Join Types</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Join</th><th>Returns</th></tr>
+            <tr><td>INNER JOIN</td><td>Rows matching in both tables</td></tr>
+            <tr><td>LEFT JOIN</td><td>All left rows; NULLs for non-matching right</td></tr>
+            <tr><td>RIGHT JOIN</td><td>All right rows; NULLs for non-matching left</td></tr>
+            <tr><td>FULL OUTER JOIN</td><td>All rows from both tables with NULLs where no match</td></tr>
+            <tr><td>CROSS JOIN</td><td>Cartesian product of both tables</td></tr>
+            <tr><td>SELF JOIN</td><td>Table joined with itself (requires alias)</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ML -->
+    <section class="content-section" id="ml">
+      <h2>Machine Learning</h2>
+
+      <div class="subsection" id="ml-algorithms">
+        <h3>10 Key ML Algorithms</h3>
+        <ol>
+          <li><strong>Linear Regression:</strong> Fits a line/hyperplane to continuous output</li>
+          <li><strong>Logistic Regression:</strong> Binary classification via sigmoid function</li>
+          <li><strong>Decision Tree:</strong> Recursive feature splits; interpretable</li>
+          <li><strong>Random Forest:</strong> Ensemble of trees; reduces variance via bagging</li>
+          <li><strong>Gradient Boosting (XGBoost, LightGBM):</strong> Sequential error correction</li>
+          <li><strong>SVM:</strong> Maximises margin between classes; kernel trick for non-linear</li>
+          <li><strong>K-Nearest Neighbours:</strong> Classifies by majority vote of k nearest points</li>
+          <li><strong>K-Means:</strong> Clusters data by minimising within-cluster variance</li>
+          <li><strong>Naive Bayes:</strong> Probabilistic; assumes feature independence</li>
+          <li><strong>PCA:</strong> Dimensionality reduction via eigenvectors of covariance matrix</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="ml-vs-dl">
+        <h3>ML vs Deep Learning</h3>
+        <p><strong>Traditional ML:</strong> Requires manual feature engineering; works well on structured/tabular data with limited samples. Models are interpretable.</p>
+        <p><strong>Deep Learning:</strong> Learns features automatically from raw data (images, text, audio); needs large datasets and compute. Models are less interpretable but more powerful for unstructured data.</p>
+      </div>
+
+      <div class="subsection" id="classification-metrics">
+        <h3>Classification Evaluation Metrics</h3>
+        <ul>
+          <li><strong>Accuracy:</strong> (TP+TN)/(TP+TN+FP+FN) — misleading on imbalanced datasets</li>
+          <li><strong>Precision:</strong> TP/(TP+FP) — of all predicted positives, how many were correct?</li>
+          <li><strong>Recall (Sensitivity):</strong> TP/(TP+FN) — of all actual positives, how many found?</li>
+          <li><strong>F1 Score:</strong> 2 × (Precision × Recall)/(Precision + Recall) — harmonic mean</li>
+          <li><strong>ROC-AUC:</strong> Area under the ROC curve; 1.0 = perfect, 0.5 = random</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="regression-metrics">
+        <h3>Regression Metrics</h3>
+        <ul>
+          <li><strong>MAE:</strong> Mean Absolute Error — average |y − ŷ|; robust to outliers</li>
+          <li><strong>MSE:</strong> Mean Squared Error — penalises large errors more heavily</li>
+          <li><strong>RMSE:</strong> √MSE — same units as target; interpretable</li>
+          <li><strong>R²:</strong> Proportion of variance explained; 1.0 = perfect fit</li>
+          <li><strong>MAPE:</strong> Mean Absolute Percentage Error — scale-independent</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="markov">
+        <h3>Markov Chains</h3>
+        <p>A stochastic process where the next state depends only on the current state (Markov property). Defined by a transition matrix P where P<sub>ij</sub> = probability of moving from state i to state j.</p>
+        <p><strong>Applications:</strong> Language modelling, PageRank, MCMC sampling, hidden Markov models in NLP.</p>
+      </div>
+
+      <div class="subsection" id="shannon-entropy">
+        <h3>Shannon Entropy</h3>
+        <div class="math-block" data-tex="H(X) = -\sum_x P(x)\log P(x)"></div>
+        <p>Claude Shannon (1948). Measures the average information content (uncertainty) of a random variable X. Higher entropy = more uncertainty. Used in decision trees (information gain), compression, and cryptography.</p>
+      </div>
+    </section>
+
+    <!-- DEEP LEARNING -->
+    <section class="content-section" id="deep-learning">
+      <h2>Deep Learning</h2>
+
+      <div class="subsection" id="training-steps">
+        <h3>8 Steps to Train a Neural Network</h3>
+        <ol>
+          <li>Prepare and preprocess training data</li>
+          <li>Define model architecture (layers, activations, output)</li>
+          <li>Choose loss function and optimiser</li>
+          <li>Initialise weights (Xavier, He)</li>
+          <li>Forward pass: compute predictions</li>
+          <li>Compute loss between predictions and targets</li>
+          <li>Backward pass (backpropagation): compute gradients</li>
+          <li>Update weights using optimiser; repeat for each batch/epoch</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="gradient-descent">
+        <h3>Gradient Descent Update Rule</h3>
+        <div class="math-block" data-tex="\theta \leftarrow \theta - \eta\,\nabla_\theta\mathcal{L}"></div>
+        <p>θ = parameters, η = learning rate, ∇<sub>θ</sub>L = gradient of loss w.r.t. parameters. Variants: SGD, Adam, RMSProp, AdaGrad.</p>
+      </div>
+
+      <div class="subsection" id="backprop">
+        <h3>Backpropagation Chain Rule</h3>
+        <div class="math-block" data-tex="\frac{\partial\mathcal{L}}{\partial w} = \frac{\partial\mathcal{L}}{\partial a}\cdot\frac{\partial a}{\partial w}"></div>
+        <p>Gradients flow backwards through the computational graph using the chain rule. Each layer's gradient is the product of all downstream gradients.</p>
+      </div>
+
+      <div class="subsection" id="activations">
+        <h3>Activation Functions</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Function</th><th>Formula</th><th>Use</th></tr>
+            <tr><td>Sigmoid</td><td>1/(1+e⁻ˣ)</td><td>Binary output</td></tr>
+            <tr><td>ReLU</td><td>max(0, x)</td><td>Hidden layers (default)</td></tr>
+            <tr><td>Leaky ReLU</td><td>max(αx, x)</td><td>Avoids dying ReLU</td></tr>
+            <tr><td>Tanh</td><td>(eˣ−e⁻ˣ)/(eˣ+e⁻ˣ)</td><td>RNNs, zero-centred</td></tr>
+            <tr><td>Softmax</td><td>eˣⁱ/Σeˣʲ</td><td>Multi-class output</td></tr>
+            <tr><td>GELU</td><td>x·Φ(x)</td><td>Transformers (BERT, GPT)</td></tr>
+            <tr><td>Swish</td><td>x·σ(x)</td><td>EfficientNet, research</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="single-neuron">
+        <h3>Single Neuron Model</h3>
+        <div class="math-block" data-tex="y = \sigma(\mathbf{w}\cdot\mathbf{x} + b)"></div>
+        <p>The basic building block: dot product of weights w and inputs x, plus bias b, passed through activation σ.</p>
+      </div>
+    </section>
+
+    <!-- RL -->
+    <section class="content-section" id="rl">
+      <h2>Reinforcement Learning</h2>
+
+      <div class="subsection" id="mdp">
+        <h3>Markov Decision Process</h3>
+        <p>MDP = (S, A, P, R, γ) where S = states, A = actions, P = transition probabilities, R = reward function, γ = discount factor.</p>
+        <p>Return (discounted sum of future rewards):</p>
+        <div class="math-block" data-tex="G_t = \sum_{k=0}^\infty \gamma^k r_{t+k}"></div>
+      </div>
+
+      <div class="subsection" id="bellman">
+        <h3>Bellman Optimality Equation</h3>
+        <div class="math-block" data-tex="Q^*(s,a) = \mathbb{E}\left[r + \gamma \max_{a'} Q^*(s',a') \mid s,a\right]"></div>
+        <p>The optimal Q-function satisfies this recursive equation. Q-learning directly approximates Q*.</p>
+      </div>
+
+      <div class="subsection" id="dqn">
+        <h3>DQN Family</h3>
+        <ul>
+          <li><strong>DQN:</strong> Deep Q-Network — experience replay + target network</li>
+          <li><strong>Double DQN:</strong> Decouples action selection from evaluation to reduce overestimation bias</li>
+          <li><strong>Dueling DQN:</strong> Separates value V(s) and advantage A(s,a) streams</li>
+          <li><strong>Prioritised Experience Replay:</strong> Samples transitions proportional to TD error</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="policy-gradients">
+        <h3>Policy Gradient Methods</h3>
+        <ul>
+          <li><strong>REINFORCE:</strong> Monte Carlo policy gradient; high variance</li>
+          <li><strong>Actor-Critic (A2C):</strong> Actor updates policy; critic estimates value function as baseline</li>
+          <li><strong>A3C:</strong> Asynchronous parallel workers; diverse experience</li>
+          <li><strong>PPO (Proximal Policy Optimisation):</strong> Clips the policy update ratio to prevent large jumps; stable and widely used</li>
+          <li><strong>SAC (Soft Actor-Critic):</strong> Maximum entropy RL; balances reward and exploration</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="rl-modern">
+        <h3>Modern RL Concepts</h3>
+        <ul>
+          <li><strong>Offline RL:</strong> Learning from a fixed dataset without environment interaction</li>
+          <li><strong>GRPO (Group Relative Policy Optimisation):</strong> Compares outputs within a group to avoid needing a critic; used in DeepSeek-R1</li>
+          <li><strong>DAPO (Decoupled Clip and Dynamic Sampling Policy Optimisation):</strong> Decouples clip ratios for better stability</li>
+          <li><strong>RLVR (RL with Verifiable Rewards):</strong> Uses programmatically verifiable reward signals (math, code) instead of human preference labels</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LLMS -->
+    <section class="content-section" id="llms">
+      <h2>LLMs and AI Infrastructure</h2>
+
+      <div class="subsection" id="rag">
+        <h3>RAG vs Agentic RAG</h3>
+        <p><strong>Standard RAG:</strong> Query → retrieve docs → augment prompt → LLM generates answer. Single-shot retrieval.</p>
+        <p><strong>Agentic RAG:</strong> LLM agent iteratively queries, reasons, reformulates queries, and synthesises across multiple retrieved documents. Handles complex multi-hop questions.</p>
+      </div>
+
+      <div class="subsection" id="rag-metrics">
+        <h3>RAG Evaluation Metrics</h3>
+        <ul>
+          <li><strong>Context Precision:</strong> Fraction of retrieved chunks that are relevant</li>
+          <li><strong>Context Recall:</strong> Fraction of relevant information that was retrieved</li>
+          <li><strong>Faithfulness:</strong> Whether the answer is grounded in the retrieved context (no hallucination)</li>
+          <li><strong>Answer Relevance:</strong> Whether the answer addresses the question</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="finetuning">
+        <h3>5 LLM Fine-Tuning Techniques</h3>
+        <ul>
+          <li><strong>LoRA:</strong> Low-Rank Adaptation — adds low-rank matrices to frozen weights; very parameter-efficient</li>
+          <li><strong>LoRA-FA:</strong> Freezes matrix A during training; saves memory further</li>
+          <li><strong>VeRA:</strong> Very-low-rank adaptation with shared frozen random matrices; even fewer parameters</li>
+          <li><strong>Delta-LoRA:</strong> Updates the pre-trained weight using delta of LoRA products over training steps</li>
+          <li><strong>LoRA+:</strong> Sets different learning rates for A and B matrices for better convergence</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="mcp-a2a">
+        <h3>MCP vs A2A</h3>
+        <p><strong>MCP (Model Context Protocol):</strong> Standardises how LLMs connect to external tools and data sources. One model ↔ many tools.</p>
+        <p><strong>A2A (Agent-to-Agent):</strong> Protocol for agents to communicate with other agents; enables multi-agent orchestration where specialised sub-agents collaborate.</p>
+      </div>
+
+      <div class="subsection" id="ai-taxonomy">
+        <h3>LLM vs Agent vs Agentic Workflow vs Multi-Agent</h3>
+        <ul>
+          <li><strong>LLM:</strong> Stateless language model; single prompt → single response</li>
+          <li><strong>Agent:</strong> LLM + tools + memory; can take actions across multiple steps</li>
+          <li><strong>Agentic Workflow:</strong> Structured sequence of LLM calls with conditional branching and tool use</li>
+          <li><strong>Multi-Agent System:</strong> Network of specialised agents with defined roles; orchestrator coordinates sub-agents</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="ai-architecture">
+        <h3>AI System Architecture Layers</h3>
+        <ol>
+          <li><strong>Ingestion:</strong> Web scraping, APIs, databases, document parsers</li>
+          <li><strong>Preprocessing:</strong> Chunking, embedding, deduplication, quality filtering</li>
+          <li><strong>Training:</strong> Pre-training, instruction tuning, RLHF/RLAIF</li>
+          <li><strong>Evaluation:</strong> Benchmarks, human eval, LLM-as-judge</li>
+          <li><strong>Deployment:</strong> Inference optimisation (quantisation, speculative decoding), serving infrastructure</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="benchmarks">
+        <h3>AI Benchmark Comparison</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Benchmark</th><th>What it Tests</th></tr>
+            <tr><td>MMLU</td><td>Multi-subject knowledge (57 domains)</td></tr>
+            <tr><td>MATH</td><td>Competition-level mathematics</td></tr>
+            <tr><td>HumanEval</td><td>Python coding (pass@k)</td></tr>
+            <tr><td>GSM8K</td><td>Grade-school math word problems</td></tr>
+            <tr><td>ARC-Challenge</td><td>Science QA reasoning</td></tr>
+            <tr><td>HellaSwag</td><td>Commonsense reasoning (NLI)</td></tr>
+            <tr><td>TruthfulQA</td><td>Factual accuracy vs hallucination</td></tr>
+            <tr><td>BIG-Bench Hard</td><td>Diverse hard tasks beyond GPT-4 baseline</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="ds-roadmap">
+        <h3>Data Science Roadmap 2026</h3>
+        <ol>
+          <li>Mathematics foundations: linear algebra, calculus, statistics</li>
+          <li>Python programming and data libraries (NumPy, Pandas, Matplotlib)</li>
+          <li>SQL and database fundamentals</li>
+          <li>Classical ML: supervised, unsupervised, model evaluation</li>
+          <li>Deep Learning: CNNs, RNNs, Transformers</li>
+          <li>MLOps: versioning, CI/CD, monitoring, model serving</li>
+          <li>LLMs and prompt engineering; fine-tuning; RAG pipelines</li>
+          <li>Domain specialisation: NLP, CV, time series, or RL</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="china-ai">
+        <h3>China's Open-Source AI Companies</h3>
+        <ul>
+          <li><strong>DeepSeek</strong> — DeepSeek-V3, R1; frontier-competitive open weights</li>
+          <li><strong>Qwen (Alibaba)</strong> — Qwen2.5 family; strong multilingual and coding</li>
+          <li><strong>Baidu</strong> — ERNIE series; search-integrated</li>
+          <li><strong>01.AI (Yi)</strong> — Yi-Lightning; founded by Kai-Fu Lee</li>
+          <li><strong>Zhipu AI</strong> — GLM-4; leading in Chinese academia</li>
+          <li><strong>MiniMax</strong> — Long-context specialist models</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="content-section" id="research">
+      <h2>Research Methods</h2>
+
+      <div class="subsection" id="three-pass">
+        <h3>Three-Pass Method for Reading Papers</h3>
+        <ol>
+          <li><strong>First pass (5–10 min):</strong> Title, abstract, section headings, conclusions. Decide if worth reading.</li>
+          <li><strong>Second pass (1 hr):</strong> Read with attention, skip proofs; understand figures, note key references.</li>
+          <li><strong>Third pass (4–5 hrs):</strong> Virtually re-implement the paper; challenge every assumption; identify gaps.</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="feynman">
+        <h3>Feynman Technique</h3>
+        <ol>
+          <li>Choose a concept and study it</li>
+          <li>Explain it in simple language as if teaching a child</li>
+          <li>Identify gaps in your explanation and go back to the source</li>
+          <li>Simplify and use analogies until the explanation is clear and concise</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>Sajeevan Veeriah · Montage · 2026</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<script src="./assets/search.js"></script>
+<script>
+  function renderMath() {
+    document.querySelectorAll('.math-block[data-tex]').forEach(el => {
+      katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false });
+    });
+    document.querySelectorAll('.math-inline[data-tex]').forEach(el => {
+      katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', renderMath);
+</script>
+</body>
+</html>

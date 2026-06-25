@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathematics — Montage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/theme.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="./index.html" class="nav-brand">Montage</a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./mathematics.html" class="active">Maths</a></li>
+    <li><a href="./physics.html">Physics</a></li>
+    <li><a href="./engineering.html">Engineering</a></li>
+    <li><a href="./cs-ai-ml.html">CS/AI/ML</a></li>
+    <li><a href="./personal-dev.html">Personal Dev</a></li>
+    <li><a href="./career-finance.html">Career</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="search-wrap">
+      <input type="search" id="search-input" class="search-input" placeholder="Search this page…" autocomplete="off">
+    </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">◑</button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+<div class="section-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-title">Sections</div>
+    <nav>
+      <a href="#calculus">Calculus Foundations</a>
+      <a href="#diff-eq">Differential Equations</a>
+      <a href="#linear-algebra">Linear Algebra</a>
+      <a href="#vector-calc">Vector Calculus</a>
+      <a href="#number-theory">Number Theory &amp; Analysis</a>
+      <a href="#complex">Complex Analysis</a>
+      <a href="#special">Special Functions</a>
+      <a href="#trig-geo">Trigonometry &amp; Geometry</a>
+      <a href="#probability">Probability &amp; Statistics</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <h1 class="page-title">Mathematics</h1>
+    <p class="page-subtitle">Pure maths from calculus to topology — 32 topics</p>
+
+    <div id="no-results-msg" class="no-results-msg">No subsections match your search.</div>
+
+    <!-- CALCULUS -->
+    <section class="content-section" id="calculus">
+      <h2>Calculus Foundations</h2>
+
+      <div class="subsection" id="limit-derivative">
+        <h3>Limit Definition of the Derivative</h3>
+        <div class="math-block" data-tex="f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}"></div>
+        <p>The derivative gives the instantaneous rate of change. <em>h</em> is the time interval tending to zero.</p>
+      </div>
+
+      <div class="subsection" id="differentiation-rules">
+        <h3>Differentiation Rules</h3>
+        <p>Power rule: <span class="math-inline" data-tex="\frac{d}{dx} x^n = nx^{n-1}"></span>, &nbsp;<span class="math-inline" data-tex="\frac{d}{dx} e^x = e^x"></span>, &nbsp;<span class="math-inline" data-tex="\frac{d}{dx} \ln x = \frac{1}{x}"></span></p>
+        <p>Product rule: <span class="math-inline" data-tex="\frac{d}{dx}[f \cdot g] = f'g + fg'"></span></p>
+        <p>Quotient rule: <span class="math-inline" data-tex="\frac{d}{dx}\left[\frac{f}{g}\right] = \frac{f'g - fg'}{g^2}"></span></p>
+        <p>Chain rule: <span class="math-inline" data-tex="\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)"></span></p>
+      </div>
+
+      <div class="subsection" id="ftc">
+        <h3>Fundamental Theorem of Calculus</h3>
+        <div class="math-block" data-tex="\frac{d}{dx}\int_a^x f(t)\,dt = f(x)"></div>
+        <p>Connects differentiation and integration: the derivative of an integral with variable upper limit recovers the integrand.</p>
+      </div>
+
+      <div class="subsection" id="riemann-lebesgue">
+        <h3>Riemann and Lebesgue Integrals</h3>
+        <p>Riemann: <span class="math-inline" data-tex="\int_a^b f(x)\,dx = \lim_{n\to\infty}\sum_{i=1}^n f(x_i^*)\Delta x_i"></span></p>
+        <p>Lebesgue: <span class="math-inline" data-tex="\int f\,d\mu = \sup \sum \mu(E_k) h_k"></span> — integrates by measuring sets rather than intervals.</p>
+      </div>
+
+      <div class="subsection" id="integration-types">
+        <h3>Integration Types</h3>
+        <p>Line: <span class="math-inline" data-tex="\int_C f\,ds"></span> &nbsp;|&nbsp; Double: <span class="math-inline" data-tex="\iint_D f\,dA"></span> &nbsp;|&nbsp; Triple: <span class="math-inline" data-tex="\iiint_V f\,dV"></span> &nbsp;|&nbsp; Surface: <span class="math-inline" data-tex="\iint_S \mathbf{F}\cdot d\mathbf{S}"></span></p>
+      </div>
+
+      <div class="subsection" id="fourier">
+        <h3>Fourier Transform and Series</h3>
+        <p>Fourier Transform:</p>
+        <div class="math-block" data-tex="F(\omega) = \int_{-\infty}^{\infty} f(t)\,e^{-i\omega t}\,dt"></div>
+        <p>Fourier Coefficients:</p>
+        <div class="math-block" data-tex="a_n = \frac{1}{L}\int_{-L}^{L} f(x)\cos\!\left(\frac{n\pi x}{L}\right)dx"></div>
+      </div>
+
+      <div class="subsection" id="laplace">
+        <h3>Laplace Transform</h3>
+        <div class="math-block" data-tex="\mathcal{L}\{f(t)\} = \int_0^{\infty} f(t)\,e^{-st}\,dt"></div>
+        <p>Converts time-domain functions to the complex frequency domain. Core tool in control systems.</p>
+      </div>
+
+      <div class="subsection" id="mellin">
+        <h3>Mellin Transform</h3>
+        <div class="math-block" data-tex="\{Mf\}(s) = \int_0^{\infty} x^{s-1} f(x)\,dx"></div>
+      </div>
+
+      <div class="subsection" id="stirling">
+        <h3>Stirling's Approximation</h3>
+        <div class="math-block" data-tex="n! \approx \sqrt{2\pi n}\left(\frac{n}{e}\right)^n"></div>
+        <p>James Stirling, 1730. Approximates the factorial for large <em>n</em>.</p>
+      </div>
+    </section>
+
+    <!-- DIFFERENTIAL EQUATIONS -->
+    <section class="content-section" id="diff-eq">
+      <h2>Differential Equations</h2>
+
+      <div class="subsection" id="ode-classification">
+        <h3>ODE Classification</h3>
+        <p><strong>Order:</strong> highest derivative present. <strong>Linearity:</strong> linear if y and all its derivatives appear to the first power only. <strong>Homogeneity:</strong> homogeneous if the right-hand side is zero.</p>
+      </div>
+
+      <div class="subsection" id="suvat">
+        <h3>SUVAT Equations</h3>
+        <p><span class="math-inline" data-tex="v = u + at"></span> &nbsp;|&nbsp; <span class="math-inline" data-tex="s = ut + \frac{1}{2}at^2"></span> &nbsp;|&nbsp; <span class="math-inline" data-tex="v^2 = u^2 + 2as"></span></p>
+        <p>Kinematic equations for constant acceleration. s = displacement, u = initial velocity, v = final velocity, a = acceleration, t = time.</p>
+      </div>
+
+      <div class="subsection" id="integrating-factor">
+        <h3>First-Order Linear ODE — Integrating Factor</h3>
+        <p>For <span class="math-inline" data-tex="y' + P(x)y = Q(x)"></span>, multiply both sides by the integrating factor:</p>
+        <div class="math-block" data-tex="\mu = e^{\int P(x)\,dx}"></div>
+        <p>The equation becomes <span class="math-inline" data-tex="\frac{d}{dx}[\mu y] = \mu Q(x)"></span>, which can be integrated directly.</p>
+      </div>
+    </section>
+
+    <!-- LINEAR ALGEBRA -->
+    <section class="content-section" id="linear-algebra">
+      <h2>Linear Algebra</h2>
+
+      <div class="subsection" id="jordan">
+        <h3>Jordan Normal Form</h3>
+        <p>Every square matrix over ℂ is similar to a block-diagonal matrix <span class="math-inline" data-tex="J_k(\lambda)"></span> with Jordan blocks having λ on the diagonal and 1 on the superdiagonal. Canonical form for understanding matrix structure.</p>
+      </div>
+
+      <div class="subsection" id="rotation-matrix">
+        <h3>Rotation Matrix (2D)</h3>
+        <div class="math-block" data-tex="R(\theta) = \begin{pmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{pmatrix}"></div>
+        <p>Rotates vectors in the plane counterclockwise by angle θ. Preserves lengths and angles — it is orthogonal: <span class="math-inline" data-tex="R^T R = I"></span>.</p>
+      </div>
+
+      <div class="subsection" id="hessian">
+        <h3>Hessian Matrix</h3>
+        <div class="math-block" data-tex="H(f)_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}"></div>
+        <p>The Hessian classifies critical points: positive definite → local minimum, negative definite → local maximum, indefinite → saddle point.</p>
+      </div>
+
+      <div class="subsection" id="rank-nullity">
+        <h3>Rank-Nullity Theorem</h3>
+        <div class="math-block" data-tex="\text{rank}(T) + \text{nullity}(T) = \dim(V)"></div>
+        <p>For a linear map T: V → W, the dimension of the image plus the dimension of the kernel equals the dimension of the domain.</p>
+      </div>
+
+      <div class="subsection" id="pearson">
+        <h3>Pearson Correlation</h3>
+        <div class="math-block" data-tex="r = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum(x_i-\bar{x})^2 \sum(y_i-\bar{y})^2}}"></div>
+        <p>Measures linear association between two variables; r ∈ [−1, 1].</p>
+      </div>
+    </section>
+
+    <!-- VECTOR CALCULUS -->
+    <section class="content-section" id="vector-calc">
+      <h2>Vector Calculus</h2>
+
+      <div class="subsection" id="del">
+        <h3>Del Operator</h3>
+        <div class="math-block" data-tex="\nabla = \hat{x}\frac{\partial}{\partial x} + \hat{y}\frac{\partial}{\partial y} + \hat{z}\frac{\partial}{\partial z}"></div>
+        <p>Used to form gradient (∇f), divergence (∇·F), and curl (∇×F).</p>
+      </div>
+
+      <div class="subsection" id="divergence-theorem">
+        <h3>Divergence Theorem</h3>
+        <div class="math-block" data-tex="\oiint_S \mathbf{F}\cdot d\mathbf{S} = \iiint_V (\nabla\cdot\mathbf{F})\,dV"></div>
+        <p>Relates the flux of a vector field through a closed surface to the divergence over the enclosed volume.</p>
+      </div>
+
+      <div class="subsection" id="greens">
+        <h3>Green's Theorem</h3>
+        <div class="math-block" data-tex="\oint_C (P\,dx + Q\,dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dA"></div>
+        <p>Relates a line integral around a simple closed curve C to a double integral over the region D bounded by C.</p>
+      </div>
+
+      <div class="subsection" id="noether">
+        <h3>Noether Current</h3>
+        <div class="math-block" data-tex="j^\mu(x) = \frac{\partial\mathcal{L}}{\partial(\partial_\mu \phi_a)} X_a[\phi_a] - F^\mu"></div>
+        <p>By Noether's theorem, every continuous symmetry of a physical system corresponds to a conserved current and a conserved charge.</p>
+      </div>
+    </section>
+
+    <!-- NUMBER THEORY -->
+    <section class="content-section" id="number-theory">
+      <h2>Number Theory and Analysis</h2>
+
+      <div class="subsection" id="basel">
+        <h3>Basel Problem</h3>
+        <div class="math-block" data-tex="\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}"></div>
+        <p>Solved by Euler, 1734. The sum of reciprocals of squares equals π²/6.</p>
+      </div>
+
+      <div class="subsection" id="eulers-identity">
+        <h3>Euler's Identity</h3>
+        <div class="math-block" data-tex="e^{i\pi} + 1 = 0"></div>
+        <p>Connects the five most important constants in mathematics: e, i, π, 1, and 0.</p>
+      </div>
+
+      <div class="subsection" id="riemann-hypothesis">
+        <h3>Riemann Hypothesis</h3>
+        <p>All non-trivial zeros of the Riemann zeta function</p>
+        <div class="math-block" data-tex="\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}"></div>
+        <p>have real part ½. One of the Millennium Prize Problems — unproven.</p>
+      </div>
+
+      <div class="subsection" id="picks">
+        <h3>Pick's Theorem</h3>
+        <div class="math-block" data-tex="A = I + \frac{B}{2} - 1"></div>
+        <p>Area of a lattice polygon where I = interior lattice points, B = boundary lattice points.</p>
+      </div>
+
+      <div class="subsection" id="binomial">
+        <h3>Binomial Theorem</h3>
+        <div class="math-block" data-tex="(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k"></div>
+      </div>
+
+      <div class="subsection" id="summation-formulas">
+        <h3>Summation Formulas</h3>
+        <p>Sum of first n naturals: <span class="math-inline" data-tex="\frac{n(n+1)}{2}"></span></p>
+        <p>Sum of first n squares: <span class="math-inline" data-tex="\frac{n(n+1)(2n+1)}{6}"></span></p>
+        <p>Sum of first n cubes: <span class="math-inline" data-tex="\left[\frac{n(n+1)}{2}\right]^2"></span></p>
+      </div>
+
+      <div class="subsection" id="sqrt2-irrational">
+        <h3>Irrationality of √2</h3>
+        <p>Proof by contradiction: assume <span class="math-inline" data-tex="\sqrt{2} = p/q"></span> in lowest terms. Then <span class="math-inline" data-tex="2q^2 = p^2"></span>, so p is even; write p = 2k. Then <span class="math-inline" data-tex="2q^2 = 4k^2 \Rightarrow q^2 = 2k^2"></span>, so q is also even — contradicting that p/q is in lowest terms. ∎</p>
+      </div>
+    </section>
+
+    <!-- COMPLEX ANALYSIS -->
+    <section class="content-section" id="complex">
+      <h2>Complex Analysis</h2>
+
+      <div class="subsection" id="cauchy-residue">
+        <h3>Cauchy Residue Theorem</h3>
+        <div class="math-block" data-tex="\oint_C f(z)\,dz = 2\pi i \sum_k \text{Res}(f, z_k)"></div>
+        <p>Augustin-Louis Cauchy (1789–1857). The contour integral equals 2πi times the sum of residues at all poles inside the contour.</p>
+      </div>
+
+      <div class="subsection" id="cauchy-riemann">
+        <h3>Cauchy–Riemann Equations</h3>
+        <p><span class="math-inline" data-tex="\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}"></span> &nbsp;and&nbsp; <span class="math-inline" data-tex="\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}"></span></p>
+        <p>Necessary conditions for a function f(z) = u + iv to be holomorphic (complex differentiable) in a domain.</p>
+      </div>
+    </section>
+
+    <!-- SPECIAL FUNCTIONS -->
+    <section class="content-section" id="special">
+      <h2>Special Functions</h2>
+
+      <div class="subsection" id="wavelet">
+        <h3>Continuous Wavelet Transform</h3>
+        <div class="math-block" data-tex="W(a,b) = \int_{-\infty}^{\infty} f(t)\,\frac{1}{\sqrt{a}}\,\psi\!\left(\frac{t-b}{a}\right)dt"></div>
+        <p>Decomposes a signal by scale a and translation b. Used in signal processing, image compression, and geophysics.</p>
+      </div>
+
+      <div class="subsection" id="lagrange-multipliers">
+        <h3>Lagrange Multipliers</h3>
+        <p>To optimise f subject to constraints g₁ = 0, …, gₙ = 0, build the Lagrangian:</p>
+        <div class="math-block" data-tex="\mathcal{L} = f - \sum_i \lambda_i g_i"></div>
+        <p>and solve <span class="math-inline" data-tex="\nabla\mathcal{L} = 0"></span>.</p>
+      </div>
+
+      <div class="subsection" id="wallis">
+        <h3>Wallis's Product</h3>
+        <div class="math-block" data-tex="\frac{\pi}{2} = \prod_{n=1}^{\infty} \frac{(2n)^2}{(2n-1)(2n+1)}"></div>
+      </div>
+
+      <div class="subsection" id="dirac-delta">
+        <h3>Dirac Delta Function</h3>
+        <div class="math-block" data-tex="\int_{-\infty}^{\infty} f(x)\,\delta(x-a)\,dx = f(a)"></div>
+        <p>Sifting property: the delta function picks out the value of f at x = a.</p>
+      </div>
+
+      <div class="subsection" id="hyperbolic">
+        <h3>Hyperbolic Functions</h3>
+        <p><span class="math-inline" data-tex="\sinh x = \frac{e^x - e^{-x}}{2}"></span> &nbsp;|&nbsp; <span class="math-inline" data-tex="\cosh x = \frac{e^x + e^{-x}}{2}"></span></p>
+        <p>Fundamental identity: <span class="math-inline" data-tex="\cosh^2 x - \sinh^2 x = 1"></span></p>
+      </div>
+
+      <div class="subsection" id="nicomachus">
+        <h3>Nicomachus's Theorem</h3>
+        <div class="math-block" data-tex="1^3 + 2^3 + \cdots + n^3 = \left[\frac{n(n+1)}{2}\right]^2"></div>
+        <p>The sum of the first n cubes equals the square of the n-th triangular number.</p>
+      </div>
+    </section>
+
+    <!-- TRIGONOMETRY AND GEOMETRY -->
+    <section class="content-section" id="trig-geo">
+      <h2>Trigonometry and Geometry</h2>
+
+      <div class="subsection" id="trig-identities">
+        <h3>Fundamental Trigonometric Identities</h3>
+        <p><span class="math-inline" data-tex="\sin^2\theta + \cos^2\theta = 1"></span></p>
+        <p><span class="math-inline" data-tex="1 + \tan^2\theta = \sec^2\theta"></span></p>
+      </div>
+
+      <div class="subsection" id="geometric-formulas">
+        <h3>Geometric Formulas</h3>
+        <p>Circle area: <span class="math-inline" data-tex="\pi r^2"></span> &nbsp;|&nbsp; Sphere volume: <span class="math-inline" data-tex="\frac{4}{3}\pi r^3"></span> &nbsp;|&nbsp; Cone volume: <span class="math-inline" data-tex="\frac{1}{3}\pi r^2 h"></span></p>
+      </div>
+
+      <div class="subsection" id="viviani">
+        <h3>Viviani's Theorem</h3>
+        <p>For any interior point of an equilateral triangle, the sum of perpendicular distances from that point to the three sides equals the altitude of the triangle.</p>
+      </div>
+    </section>
+
+    <!-- PROBABILITY -->
+    <section class="content-section" id="probability">
+      <h2>Probability and Statistics</h2>
+
+      <div class="subsection" id="bayes">
+        <h3>Bayes' Theorem</h3>
+        <div class="math-block" data-tex="P(A|B) = \frac{P(B|A)\,P(A)}{P(B)}"></div>
+        <p>Updates the probability of a hypothesis A given new evidence B. Foundational to Bayesian inference.</p>
+      </div>
+
+      <div class="subsection" id="poisson">
+        <h3>Poisson Distribution</h3>
+        <div class="math-block" data-tex="P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}"></div>
+        <p>Models the number of events occurring in a fixed interval when events happen at a constant average rate λ.</p>
+      </div>
+
+      <div class="subsection" id="geometric-series">
+        <h3>Geometric Series (Infinite)</h3>
+        <div class="math-block" data-tex="S_\infty = \frac{a}{1-r} \quad \text{for } |r| < 1"></div>
+        <p>Sum of an infinite geometric progression with first term a and common ratio r.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>Sajeevan Veeriah · Montage · 2026</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<script src="./assets/search.js"></script>
+<script>
+  function renderMath() {
+    document.querySelectorAll('.math-block[data-tex]').forEach(el => {
+      katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false });
+    });
+    document.querySelectorAll('.math-inline[data-tex]').forEach(el => {
+      katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', renderMath);
+</script>
+</body>
+</html>

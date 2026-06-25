@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Development — Montage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/theme.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="./index.html" class="nav-brand">Montage</a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./mathematics.html">Maths</a></li>
+    <li><a href="./physics.html">Physics</a></li>
+    <li><a href="./engineering.html">Engineering</a></li>
+    <li><a href="./cs-ai-ml.html">CS/AI/ML</a></li>
+    <li><a href="./personal-dev.html" class="active">Personal Dev</a></li>
+    <li><a href="./career-finance.html">Career</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="search-wrap">
+      <input type="search" id="search-input" class="search-input" placeholder="Search this page…" autocomplete="off">
+    </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">◑</button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+<div class="section-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-title">Sections</div>
+    <nav>
+      <a href="#habits">Habit Formation</a>
+      <a href="#mental">Mental Strength</a>
+      <a href="#productivity">Productivity and Focus</a>
+      <a href="#learning">Learning and Memory</a>
+      <a href="#wellbeing">Wellbeing</a>
+      <a href="#motivation">Motivation and Philosophy</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <h1 class="page-title">Personal Development</h1>
+    <p class="page-subtitle">Habits, mindset, learning, wellbeing — 26 topics</p>
+
+    <div id="no-results-msg" class="no-results-msg">No subsections match your search.</div>
+
+    <!-- HABITS -->
+    <section class="content-section" id="habits">
+      <h2>Habit Formation</h2>
+
+      <div class="subsection" id="atomic-habits">
+        <h3>Atomic Habits — James Clear</h3>
+        <p><strong>4 Laws of Behaviour Change:</strong></p>
+        <ol>
+          <li><strong>Make it obvious</strong> — design your environment to cue the habit</li>
+          <li><strong>Make it attractive</strong> — pair the habit with something you enjoy</li>
+          <li><strong>Make it easy</strong> — reduce friction; two-minute rule to start</li>
+          <li><strong>Make it satisfying</strong> — track progress; immediate reward</li>
+        </ol>
+        <p><strong>1% better every day:</strong> 1.01³⁶⁵ ≈ 37× better over a year. Identity-based habits: "I am a reader" rather than "I want to read more." Habit stacking: "After [current habit], I will [new habit]."</p>
+      </div>
+
+      <div class="subsection" id="micro-habits">
+        <h3>20 Micro Habits</h3>
+        <ul>
+          <li>Drink a glass of water immediately on waking</li>
+          <li>Make your bed each morning</li>
+          <li>Take 5 deep breaths before any high-stakes conversation</li>
+          <li>Write 3 things you're grateful for daily</li>
+          <li>Read 10 pages of a book before screens</li>
+          <li>Take a 10-minute walk after lunch</li>
+          <li>Put your phone in another room at bedtime</li>
+          <li>Spend 2 minutes tidying your workspace at end of day</li>
+          <li>Review tomorrow's priorities the night before</li>
+          <li>Eat vegetables with every meal</li>
+          <li>Respond to non-urgent messages in batched windows</li>
+          <li>Do 5 minutes of stretching or mobility each morning</li>
+          <li>Learn one new word daily</li>
+          <li>Write a 3-sentence journal entry each evening</li>
+          <li>Say no to one unnecessary commitment per week</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="top1-habits">
+        <h3>10 Habits of the Top 1%</h3>
+        <ol>
+          <li>Wake up early and protect morning hours for deep work</li>
+          <li>Exercise daily — movement as a non-negotiable</li>
+          <li>Read voraciously across disciplines</li>
+          <li>Invest continuously — in skills, assets, and relationships</li>
+          <li>Eat with intention; avoid processed foods</li>
+          <li>Sleep 7–8 hours; treat it as performance recovery</li>
+          <li>Practise delayed gratification — think in decades</li>
+          <li>Build and nurture a high-quality network</li>
+          <li>Meditate or maintain a contemplative practice</li>
+          <li>Review goals weekly; measure what matters</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="elite-work-ethic">
+        <h3>10 Habits of an Elite Work Ethic</h3>
+        <ol>
+          <li>Show up before everyone else — time advantage compounds</li>
+          <li>Finish what you start; incomplete projects drain energy</li>
+          <li>Do the hardest task first (eat the frog)</li>
+          <li>Under-promise and over-deliver, always</li>
+          <li>Take ownership — never blame, always solve</li>
+          <li>Seek feedback actively and act on it fast</li>
+          <li>Document and systematise so you scale</li>
+          <li>Take care of your body — energy is the foundation</li>
+          <li>Improve by 1% every single day</li>
+          <li>Outwork doubt with relentless consistency</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="time-saving-habits">
+        <h3>Daily Habits That Save You Time</h3>
+        <ul>
+          <li>Batch similar tasks (emails, calls, admin) into scheduled windows</li>
+          <li>Prepare tomorrow the night before (clothes, bag, to-do list)</li>
+          <li>Use templates for recurring communications</li>
+          <li>Practice the two-minute rule: if it takes less than 2 minutes, do it now</li>
+          <li>Do a weekly review — clear inbox, update priorities, plan the week</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="brain-health-habits">
+        <h3>5 Habits for Brain Health</h3>
+        <ul>
+          <li><strong>Japan's 80% rule (Hara Hachi Bu):</strong> Eat until 80% full to reduce inflammation</li>
+          <li><strong>Walking meetings:</strong> Movement boosts creativity and BDNF production</li>
+          <li><strong>Rest ethic:</strong> Strategic rest is as important as work; avoid chronic activation</li>
+          <li><strong>Energy vampires:</strong> Identify and minimise time with people who drain your energy</li>
+          <li><strong>Morning sunlight:</strong> 10–30 min of natural light within an hour of waking sets circadian rhythm</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MENTAL -->
+    <section class="content-section" id="mental">
+      <h2>Mental Strength</h2>
+
+      <div class="subsection" id="mentally-unbreakable">
+        <h3>10 Secrets of the Mentally Unbreakable</h3>
+        <ol>
+          <li>They embrace discomfort as growth</li>
+          <li>They control their response, never the outcome</li>
+          <li>They have clear values as their north star</li>
+          <li>They practise radical acceptance of what is</li>
+          <li>They build recovery habits as seriously as performance habits</li>
+          <li>They reframe failure as data, not identity</li>
+          <li>They use visualisation for both outcome and obstacles</li>
+          <li>They cultivate a support system of honest people</li>
+          <li>They maintain physical discipline as mental foundation</li>
+          <li>They act before they feel ready</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="mentally-strong">
+        <h3>How to Be Mentally Strong</h3>
+        <ol>
+          <li>Accept that change is inevitable; resist nothing, adapt everything</li>
+          <li>Don't waste energy on things outside your control</li>
+          <li>Embrace solitude; make peace with your own mind</li>
+          <li>Keep score honestly; self-delusion is weakness</li>
+          <li>Celebrate others' success without envy</li>
+          <li>Take calculated risks; comfort zones shrink you</li>
+          <li>Tolerate failure; it is a prerequisite for mastery</li>
+          <li>Gratitude is not a feeling — it's a daily practice</li>
+          <li>Your thoughts are not facts; you are not your mind</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="resilient-mindset">
+        <h3>Resilient Mindset</h3>
+        <ol>
+          <li>Bounce back faster each time — resilience is a skill</li>
+          <li>Seek meaning in difficulty</li>
+          <li>Maintain perspective: most crises are temporary</li>
+          <li>Build emotional vocabulary to process, not suppress</li>
+          <li>Maintain routines under stress — structure provides stability</li>
+          <li>Use humour to diffuse catastrophising</li>
+          <li>Develop a growth narrative about adversity</li>
+          <li>Stay connected — isolation amplifies suffering</li>
+          <li>Focus on micro-wins during extended hard periods</li>
+          <li>Accept that some wounds leave scars — and that is okay</li>
+          <li>Practice stoic pre-meditation: prepare mentally for difficulty</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="mindset-shifts">
+        <h3>12 Unstoppable Mindset Shifts</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Old Thinking</th><th>New Thinking</th></tr>
+            <tr><td>I can't do this</td><td>I can't do this yet</td></tr>
+            <tr><td>Failure is the end</td><td>Failure is feedback</td></tr>
+            <tr><td>I need to be perfect</td><td>Done is better than perfect</td></tr>
+            <tr><td>I don't have time</td><td>I choose not to prioritise this</td></tr>
+            <tr><td>I'm not creative</td><td>Creativity is a skill, not a trait</td></tr>
+            <tr><td>I'm too old/young</td><td>Now is the right time</td></tr>
+            <tr><td>I need to feel motivated</td><td>Action creates motivation</td></tr>
+            <tr><td>They are lucky</td><td>Luck = preparation + opportunity</td></tr>
+            <tr><td>My past defines me</td><td>My choices define me</td></tr>
+            <tr><td>I need others' approval</td><td>I need my own respect</td></tr>
+            <tr><td>Life happens to me</td><td>I happen to life</td></tr>
+            <tr><td>Comfort is safety</td><td>Growth lives at the edge</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="discipline">
+        <h3>The Art of Discipline</h3>
+        <ul>
+          <li>Discipline is choosing between what you want now and what you want most</li>
+          <li>Remove decisions — automate routines so willpower stays for what matters</li>
+          <li>Track your commitments; accountability is external discipline made internal</li>
+          <li>Start small enough that failure is impossible, then scale</li>
+          <li>Build identity around your disciplines: "I am someone who keeps their word"</li>
+        </ul>
+        <p><em>"We are what we repeatedly do. Excellence, then, is not an act, but a habit." — Aristotle</em></p>
+      </div>
+    </section>
+
+    <!-- PRODUCTIVITY -->
+    <section class="content-section" id="productivity">
+      <h2>Productivity and Focus</h2>
+
+      <div class="subsection" id="organised">
+        <h3>How to Be Seriously Organised</h3>
+        <ol>
+          <li>Use one trusted system (GTD, Notion, plain text) — not many half-used ones</li>
+          <li>Capture everything immediately; don't rely on memory</li>
+          <li>Process inbox to zero daily</li>
+          <li>Assign every task a context, a deadline, and a priority</li>
+          <li>Review weekly: close loops, update priorities, plan ahead</li>
+          <li>Keep a single calendar as the source of truth for time</li>
+          <li>Use project templates to avoid reinventing planning</li>
+          <li>Eliminate or delegate anything not requiring your specific skills</li>
+          <li>Separate collections of ideas from actionable tasks</li>
+          <li>The goal is not a perfect system but a trusted one</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="time-management">
+        <h3>Time Management: Where to Start</h3>
+        <ol>
+          <li>Track how you actually spend your time for one week</li>
+          <li>Identify your top 3 priorities for the next 90 days</li>
+          <li>Block time for deep work before anything else</li>
+          <li>Create boundaries around meetings — batch and time-box them</li>
+          <li>Eliminate low-value activities ruthlessly</li>
+          <li>Protect your biological peak hours for creative/analytical work</li>
+          <li>Build transition rituals between tasks to reset focus</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="strategic-thinking">
+        <h3>Strategic Thinking Framework</h3>
+        <ul>
+          <li><strong>First principles:</strong> Break assumptions down to fundamental truths, then reason up</li>
+          <li><strong>Inversion:</strong> Ask "What would cause failure?" then avoid it</li>
+          <li><strong>Second-order thinking:</strong> Consider the consequences of the consequences</li>
+          <li><strong>Opportunity cost:</strong> Every choice forecloses alternatives — make them visible</li>
+          <li><strong>Circle of competence:</strong> Know what you know and stay within it</li>
+          <li><strong>Margin of safety:</strong> Build in buffers for your estimates</li>
+          <li><strong>Probabilistic thinking:</strong> Think in distributions, not certainties</li>
+          <li><strong>Map vs territory:</strong> Your model of reality is not reality</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="overthinking">
+        <h3>Overthinking vs Mindfulness</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Overthinking</th><th>Mindfulness</th></tr>
+            <tr><td>Ruminating about the past</td><td>Accepting what has happened</td></tr>
+            <tr><td>Catastrophising the future</td><td>Focusing on the present action</td></tr>
+            <tr><td>Seeking certainty before acting</td><td>Acting with uncertainty</td></tr>
+            <tr><td>Paralysis by analysis</td><td>Iterative action and adjustment</td></tr>
+            <tr><td>Identifying with thoughts</td><td>Observing thoughts without attachment</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="research-loop">
+        <h3>The Research Loop</h3>
+        <p><strong>Predict → Test → Update → Repeat</strong></p>
+        <p>8 trainable skills that improve with this loop:</p>
+        <ol>
+          <li>Formulating precise hypotheses</li>
+          <li>Designing minimal experiments</li>
+          <li>Collecting clean data</li>
+          <li>Distinguishing signal from noise</li>
+          <li>Updating beliefs proportional to evidence</li>
+          <li>Recognising base rates and prior probabilities</li>
+          <li>Identifying confounding variables</li>
+          <li>Communicating findings with appropriate uncertainty</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- LEARNING -->
+    <section class="content-section" id="learning">
+      <h2>Learning and Memory</h2>
+
+      <div class="subsection" id="memory-tips">
+        <h3>12 Tips to Improve Memory</h3>
+        <ol>
+          <li>Sleep 7–8 hours; memory consolidation occurs during sleep</li>
+          <li>Exercise regularly — BDNF promotes neurogenesis</li>
+          <li>Use spaced repetition (Anki) rather than massed practice</li>
+          <li>Test yourself actively; retrieval is stronger than re-reading</li>
+          <li>Teach what you learn; explanation reveals gaps</li>
+          <li>Use the method of loci (memory palace) for sequences</li>
+          <li>Create vivid, emotional, multi-sensory associations</li>
+          <li>Connect new information to what you already know</li>
+          <li>Reduce alcohol and manage chronic stress (cortisol damages hippocampus)</li>
+          <li>Stay hydrated; even mild dehydration impairs cognition</li>
+          <li>Interleave practice topics rather than blocking</li>
+          <li>Take breaks; diffuse mode thinking aids insight</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="study-smart">
+        <h3>Study Smarter, Not Harder</h3>
+        <ul>
+          <li><strong>Active Recall:</strong> Close your notes and retrieve from memory — the most effective study technique</li>
+          <li><strong>Spaced Repetition:</strong> Review at increasing intervals (1 day, 3 days, 1 week, 1 month)</li>
+          <li><strong>Practice Testing:</strong> Past papers and problem sets beat passive review</li>
+          <li><strong>Deep Work:</strong> 90-minute focused sessions with no distractions (Cal Newport)</li>
+          <li><strong>Zettelkasten:</strong> Atomic note-taking with bi-directional links — builds a personal knowledge graph</li>
+          <li><strong>Consistency:</strong> 1 hour daily beats 7 hours once a week</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="think-smarter">
+        <h3>Train Your Brain to Think Smarter</h3>
+        <ol>
+          <li>Read widely across disciplines — cross-domain pattern recognition is intelligence</li>
+          <li>Practise solving problems you don't know how to solve yet</li>
+          <li>Write to think: articulating ideas reveals confusion</li>
+          <li>Seek out views that challenge your own; steelman them</li>
+          <li>Meditate to improve meta-cognition and attention control</li>
+          <li>Delay judgement; sit with ambiguity before concluding</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="learning-timelines">
+        <h3>How Long to Learn Programming Skills</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Skill</th><th>Time to Proficiency</th></tr>
+            <tr><td>HTML/CSS</td><td>2–4 weeks</td></tr>
+            <tr><td>Python basics</td><td>1–3 months</td></tr>
+            <tr><td>JavaScript</td><td>3–6 months</td></tr>
+            <tr><td>SQL</td><td>1–3 months</td></tr>
+            <tr><td>React/Vue</td><td>3–6 months</td></tr>
+            <tr><td>Data Science stack</td><td>6–12 months</td></tr>
+            <tr><td>Machine Learning</td><td>12–18 months</td></tr>
+            <tr><td>Systems (C/Rust)</td><td>12–24 months</td></tr>
+            <tr><td>Haskell / FP</td><td>6–18 months (paradigm shift)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="brain-trainable">
+        <h3>Your Brain Is Trainable</h3>
+        <ul>
+          <li>Neuroplasticity persists throughout life — the brain rewires in response to experience</li>
+          <li>Learning a new language or instrument grows the cortex</li>
+          <li>Aerobic exercise increases hippocampal volume</li>
+          <li>Stress response can be trained — cold exposure, controlled breathing</li>
+          <li>Emotional regulation improves with reflective practice</li>
+          <li>Attention span can be rebuilt by deep work and meditation</li>
+          <li>Growth mindset itself is learnable and changes brain activation patterns</li>
+          <li>Sleep is when synaptic pruning and memory consolidation occur</li>
+          <li>Social connection drives neurotrophic factor release</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="three-hour-window">
+        <h3>The 3-Hour Window</h3>
+        <p>Most people have a 2–3 hour window of peak cognitive performance approximately 2 hours after waking (depending on chronotype). During this window:</p>
+        <ul>
+          <li>Prefrontal cortex activity is highest</li>
+          <li>Attention and working memory are sharpest</li>
+          <li>Creative problem-solving is most effective</li>
+        </ul>
+        <p><strong>How to use it:</strong> Protect this window for your most demanding, creative, or analytical work. Defer meetings, email, and administrative tasks to the afternoon.</p>
+      </div>
+    </section>
+
+    <!-- WELLBEING -->
+    <section class="content-section" id="wellbeing">
+      <h2>Wellbeing</h2>
+
+      <div class="subsection" id="anxiety-tips">
+        <h3>8 Wellbeing Tips to Silence Anxiety</h3>
+        <ol>
+          <li>Slow, extended exhales activate the parasympathetic system (box breathing: 4-4-4-4)</li>
+          <li>Name the emotion to diffuse it: "I notice I feel anxious about X"</li>
+          <li>Move your body — anxiety is cortisol and adrenaline demanding action</li>
+          <li>Limit news and social media to one scheduled window</li>
+          <li>Write the worst case — it is almost always survivable</li>
+          <li>Connect with someone you trust — anxiety thrives in isolation</li>
+          <li>Maintain basic routines: sleep, food, movement — they are pillars</li>
+          <li>Differentiate worry (repetitive thought) from problem-solving (action planning)</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="brainwaves">
+        <h3>Brain Wave States</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>State</th><th>Frequency</th><th>Associated With</th></tr>
+            <tr><td>Delta</td><td>0.5–4 Hz</td><td>Deep dreamless sleep, healing</td></tr>
+            <tr><td>Theta</td><td>4–8 Hz</td><td>Drowsiness, creativity, dreaming, meditation</td></tr>
+            <tr><td>Alpha</td><td>8–12 Hz</td><td>Relaxed awareness, eyes closed rest</td></tr>
+            <tr><td>Beta</td><td>12–30 Hz</td><td>Alert focus, active thinking, problem-solving</td></tr>
+            <tr><td>Gamma</td><td>30–100 Hz</td><td>High-level cognition, peak performance, insight</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="brain-lies">
+        <h3>Your Brain Lies: 7 Habits That Rewire Thinking</h3>
+        <ol>
+          <li><strong>Label thoughts:</strong> "I'm having the thought that…" creates distance</li>
+          <li><strong>Opposite action:</strong> Do the opposite of what anxiety tells you to avoid</li>
+          <li><strong>Gratitude reframing:</strong> Actively seek what is right before cataloguing what is wrong</li>
+          <li><strong>Evidence interrogation:</strong> What is the actual evidence for this belief?</li>
+          <li><strong>Future-self journalling:</strong> Write from the perspective of your 80-year-old self</li>
+          <li><strong>Compassionate self-talk:</strong> Speak to yourself as you would a close friend</li>
+          <li><strong>Consistent exposure:</strong> Gradually confront what you avoid; the brain updates threat assessments</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="neuroplasticity">
+        <h3>Neuroscience of Change</h3>
+        <ul>
+          <li><strong>Neuroplasticity:</strong> The brain's ability to reorganise by forming new neural connections throughout life</li>
+          <li><strong>Repetition:</strong> Neurons that fire together wire together (Hebb's rule)</li>
+          <li><strong>Emotion:</strong> Emotionally charged experiences encode more deeply</li>
+          <li><strong>Sleep:</strong> Slow-wave sleep consolidates procedural memory; REM consolidates emotional and declarative memory</li>
+          <li><strong>66-day timeline:</strong> On average, new behaviours take ~66 days to become automatic (Phillippa Lally, UCL, 2010)</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="thinking-traps">
+        <h3>10 Thinking Traps (Cognitive Distortions)</h3>
+        <ol>
+          <li><strong>All-or-nothing:</strong> Black and white thinking with no middle ground</li>
+          <li><strong>Overgeneralisation:</strong> One event becomes a permanent pattern ("always", "never")</li>
+          <li><strong>Mental filter:</strong> Focusing exclusively on the negative</li>
+          <li><strong>Discounting the positive:</strong> Dismissing achievements as luck or trivial</li>
+          <li><strong>Mind reading:</strong> Assuming you know what others are thinking</li>
+          <li><strong>Fortune telling:</strong> Predicting negative outcomes as inevitable</li>
+          <li><strong>Catastrophising:</strong> Magnifying problems out of proportion</li>
+          <li><strong>Emotional reasoning:</strong> "I feel bad, therefore it is bad"</li>
+          <li><strong>Should statements:</strong> Rigid rules that produce guilt and shame</li>
+          <li><strong>Labelling:</strong> Attaching a global label instead of describing behaviour</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="dunning-kruger">
+        <h3>Dunning–Kruger Effect</h3>
+        <p>A cognitive bias in which people with limited knowledge overestimate their competence:</p>
+        <ol>
+          <li><strong>Peak of Mount Stupid:</strong> Low competence, high confidence</li>
+          <li><strong>Valley of Despair:</strong> Exposure to complexity collapses confidence</li>
+          <li><strong>Slope of Enlightenment:</strong> Competence grows; humility develops</li>
+          <li><strong>Plateau of Sustainability:</strong> High competence, calibrated confidence</li>
+        </ol>
+        <p>Experts often underestimate themselves relative to true mastery; novices drastically overestimate.</p>
+      </div>
+
+      <div class="subsection" id="grow-intelligence">
+        <h3>How to Grow Your Intelligence</h3>
+        <ol>
+          <li>Embrace challenge as the mechanism, not the obstacle</li>
+          <li>Value effort over innate talent — growth mindset (Carol Dweck)</li>
+          <li>Learn from criticism; feedback is compressed experience</li>
+          <li>Find inspiration in others' success, not threat</li>
+          <li>Persist through setbacks; grit predicts outcomes more than IQ</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MOTIVATION -->
+    <section class="content-section" id="motivation">
+      <h2>Motivation and Philosophy</h2>
+
+      <div class="subsection" id="naval-mantra">
+        <h3>Naval Mantra</h3>
+        <p>"Seek wealth, not money or status. Wealth is having assets that earn while you sleep. Money is how we transfer time and wealth. Status is your place in the social hierarchy."</p>
+        <p>"Specific knowledge cannot be taught, but it can be learned. It is found at the intersection of your curiosity, passion, and skill."</p>
+        <p>"Your reputation is your most important capital. Build it over decades and protect it absolutely."</p>
+      </div>
+
+      <div class="subsection" id="japanese-wisdom">
+        <h3>12 Timeless Life Lessons (Japanese Wisdom)</h3>
+        <ol>
+          <li>Ikigai: Find the intersection of what you love, what you're good at, what the world needs, and what you can be paid for</li>
+          <li>Wabi-sabi: Find beauty in imperfection and impermanence</li>
+          <li>Kaizen: Continuous, incremental improvement over dramatic change</li>
+          <li>Hara hachi bu: Eat until 80% full — moderation as discipline</li>
+          <li>Shokunin: Pursue mastery in your craft as a way of life</li>
+          <li>Mono no aware: The gentle sadness of passing things; cherish the ephemeral</li>
+          <li>Ganbaru: Persevere and give your best, always</li>
+          <li>Enryo: Restraint and consideration for others' feelings</li>
+          <li>Oubaitori: Never compare yourself to others; everyone blossoms in their own time</li>
+          <li>Shoshin (Beginner's Mind): Approach everything with openness and no preconceptions</li>
+          <li>Ma: Value empty space and silence as much as content</li>
+          <li>Kintsugi: Repair breakage with gold; your scars make you more beautiful</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="risk-regret">
+        <h3>Risk and Regret</h3>
+        <p>Jeff Bezos's regret minimisation framework: project yourself to age 80 and ask which choice you'll regret more — taking the risk or not taking it. Most people regret inaction more than failed action.</p>
+        <p>Don't attach to outcomes — only to effort, intention, and process. Outcomes are partially random; processes are fully yours.</p>
+      </div>
+
+      <div class="subsection" id="quotes">
+        <h3>6 Quotes Worth Returning To</h3>
+        <ul>
+          <li><em>"The impediment to action advances action. What stands in the way becomes the way."</em> — Marcus Aurelius</li>
+          <li><em>"You have power over your mind, not outside events. Realise this, and you will find strength."</em> — Marcus Aurelius</li>
+          <li><em>"The cave you fear to enter holds the treasure you seek."</em> — Joseph Campbell</li>
+          <li><em>"It is not the mountain we conquer but ourselves."</em> — Edmund Hillary</li>
+          <li><em>"Do the hard jobs first. The easy jobs will take care of themselves."</em> — Dale Carnegie</li>
+          <li><em>"In the middle of difficulty lies opportunity."</em> — Albert Einstein</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="8020">
+        <h3>The 80/20 Principle Across 8 Domains</h3>
+        <ul>
+          <li><strong>Business:</strong> 20% of customers generate 80% of revenue</li>
+          <li><strong>Learning:</strong> 20% of material covers 80% of what matters</li>
+          <li><strong>Productivity:</strong> 20% of tasks create 80% of value</li>
+          <li><strong>Relationships:</strong> 20% of people provide 80% of your joy and support</li>
+          <li><strong>Health:</strong> 20% of habits drive 80% of health outcomes</li>
+          <li><strong>Code:</strong> 20% of features are used 80% of the time</li>
+          <li><strong>Problems:</strong> 20% of causes create 80% of problems</li>
+          <li><strong>Wealth:</strong> 20% of investments generate 80% of returns</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>Sajeevan Veeriah · Montage · 2026</footer>
+</div>
+
+<script src="./assets/search.js"></script>
+</body>
+</html>
