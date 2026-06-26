@@ -1,0 +1,272 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{accent}{RGB}{20,100,40}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\vspace{-4pt}\rule{\linewidth}{1pt}]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=*}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries\color{accent} Electrical, Electronics \& Engineering Reference}\\[4pt]
+{\small Circuit Theory, Electronic Components, Power Systems, RF, Control Systems, Mechanical Engineering}
+\end{center}
+\vspace{4pt}\hrule\vspace{6pt}
+
+\begin{multicols}{2}
+
+\section{Electronic Fundamentals}
+
+\subsection{Voltage and Current}
+\textbf{Voltage (V):} Electrical pressure; difference in electric potential. Units: Volts (V).\\
+\textbf{Current (I):} Flow of electric charge. Units: Amperes (A). $I = Q/t$.\\
+\textbf{Resistance (R):} Opposition to current flow. Ohm's Law: $V = IR$.\\
+\textbf{Power:} $P = IV = I^2R = V^2/R$. Units: Watts (W).
+
+\subsection{MOSFETs, Transistors and IGBTs}
+\textbf{Transistor (NPN/PNP):} Small control current at base controls large collector-emitter current. Amplification or switching.\\
+\textbf{MOSFET:} Voltage-controlled; gate voltage controls drain-source current. Very low input current; used in high-speed switching, IC design.\\
+\textbf{IGBT:} Combines high input impedance of MOSFET with low saturation voltage of BJT. Controls large voltages and high frequencies. Used in motor drives, inverters, power supplies.
+
+\subsection{NPN vs PNP (SparkED Diagram)}
+NPN: Load connected to +24V; output switches 0V (low). Common in Asian PLCs.\\
+PNP: Load connected to 0V/GND; output switches +24V (high). Common in European PLCs.
+
+\subsection{Sinking and Sourcing}
+\textbf{Sinking (NPN):} Output provides a path to ground (current flows into output).\\
+\textbf{Sourcing (PNP):} Output provides +V to load (current flows out of output).
+
+\subsection{Diode and Zener Diode}
+Diode: allows current in one direction only ($V_f \approx 0.7$V silicon). Zener: operates in reverse breakdown at a defined voltage; used for voltage regulation.
+
+\subsection{Sziklai Darlington Transistor}
+A complementary Darlington pair (NPN + PNP) providing very high current gain $h_{FE1} \times h_{FE2}$ with only one $V_{BE}$ drop. Common in audio amplifiers and power drivers.
+
+\section{Circuit Analysis}
+
+\subsection{RLC Series Circuit}
+Series resonance condition: $Z_R = R$, $X_L = X_C$ $\Rightarrow$ $\omega_0 = 1/\sqrt{LC}$. Impedance $Z = \sqrt{R^2 + (X_L - X_C)^2}$.\\
+Phase angle: $\phi = \arctan\!\left(\frac{X_L - X_C}{R}\right)$.
+
+\subsection{Capacitive Reactance}
+\[
+X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}
+\]
+Opposes AC current; decreases with frequency.
+
+\subsection{Inductive Reactance}
+\[
+X_L = \omega L = 2\pi f L
+\]
+Opposes change in current; increases with frequency.
+
+\subsection{Oscillator Circuit}
+$q'' + (R/L)q' + q/LC = 0$. Underdamped: $\omega_d = \sqrt{\omega_0^2 - (R/2L)^2}$.
+
+\subsection{RC Circuit (Transient Response)}
+\[
+v(t) = V - Ve^{-t/RC} = V(1 - e^{-t/\tau}), \quad \tau = RC
+\]
+
+\subsection{OPAMP Basic Applications}
+\textbf{Inverting:} $V_{out} = -\frac{R_f}{R_1}V_{in}$\\
+\textbf{Non-inverting:} $V_{out} = \left(1 + \frac{R_f}{R_1}\right)V_{in}$\\
+\textbf{Voltage follower:} $V_{out} = V_{in}$ (buffer, high impedance in, low out)\\
+\textbf{Summing:} $V_{out} = -R_f\!\left(\frac{V_1}{R_1}+\frac{V_2}{R_2}+\cdots\right)$\\
+\textbf{Difference:} $V_{out} = \frac{R_2}{R_1}(V_2 - V_1)$
+
+\subsection{4th-Order Butterworth Filter}
+Maximally flat magnitude response in the passband. Rolloff: $-80$\,dB/decade (4th order). Butterworth condition: $|H(j\omega)|^2 = \frac{1}{1+(\omega/\omega_c)^{2n}}$.
+
+\subsection{Filter Types and Frequency Response}
+Low-pass: passes below cutoff; High-pass: passes above; Band-pass: passes a band; Band-stop (notch): rejects a band.
+
+\subsection{The Fastest OPAMP (EL5165)}
+Ultra-high speed: slew rate $\sim 1500$\,V/$\mu$s, GBW $\sim 1.2$\,GHz. Used in high-speed DAC buffers, video, and communications.
+
+\section{Power Systems}
+
+\subsection{Transformers: Why Rated in kVA, Not kW?}
+Transformer losses are resistive ($I^2R$) and core (eddy current/hysteresis) --- neither depends on load power factor. Apparent power $S = V \times I$ (kVA) determines current (and thus heat and loss), regardless of whether the load is resistive, inductive, or capacitive. Therefore transformers are rated in kVA.
+
+\subsection{3-Phase Power Calculation}
+\[
+kW = \sqrt{3} \times kV \times kA \times \text{PF}
+\]
+\[
+kVAR = \sqrt{3} \times kV \times kA \times \sin\phi
+\]
+\[
+kVA = \sqrt{3} \times kV \times kA
+\]
+
+\subsection{Main Parts of an Electrical Transformer}
+Conservator tank, breather, Buchholz relay, high-voltage bushing, low-voltage bushing, tap changer, iron core (silicon steel laminations), primary winding, secondary winding, oil circulation pathway, radiator.
+
+\subsection{Breaker Sizing}
+Rule of thumb: breaker rating $\geq 125\%$ of full-load current ($I_{FLA}$). For motors: use inverse-time circuit breaker.
+
+\subsection{Grounding vs Earthing}
+\textbf{Grounding:} connected to neutral conductor (current-carrying in normal operation). Protects equipment.\\
+\textbf{Earthing:} connected to earth (non-current-carrying). Protects humans. Earth connects exposed metal chassis to zero potential.
+
+\subsection{UPS (Uninterruptible Power Supply)}
+Components: Rectifier, Battery, Inverter, Static Transfer Switch, Bypass. Types: offline/standby, line-interactive, double-conversion (online). Provides uninterrupted power during outages.
+
+\subsection{Battery Backup Calculation}
+$\text{Backup time (h)} = \frac{A_h \times V}{\text{Load (W)}}$. Example: $225$\,Ah, 12\,V, 300\,W total load: $225 \times 12 / 300 = 9$\,h.
+
+\section{RF and Communications}
+
+\subsection{Antenna Types}
+\begin{itemize}
+\item \textbf{Monopole:} $\lambda/4$, omnidirectional vertical; mobile devices, AM radio.
+\item \textbf{Dipole:} $\lambda/2$, reference antenna (0\,dBd); TV, radio.
+\item \textbf{Yagi:} Directional, high gain; TV reception, point-to-point.
+\item \textbf{Parabolic Reflector:} Very high gain; satellite, radar.
+\item \textbf{Patch:} PCB-integrated; GPS, Wi-Fi, mobile.
+\item \textbf{Horn:} Waveguide-fed, standard gain; microwave.
+\end{itemize}
+
+\subsection{RF Connector Types}
+SMA (up to 18\,GHz, screw, precision); BNC (0--4\,GHz, bayonet lock, test equipment); N-type (rugged, up to 11\,GHz, outdoor); TNC (threaded BNC); SMA: most common for microwave work. SMPM, SMPS for miniaturised applications.
+
+\subsection{Digital Modulation Techniques}
+\begin{itemize}
+\item \textbf{FSK:} Frequency-shift keying; frequency encodes data; robust noise immunity.
+\item \textbf{ASK:} Amplitude-shift keying; amplitude varies; simple but noise-prone.
+\item \textbf{PSK:} Phase-shift keying (BPSK, QPSK, 8PSK); efficient bandwidth use.
+\item \textbf{QAM:} Quadrature amplitude modulation; combines amplitude and phase; high spectral efficiency (64-QAM, 256-QAM used in cable/Wi-Fi).
+\end{itemize}
+
+\section{Semiconductors and Materials}
+
+\subsection{From Sand to 3nm (Semiconductor Manufacturing)}
+Silicon dioxide (sand) $\to$ polysilicon purification $\to$ Czochralski process (single-crystal boule) $\to$ wafer slicing $\to$ photolithography (UV/EUV) $\to$ etching (wet/dry plasma) $\to$ doping (ion implantation) $\to$ deposition (CVD, PVD, ALD) $\to$ CMP planarisation $\to$ metallisation $\to$ testing and dicing. 3nm node (TSMC/Samsung) = ~50 billion transistors per chip.
+
+\subsection{Key Chip Suppliers for Apple iPhone 15}
+Logic board: TSMC (A17 Pro), Qualcomm (5G modem), Skyworks/Qorvo (RF). Memory board: KIOXIA, SK Hynix. Radio frequency board: Qualcomm, Broadcom, QORVO, Skyworks.
+
+\subsection{Rare Earth Elements (REEs)}
+17 elements (Sc, Y, 15 lanthanides). Used in: NdFeB magnets (motors, headphones), phosphors (LED, displays), catalysts. Critical for EV motors, wind turbines, and defence applications.
+
+\section{Sensors and Transducers}
+
+\subsection{Hall Effect}
+\[
+V_H = \frac{I \cdot B}{n \cdot q \cdot d}
+\]
+When a current-carrying conductor is placed in a magnetic field perpendicular to the current, charge carriers deflect, creating a voltage difference (Hall voltage). Edwin Hall, 1879. Used in current sensing, position detection, brushless DC motors.
+
+\subsection{Piezoelectric Effect}
+\[
+P = d \times T, \quad A_1 T_1 = A_2 T_2, \quad P_1 < P_2
+\]
+Certain materials (quartz, ceramics) produce electric charge when mechanically stressed, and deform when an electric field is applied. Discovered by Pierre and Jacques Curie. Used in microphones, sensors, actuators, ultrasound, gyroscopes.
+
+\section{Mechanical Engineering}
+
+\subsection{Types of Valves}
+Ball, Gate, Butterfly, Globe, Check, Plug, Needle, Diaphragm, Pinch, Piston, Safety/Relief. Selection depends on: flow control (throttle vs isolate), pressure rating, fluid type, actuation (manual/actuated).
+
+\subsection{Spur, Helical and Bevel Gears}
+\textbf{Spur:} Parallel axes; loud at high speed; simple and cheap.\\
+\textbf{Helical:} Angled teeth; smoother and quieter; can handle more load; generate axial thrust.\\
+\textbf{Bevel:} Intersecting axes (usually 90°); used to change direction of drive shaft.
+
+\subsection{Types of Bearings}
+Ball, roller, tapered roller, thrust, needle, self-aligning ball, cylindrical roller, angular contact. Bearings reduce friction by substituting rolling contact for sliding.
+
+\subsection{Pulleys (Simple Machines)}
+\textbf{Fixed:} Changes direction only; MA = 1.\\
+\textbf{Movable:} MA = 2; reduces effort required.\\
+\textbf{Block and tackle:} Multiple pulleys; MA = number of rope segments supporting load.\\
+Mechanical advantage $= \frac{\text{Load force}}{\text{Effort force}}$.
+
+\subsection{Types of Failures in Concrete Beams}
+Flexure failure (tension/compression), shear failure, bond failure, bearing failure. Design to ensure ductile flexure failure rather than brittle shear failure.
+
+\subsection{How to Use an Analogue Watch as a Compass}
+Northern hemisphere: point hour hand at sun; bisect angle between hour hand and 12 o'clock marking --- that direction is south.\\
+Southern hemisphere: point 12 o'clock at sun; bisect angle between 12 and hour hand --- that direction is north.
+
+\subsection{How Parachute Works}
+Air resistance (drag) $F_d = \frac{1}{2}\rho v^2 C_d A$. Large canopy area $A$ maximises drag. At terminal velocity, drag = weight.
+
+\subsection{Hydraulic Clutch System}
+Master cylinder $\to$ hydraulic line $\to$ slave cylinder. Pedal pressure converts to hydraulic pressure; Pascal's law transmits force. Advantages: no mechanical stretch, self-adjusting.
+
+\subsection{How a Steam Engine Works}
+1. Coal combustion heats water in boiler. 2. Steam created; steam pressure pushes piston. 3. Piston drives connecting rod and flywheel. 4. Combustion $\to$ chemical $\to$ heat $\to$ mechanical energy.\\
+Powered the industrial revolution (18th--19th century).
+
+\section{Industrial and Automation}
+
+\subsection{Important Automation Tools}
+\textbf{PLC:} Programmable Logic Controller; executes ladder/FBD/ST programs for industrial control.\\
+\textbf{SCADA:} Supervisory Control and Data Acquisition; monitors and controls distributed systems.\\
+\textbf{HMI:} Human-Machine Interface; touchscreen visualisation of process.\\
+\textbf{DCS:} Distributed Control System; large-scale continuous process control.\\
+\textbf{VFD:} Variable Frequency Drive; controls motor speed.\\
+\textbf{Servo/Stepper controllers:} precise motion control.\\
+\textbf{Industrial robots:} 6-DOF arms, collaborative (cobot), SCARA, delta.
+
+\subsection{The Mechanisms That Move Robots}
+Linear actuators, ball screws, lead screws, rack and pinion, timing belts, harmonic drives, planetary gearboxes, servomotors, stepper motors, pneumatic cylinders, hydraulic cylinders. Joint types: revolute, prismatic, spherical.
+
+\subsection{The Modern Factory}
+Operational technology (OT): PLCs, SCADA, DCS, historians.\\
+Information technology (IT): ERP, MES, databases.\\
+IT/OT convergence enables Industry 4.0: IIoT sensors, cloud analytics, digital twins, AI-guided maintenance, robotics integration.
+
+\subsection{Robotic Process Automation (RPA) vs Intelligent Process Automation (IPA)}
+\textbf{RPA:} Rule-based, repetitive, structured data; mimics human actions in software.\\
+\textbf{IPA:} RPA + AI (NLP, ML, computer vision); handles unstructured data and decisions.
+
+\section{Power Electronics and Drives}
+
+\subsection{AC vs DC Current}
+\textbf{DC:} Constant polarity; one-way current flow. Used in batteries, electronics, solar.\\
+\textbf{AC:} Alternating polarity; efficient long-distance transmission (transformable). Standard: 50\,Hz (Australia/Europe), 60\,Hz (USA).
+
+\subsection{Ohm's Law}
+$V = IR$. For AC: replace $R$ with impedance $Z = R + jX$.
+
+\subsection{Wheatstone Bridge}
+\[
+\frac{R_1}{R_2} = \frac{R_3}{R_x} \Rightarrow R_x = \frac{R_3 R_2}{R_1}
+\]
+Used to measure unknown resistance with high accuracy. Balanced when galvanometer reads zero.
+
+\subsection{Lorentz Law, Bernoulli's Law, Brewster's Law}
+Lorentz: $F = q(E + v\times B)$.\\
+Bernoulli (fluids): $P + \frac{1}{2}\rho v^2 = \text{const}$.\\
+Brewster: $\tan\theta_B = n_2/n_1$; reflected light is fully polarised at Brewster's angle.
+
+\section{Networking and Data Infrastructure}
+
+\subsection{Data Centre Rack Architecture}
+Top of rack: Ethernet switches (10/25/100\,GbE). Network: access, aggregation, core layers. Power: PDUs, UPS, CRAC cooling. Cable management: structured cabling, patch panels. Dense computing: $42\,U$ racks, hot/cold aisle containment.
+
+\subsection{VLAN Configuration}
+\textbf{VLAN 10} (HR), \textbf{VLAN 20} (Accounting), \textbf{VLAN 30} (IT Dept). Each VLAN is an isolated broadcast domain. Trunk port carries multiple VLANs (802.1Q tagging). Advanced trunk port handles untagged native VLAN.\\
+\textbf{Voice and Data Port Security:} Port security limits MAC addresses per port; dynamic ARP inspection prevents spoofing.
+
+\subsection{NAT (Network Address Translation)}
+\textbf{Static NAT (1:1):} One private IP maps to one public IP permanently.\\
+\textbf{Dynamic NAT (1:pool):} One private IP maps to one of a pool of public IPs.\\
+\textbf{PAT (NAT Overload):} Many private IPs share one public IP, differentiated by port.
+
+\subsection{7 Core Layers of Cloud-Native Architecture}
+Infrastructure, Containerisation, Orchestration, Service, Networking, Observability, CI/CD layers. Kubernetes at orchestration layer; service mesh (Istio) at service layer; Prometheus/Grafana at observability.
+
+\end{multicols}
+\end{document}

@@ -1,0 +1,335 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{esint}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+\definecolor{accent}{RGB}{30,80,160}
+\definecolor{boxbg}{RGB}{240,245,255}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\vspace{-4pt}\rule{\linewidth}{1pt}]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=*}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=*}
+
+\newmdenv[backgroundcolor=boxbg, linecolor=accent, linewidth=1pt, innerleftmargin=6pt, innerrightmargin=6pt, innertopmargin=4pt, innerbottommargin=4pt, skipabove=4pt, skipbelow=4pt]{keybox}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{accent} Mathematics Reference}\\[4pt]
+{\small Synthesised from saved infographics and references}
+\end{center}
+\vspace{4pt}
+\hrule
+\vspace{6pt}
+
+\begin{multicols}{2}
+
+\section{Calculus Foundations}
+
+\subsection{Limit Definition of the Derivative}
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+\]
+The derivative gives the rate of change of a function. $h$ is the time interval tending to zero.
+
+\subsection{Power Rule and Core Differentiation}
+\[
+\frac{d}{dx} x^n = nx^{n-1}, \quad \frac{d}{dx} e^x = e^x, \quad \frac{d}{dx} \ln x = \frac{1}{x}
+\]
+\textbf{Product rule:} $\frac{d}{dx}[f \cdot g] = f'g + fg'$\\
+\textbf{Quotient rule:} $\frac{d}{dx}\!\left[\frac{f}{g}\right] = \frac{f'g - fg'}{g^2}$\\
+\textbf{Chain rule:} $\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$
+
+\subsection{Integration (Riemann vs Lebesgue)}
+Riemann integral: $\int_a^b f(x)\,dx = \lim_{n\to\infty}\sum_{i=1}^n f(x_i^*)\Delta x_i$\\
+Lebesgue integral: $\int f\,d\mu = \sup \sum \mu(E_k) h_k$ — integrates by measuring sets.\\
+\textbf{Fundamental theorem:} $\frac{d}{dx}\int_a^x f(t)\,dt = f(x)$
+
+\subsection{Integration Notations (Types)}
+\begin{itemize}
+\item Line integral: $\int_C f\,ds$
+\item Double: $\iint_D f(x,y)\,dA$
+\item Triple: $\iiint_V f\,dV$
+\item Surface: $\iint_S \mathbf{F}\cdot d\mathbf{S}$
+\item Flux: $\iint_S \mathbf{F}\cdot\hat{n}\,dS$
+\end{itemize}
+
+\subsection{Fourier Transform}
+\[
+F(\omega) = \int_{-\infty}^{\infty} f(t)\,e^{-i\omega t}\,dt
+\]
+Decomposes any function into its constituent frequencies. Fundamental to signal processing, image processing, and solving PDEs.\\
+\textbf{Fourier coefficients:}
+\[
+a_n = \frac{1}{L}\int_{-L}^{L} f(x)\cos\!\left(\frac{n\pi x}{L}\right)dx, \quad b_n = \frac{1}{L}\int_{-L}^{L} f(x)\sin\!\left(\frac{n\pi x}{L}\right)dx
+\]
+
+\subsection{Laplace Transform}
+\[
+\mathcal{L}\{f(t)\} = F(s) = \int_0^{\infty} f(t)\,e^{-st}\,dt
+\]
+Converts a function in the time domain to the complex frequency domain. Used extensively in control systems, electrical engineering, and solving ODEs with initial conditions.
+
+\subsection{Mellin Transform}
+\[
+\{Mf\}(s) = \varphi(s) = \int_0^{\infty} x^{s-1} f(x)\,dx
+\]
+Used in analytic number theory and asymptotic analysis. Related to the Fourier and Laplace transforms via substitution.
+
+\subsection{Stirling's Approximation}
+\[
+n! \approx \sqrt{2\pi n}\left(\frac{n}{e}\right)^n
+\]
+Gives a simple formula for $n!$ when $n$ is large. Formulated by James Stirling (1730). Widely used in combinatorics, probability, and asymptotic analysis.
+
+\section{Differential Equations}
+
+\subsection{Classification}
+\begin{itemize}
+\item \textbf{Order}: highest derivative present
+\item \textbf{Linearity}: linear if $y$ and derivatives appear to the first power only
+\item \textbf{Homogeneity}: RHS is zero (homogeneous) or non-zero (non-homogeneous)
+\end{itemize}
+
+\subsection{First Equation of Motion Derivation}
+Given $a = \text{const}$, from $a = \frac{dv}{dt}$:
+\[
+v = u + at
+\]
+\textbf{SUVAT equations:} $v=u+at$, $s=ut+\tfrac{1}{2}at^2$, $v^2=u^2+2as$, $s=\tfrac{1}{2}(u+v)t$.
+
+\subsection{Integrating Factor Method (1st-order linear ODE)}
+For $y' + P(x)y = Q(x)$: multiply by integrating factor $\mu = e^{\int P\,dx}$, then integrate both sides.
+
+\subsection{Second-Order Systems (Control)}
+$a_2y'' + a_1y' + a_0y = f(t)$. Characteristic equation determines response type (overdamped, critically damped, underdamped).
+
+\section{Linear Algebra}
+
+\subsection{Jordan Normal Form}
+Every square matrix $A$ over $\mathbb{C}$ is similar to a Jordan matrix $J$ with Jordan blocks:
+\[
+J_k(\lambda) = \begin{pmatrix} \lambda & 1 & 0 \\ 0 & \lambda & 1 \\ 0 & 0 & \lambda \end{pmatrix}
+\]
+Introduced by Camille Jordan. Used in solving systems of ODEs and in quantum mechanics.
+
+\subsection{Rotational Matrix (2D and 3D)}
+\[
+R(\theta) = \begin{pmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{pmatrix}
+\]
+Rotation matrices preserve vector length and orientation. For 3D: use Euler angles or rotation around a unit axis.
+
+\subsection{Hessian Matrix}
+For $f:\mathbb{R}^n\to\mathbb{R}$, the Hessian $H(f)_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}$. A $2\times2$ matrix of second partial derivatives. Used to classify critical points (max/min/saddle). Introduced by Otto Hesse (1811--1874).
+
+\subsection{Jacobian Matrix}
+For $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^m$, $J_{ij} = \frac{\partial F_i}{\partial x_j}$. The Jacobian is a visual guide to how multivariable functions transform space locally.
+
+\subsection{Types of Matrices}
+Square, rectangular, diagonal, identity, symmetric, skew-symmetric, orthogonal, upper/lower triangular, idempotent, nilpotent, row/column matrices, inverse matrix, transpose.
+
+\subsection{Properties of Transpose}
+$(AB)^T = B^T A^T$, $(A^T)^T = A$, $(kA)^T = kA^T$, $(A+B)^T = A^T + B^T$.
+
+\subsection{Rank-Nullity Theorem}
+For a linear map $T: V \to W$:
+\[
+\text{rank}(T) + \text{nullity}(T) = \dim(V)
+\]
+Practical applications: least squares, null space analysis, Gaussian elimination.
+
+\subsection{Pearson Correlation Coefficient}
+\[
+r = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum(x_i-\bar{x})^2 \sum(y_i-\bar{y})^2}}
+\]
+Measures linear correlation between two variables. $r \in [-1, 1]$. Introduced by Karl Pearson.
+
+\section{Vector Calculus}
+
+\subsection{Del Operator (Nabla)}
+\[
+\nabla = \hat{x}\frac{\partial}{\partial x} + \hat{y}\frac{\partial}{\partial y} + \hat{z}\frac{\partial}{\partial z}
+\]
+Gradient: $\nabla f$ (scalar $\to$ vector); Divergence: $\nabla \cdot \mathbf{F}$ (vector $\to$ scalar); Curl: $\nabla \times \mathbf{F}$ (vector $\to$ vector).
+
+\subsection{Divergence Theorem}
+\[
+\oiint_S \mathbf{F}\cdot d\mathbf{S} = \iiint_V (\nabla\cdot\mathbf{F})\,dV
+\]
+The volume density of the outward flux equals the divergence: Source: $\nabla\cdot\mathbf{F} > 0$; Sink: $\nabla\cdot\mathbf{F} < 0$; Neither: $\nabla\cdot\mathbf{F} = 0$.
+
+\subsection{Green's Theorem}
+\[
+\oint_C (P\,dx + Q\,dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dA
+\]
+First introduced by George Green (1793--1841). Relates a line integral around a closed curve to a double integral over the enclosed region.
+
+\subsection{Noether Current}
+\[
+j^\mu(x) = \frac{\partial\mathcal{L}}{\partial(\partial_\mu \phi_a)} X_a[\phi_a] - F^\mu
+\]
+Each continuous symmetry of the action corresponds to a conserved current (Noether's theorem).
+
+\section{Analysis and Number Theory}
+
+\subsection{The Basel Problem (Euler)}
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+\]
+Solved by Leonhard Euler (1734). ``A solution that marked the arrival of the King of Mathematics.'' The sum of the reciprocals of all perfect squares equals $\pi^2/6$.
+
+\subsection{The Riemann Hypothesis}
+$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$ for $\text{Re}(s) > 1$. All non-trivial zeros of $\zeta(s)$ have real part $\frac{1}{2}$ (unproven). Deeply connected to the distribution of prime numbers.
+
+\subsection{Euler's Identity}
+\[
+e^{i\pi} + 1 = 0
+\]
+Considered the most beautiful equation in mathematics. Links $e$, $i$, $\pi$, $1$, $0$.
+
+\subsection{Pick's Theorem}
+For a lattice polygon with $I$ interior points and $B$ boundary points:
+\[
+A = I + \frac{B}{2} - 1
+\]
+Introduced by Georg Alexander Pick (1859--1942).
+
+\subsection{Beauty of Numbers}
+\[
+\frac{111}{1+1+1} = 37, \quad \frac{222}{2+2+2} = 37, \quad \ldots \quad \frac{999}{9+9+9} = 37
+\]
+Also: $1^2 + 2^2 + \ldots + n^2 = \frac{n(n+1)(2n+1)}{6}$.
+
+\subsection{Summation Formulas (First $n$ Natural Numbers)}
+\begin{itemize}
+\item Sum of first $n$ odd: $n^2$
+\item Sum of first $n$ natural: $\frac{n(n+1)}{2}$
+\item Sum of squares: $\frac{n(n+1)(2n+1)}{6}$
+\item Sum of cubes: $\left[\frac{n(n+1)}{2}\right]^2$
+\end{itemize}
+
+\subsection{Binomial Theorem}
+\[
+(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
+\]
+Pascal's Triangle gives the binomial coefficients. Secrets: Perfect squares, Fibonacci sequence, Powers of eleven.
+
+\subsection{Co-prime Numbers (Relatively Prime)}
+Two integers are coprime if $\gcd(a,b) = 1$ (no common factor other than 1). Used in RSA encryption and modular arithmetic.
+
+\subsection{Probability Basics}
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+\[
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+\]
+Bayes' theorem: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
+
+\subsection{Poisson Distribution (PMF)}
+\[
+P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}
+\]
+Models the number of events in a fixed interval. $\lambda$ = average rate.
+
+\section{Complex Analysis and Advanced Topics}
+
+\subsection{Cauchy Residue Theorem}
+\[
+\oint_C f(z)\,dz = 2\pi i \sum_k \text{Res}(f, z_k)
+\]
+Introduced by Augustin-Louis Cauchy (1789--1857). The integral of a function around a closed contour equals $2\pi i$ times the sum of residues inside.
+
+\subsection{Riemann Integral (Definition)}
+\[
+\int_a^b f(x)\,dx = \lim_{\max\Delta x_i \to 0} \sum_i f(x_i^*)\,\Delta x_i
+\]
+Introduced by Bernhard Riemann (1826--1866).
+
+\subsection{Arithmetic Progression}
+$a_n = a_1 + (n-1)d$; Sum $S_n = \frac{n}{2}(a_1 + a_n) = \frac{n}{2}[2a_1 + (n-1)d]$.
+
+\subsection{Geometric Progression}
+$S_n = a\frac{1-r^n}{1-r}$ (finite); $S_\infty = \frac{a}{1-r}$ for $|r| < 1$.
+
+\subsection{Continuous Wavelet Transform (CWT)}
+\[
+W(a,b) = \int_{-\infty}^{\infty} f(t)\,\frac{1}{\sqrt{a}}\,\psi\!\left(\frac{t-b}{a}\right)dt
+\]
+$a$ = scale, $b$ = translation. Allows time-frequency analysis; generalises the Fourier transform.
+
+\section{Trigonometry and Geometry}
+
+\subsection{Fundamental Identities}
+$\sin^2\theta + \cos^2\theta = 1$, $1+\tan^2\theta = \sec^2\theta$, $1+\cot^2\theta = \csc^2\theta$.
+
+\subsection{Ratio and Reciprocal Relations}
+$\tan\theta = \frac{\sin\theta}{\cos\theta}$, $\cot\theta = \frac{\cos\theta}{\sin\theta}$, $\sec\theta = \frac{1}{\cos\theta}$, $\csc\theta = \frac{1}{\sin\theta}$.
+
+\subsection{Spherical Trigonometry}
+\[
+c^2 = a^2 + b^2 - 2ab\cos C \quad \text{(spherical law of cosines)}
+\]
+\[
+\cos\left(\frac{c}{R}\right) = \cos\!\left(\frac{a}{R}\right)\cos\!\left(\frac{b}{R}\right) + \sin\!\left(\frac{a}{R}\right)\sin\!\left(\frac{b}{R}\right)\cos C
+\]
+
+\subsection{Geometric Formulas (Areas and Volumes)}
+2D: Circle $\pi r^2$, triangle $\frac{1}{2}bh$, parallelogram $bh$, trapezoid $\frac{1}{2}(a+b)h$.\\
+3D: Sphere $\frac{4}{3}\pi r^3$, cylinder $\pi r^2 h$, cone $\frac{1}{3}\pi r^2 h$, cube $s^3$.
+
+\subsection{Viviani's Theorem}
+The sum of distances from any interior point to the sides of an equilateral triangle equals the altitude. Named after Vincenzo Viviani (1622--1703).
+
+\section{Special Functions and Advanced Equations}
+
+\subsection{Hyperbolic Functions}
+\[
+\sinh x = \frac{e^x - e^{-x}}{2}, \quad \cosh x = \frac{e^x + e^{-x}}{2}, \quad \tanh x = \frac{\sinh x}{\cosh x}
+\]
+Identities: $\cosh^2 x - \sinh^2 x = 1$.
+
+\subsection{Lagrange Multipliers}
+Optimise $f(\mathbf{x})$ subject to $g_i(\mathbf{x}) = 0$: build $\mathcal{L}(\mathbf{x},\boldsymbol{\lambda}) = f - \sum \lambda_i g_i$ and solve $\nabla\mathcal{L} = 0$.
+
+\subsection{Walli's Product}
+\[
+\frac{\pi}{2} = \prod_{n=1}^{\infty} \frac{(2n)^2}{(2n-1)(2n+1)} = \frac{2}{1}\cdot\frac{2}{3}\cdot\frac{4}{3}\cdot\frac{4}{5}\cdots
+\]
+
+\subsection{Dirac Delta Function}
+\[
+\delta(x) = \begin{cases}\infty & x=0 \\ 0 & x\neq 0\end{cases}, \quad \int_{-\infty}^{\infty} f(x)\,\delta(x-a)\,dx = f(a)
+\]
+The sifting property makes it fundamental in signal processing and quantum mechanics.
+
+\subsection{Nicomachus's Theorem}
+\[
+1^3 + 2^3 + \cdots + n^3 = \left(\sum_{k=1}^n k\right)^2 = \frac{n^2(n+1)^2}{4}
+\]
+The sum of the cubes of the first $n$ natural numbers equals the square of their sum.
+
+\subsection{A Simple Proof that $\sqrt{2}$ is Irrational}
+Assume $\sqrt{2} = p/q$ in lowest terms. Then $2q^2 = p^2$, so $p$ is even; write $p=2k$, giving $q^2 = 2k^2$, so $q$ is also even --- contradiction. Discovered by the Pythagoreans, 5th century BC.
+
+\subsection{Pi is Everywhere}
+\[
+G_{\mu\nu} + g_{\mu\nu}\Lambda = \frac{8\pi G}{c^4} T_{\mu\nu} \quad \Delta x\,\Delta p \geq \frac{h}{4\pi}
+\]
+\[
+F = \frac{1}{4\pi\epsilon_0}\frac{q_1 q_2}{r^2}, \quad T_0 = 2\pi\sqrt{\frac{\ell}{g}}
+\]
+$\pi$ appears in electrostatics, quantum mechanics, general relativity, and pendulum motion.
+
+\end{multicols}
+\end{document}

@@ -1,0 +1,295 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{mdframed}
+
+\definecolor{accent}{RGB}{80,20,120}
+\definecolor{boxbg}{RGB}{248,240,255}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\vspace{-4pt}\rule{\linewidth}{1pt}]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=*}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=*}
+\newmdenv[backgroundcolor=boxbg, linecolor=accent, linewidth=0.8pt, innerleftmargin=5pt, innerrightmargin=5pt, innertopmargin=3pt, innerbottommargin=3pt, skipabove=3pt, skipbelow=3pt]{keybox}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries\color{accent} Computer Science, Programming \& AI/ML Reference}\\[4pt]
+{\small Algorithms, Python, Systems, Machine Learning, Deep Learning, Reinforcement Learning, LLMs, DevOps}
+\end{center}
+\vspace{4pt}\hrule\vspace{6pt}
+
+\begin{multicols}{2}
+
+\section{Data Structures and Algorithms}
+
+\subsection{DSA Roadmap (Step-by-Step)}
+\begin{enumerate}
+\item Learn arrays, strings, recursion
+\item Linked lists, stacks, queues
+\item Hash maps, sets
+\item Trees (binary, BST, AVL, heaps)
+\item Graphs (BFS, DFS, Dijkstra, Bellman-Ford)
+\item Dynamic programming
+\item Advanced: segment trees, tries, disjoint sets
+\item Greedy algorithms, backtracking
+\item Sorting and searching mastery
+\item Graph theory: Prim, Kruskal, topological sort
+\item Computational geometry, bit manipulation
+\end{enumerate}
+
+\subsection{Algorithm Categories (30 AI Algorithms)}
+Supervised: Linear Regression, Logistic Regression, Decision Tree, Random Forest, SVM, KNN, Naive Bayes, Gradient Boosting, XGBoost, Neural Networks.\\
+Unsupervised: K-Means, DBSCAN, Hierarchical Clustering, PCA, ICA, Autoencoders, GANs, VAEs.\\
+Reinforcement: Q-Learning, SARSA, DQN, Policy Gradient, A3C, PPO.\\
+Statistical: Bayesian Networks, HMM, Gaussian Processes.
+
+\subsection{Practical Rank-Nullity (Applications)}
+Finding null space: systems of linear equations with infinitely many solutions. Image/kernel analysis. Dimensionality reduction. Checking overdetermined/underdetermined systems.
+
+\section{Python}
+
+\subsection{Python Data Types}
+\textbf{Numeric:} int, float, complex. \textbf{Sequence:} list, tuple, range, str. \textbf{Set:} set, frozenset. \textbf{Mapping:} dict. \textbf{Boolean:} bool. \textbf{Binary:} bytes, bytearray, memoryview.
+
+\subsection{Python List Operations}
+\texttt{append(x)}, \texttt{extend(iter)}, \texttt{insert(i,x)}, \texttt{remove(x)}, \texttt{pop([i])}, \texttt{clear()}, \texttt{index(x)}, \texttt{count(x)}, \texttt{sort()}, \texttt{reverse()}, \texttt{copy()}. List comprehension: \texttt{[f(x) for x in iter if cond]}.
+
+\subsection{Python String Methods}
+\texttt{upper()}, \texttt{lower()}, \texttt{strip()}, \texttt{split(sep)}, \texttt{join(iter)}, \texttt{replace(old,new)}, \texttt{find(sub)}, \texttt{format()}, \texttt{startswith()}, \texttt{endswith()}, \texttt{encode()}.
+
+\subsection{Python Tuple}
+Immutable sequence. \texttt{count(x)}, \texttt{index(x)}. Packing: \texttt{t = 1,2,3}. Unpacking: \texttt{a,b,c = t}. Use tuples for fixed data (coordinates, RGB values, database records).
+
+\subsection{NumPy Key Functions}
+\texttt{np.array()}, \texttt{np.zeros/ones/eye()}, \texttt{np.arange()}, \texttt{np.linspace()}, \texttt{np.reshape()}, \texttt{np.concatenate()}, \texttt{np.dot()}, \texttt{np.linalg.inv/eig()}, \texttt{np.mean/std/var()}, \texttt{np.min/max/argmin/argmax()}, \texttt{np.random.seed/rand/randn()}, \texttt{np.where()}, \texttt{np.unique()}, \texttt{np.sort()}.
+
+\subsection{Pandas Functions (Data Science)}
+Reading/Writing: \texttt{pd.read\_csv()}, \texttt{df.to\_csv()}.\\
+Selection: \texttt{df[col]}, \texttt{df.loc[]}, \texttt{df.iloc[]}.\\
+Cleaning: \texttt{df.dropna()}, \texttt{df.fillna()}, \texttt{df.rename()}.\\
+Filtering: \texttt{df[df[col]>val]}, \texttt{df.query()}.\\
+Grouping: \texttt{df.groupby().agg()}, \texttt{df.pivot\_table()}.\\
+Joining: \texttt{pd.merge()}, \texttt{pd.concat()}.
+
+\subsection{Python Advanced: Decorators, Generators, Context Managers}
+\textbf{Decorator:} \texttt{@my\_decorator} wraps a function; adds pre/post behaviour without modifying the original.\\
+\textbf{Generator:} Uses \texttt{yield} to produce items lazily; memory-efficient for large datasets.\\
+\textbf{Context manager:} \texttt{with open(...) as f:} guarantees cleanup. Implement via \texttt{\_\_enter\_\_}/\texttt{\_\_exit\_\_} or \texttt{@contextmanager}.\\
+\textbf{Metaclass:} Class of a class; controls class creation.\\
+\textbf{Async:} \texttt{async def}, \texttt{await}; concurrent I/O without threads.
+
+\subsection{Python vs C++ Comparison}
+Python: Easy to learn, slow, multi-paradigm, data science/AI/web, large community, cross-platform.\\
+C++: Complex, fast and memory-efficient, OOP + procedural, game dev/systems/embedded, extensive libraries, platform-dependent compilation.
+
+\subsection{Day 5 Functions in Python (Reddit Series)}
+Higher-order functions, \texttt{lambda}, \texttt{map()}, \texttt{filter()}, \texttt{reduce()}, closures, recursion, memoisation with \texttt{functools.lru\_cache}.
+
+\section{Systems, Linux and DevOps}
+
+\subsection{Linux File System}
+\texttt{/}: root; \texttt{/bin}: essential binaries; \texttt{/etc}: config files; \texttt{/home}: user directories; \texttt{/var}: logs, spool; \texttt{/tmp}: temporary; \texttt{/usr}: user programs; \texttt{/lib}: libraries; \texttt{/dev}: device files; \texttt{/proc}: process info (virtual); \texttt{/sys}: hardware info (virtual); \texttt{/mnt}, \texttt{/media}: mount points.
+
+\subsection{12 Essential Git Commands}
+\texttt{init}, \texttt{clone}, \texttt{add}, \texttt{commit -m}, \texttt{push}, \texttt{pull}, \texttt{fetch}, \texttt{branch}, \texttt{checkout}, \texttt{merge}, \texttt{rebase}, \texttt{log}. Key patterns: feature branch workflow, squash before merge, rebase to keep linear history.
+
+\subsection{How Git Works}
+\textbf{Working tree} $\to$ \texttt{git add} $\to$ \textbf{Staging area (index)} $\to$ \texttt{git commit} $\to$ \textbf{Local repo} $\to$ \texttt{git push} $\to$ \textbf{Remote repo}. Inverse: \texttt{git pull} = fetch + merge; \texttt{git fetch} only updates remote tracking branches.
+
+\subsection{Docker Architecture}
+Daemon (dockerd), Client (docker CLI), Registry (Docker Hub, ECR). Images = read-only templates. Containers = running instances. Volumes for persistent storage. Networks: bridge, host, overlay (Swarm). Docker Compose for multi-container apps.
+
+\subsection{Kubernetes Integrations}
+Cluster: API server, etcd, controller manager, scheduler (control plane); kubelet, kube-proxy (worker nodes). Integrations: Prometheus (monitoring), Fluentd (logging), Istio (service mesh), Cert-Manager (TLS), ArgoCD (GitOps), Velero (backup), KEDA (event-driven scaling).
+
+\subsection{Azure Files -- Managed File Shares}
+SMB and NFS file shares in Azure. Lift-and-shift for on-prem file servers. Access via storage account key or AAD DS. Mountable on Windows, Linux, macOS. Supports snapshots and soft delete.
+
+\subsection{SQL Data Quality Checks}
+Null validation, duplicate detection, referential integrity, data type conformance, range validation, pattern matching (regex), statistical outliers, record count checks, cross-table consistency. Tools: Great Expectations, dbt tests, custom SQL assertions.
+
+\subsection{MySQL Join Types}
+INNER JOIN (matching rows only), LEFT JOIN (all left + matching right), RIGHT JOIN (all right + matching left), FULL OUTER JOIN (all rows from both), CROSS JOIN (Cartesian product), SELF JOIN (table joined to itself).
+
+\section{Machine Learning}
+
+\subsection{Machine Learning Algorithms Summary}
+\begin{itemize}
+\item \textbf{Linear Regression:} Continuous output; minimises MSE.
+\item \textbf{Logistic Regression:} Binary classification; sigmoid output.
+\item \textbf{Decision Tree:} Interpretable; greedy splits (Gini/entropy).
+\item \textbf{Random Forest:} Ensemble of trees; reduces variance.
+\item \textbf{SVM:} Maximises margin hyperplane; kernel trick for non-linear.
+\item \textbf{KNN:} Instance-based; nearest $k$ neighbours vote.
+\item \textbf{Naive Bayes:} Probabilistic; assumes feature independence.
+\item \textbf{XGBoost/GBM:} Gradient boosting; wins Kaggle competitions.
+\item \textbf{K-Means:} Unsupervised clustering; minimises within-cluster variance.
+\item \textbf{PCA:} Dimensionality reduction via eigenvectors.
+\item \textbf{Autoencoder:} Learns compressed representations.
+\end{itemize}
+
+\subsection{ML vs Deep Learning}
+\textbf{ML:} Requires feature engineering; tabular/structured data; interpretable; linear regression, decision trees, SVMs.\\
+\textbf{DL:} Learns features automatically; unstructured (images, audio, text); requires large data and compute; CNNs, RNNs, Transformers.
+
+\subsection{Classification Algorithms Overview}
+Decision boundaries: linear (logistic, SVM-linear), non-linear (SVM-RBF, neural net, random forest). Evaluation: accuracy, precision, recall, F1, ROC-AUC, confusion matrix.
+
+\subsection{Metrics for Regression in ML}
+MAE (mean absolute error), MSE (mean squared error), RMSE ($\sqrt{\text{MSE}}$), R$^2$ (coefficient of determination), MAPE (mean absolute percentage error), Adjusted R$^2$.
+
+\subsection{Markov Chain}
+A stochastic process where the next state depends only on the current state (Markov property). Defined by transition matrix $P$ where $P_{ij} = P(\text{next state}=j | \text{current}=i)$. Andrey Markov (1856--1922). Used in NLP, finance, Google PageRank, MCMC.
+
+\subsection{Shannon Entropy}
+\[
+H(X) = -\sum_x P(x)\log P(x)
+\]
+Measures the average uncertainty in a random variable. Maximum entropy: uniform distribution. Minimum: deterministic. Claude Elwood Shannon (1916--2001). Foundation of information theory.
+
+\subsection{RAG vs Agentic RAG}
+\textbf{RAG (Retrieval-Augmented Generation):} Query $\to$ retrieve relevant documents $\to$ augment LLM context $\to$ generate response. Improves factual accuracy; reduces hallucination.\\
+\textbf{Agentic RAG:} Multi-step reasoning; agent decides \emph{whether} and \emph{what} to retrieve; may call tools, decompose queries, iterate. Better for complex, multi-hop questions.
+
+\subsection{RAG Evaluation Metrics}
+Context precision, context recall, faithfulness (answer grounded in context), answer relevance, entity recall, noise robustness.
+
+\section{Deep Learning}
+
+\subsection{How to Train a Neural Net (Key Steps)}
+\begin{enumerate}
+\item \textbf{Supervised learning objective:} minimise loss $\mathcal{L} = \frac{1}{N}\sum \ell(y_i, \hat{y}_i)$.
+\item \textbf{Gradient descent and SGD:} $\theta \leftarrow \theta - \eta\nabla_\theta\mathcal{L}$.
+\item \textbf{Optimisation failure modes:} saddle points, poor initialisations, bad learning rates, exploding/vanishing gradients.
+\item \textbf{Momentum and gradient clipping:} momentum $v_{t+1} = \beta v_t + \nabla\mathcal{L}$; clip if $\|\nabla\| > c$.
+\item \textbf{Objective useful:} convex functions, Lipschitz continuity.
+\item \textbf{Computation graph:} forward pass builds graph; backward pass (autograd) computes gradients.
+\item \textbf{Backprop and chain rule:} $\frac{\partial\mathcal{L}}{\partial w} = \frac{\partial\mathcal{L}}{\partial a}\cdot\frac{\partial a}{\partial w}$ applied recursively.
+\item \textbf{Policy gradient:} $\nabla J(\theta) = \mathbb{E}[G_t \nabla\ln\pi_\theta(a_t|s_t)]$.
+\end{enumerate}
+
+\subsection{Generic Layer: Backward Rule}
+\[
+\nabla_W \mathcal{L} = \frac{\partial\mathcal{L}}{\partial y}\cdot x^T, \quad \nabla_b\mathcal{L} = \frac{\partial\mathcal{L}}{\partial y}
+\]
+Why average over batch? Reduces gradient noise; more stable convergence.
+
+\subsection{Activation Functions}
+Sigmoid: $\sigma(x) = 1/(1+e^{-x})$ (output 0--1; vanishing gradient issue).\\
+ReLU: $\max(0,x)$ (most common hidden layer; dying neuron problem).\\
+Leaky ReLU: $\max(\alpha x, x)$, $\alpha \approx 0.01$.\\
+Tanh: output $(-1,1)$; zero-centred.\\
+Softmax: multi-class output; $\sigma(\mathbf{z})_i = e^{z_i}/\sum_j e^{z_j}$.\\
+GELU: used in Transformers. Swish: self-gated; smooth.
+
+\subsection{Mathematics Behind AI (How a Single Artificial Neuron Works)}
+\[
+y = \sigma\!\left(\sum_i w_i x_i + b\right) = \sigma(\mathbf{w}\cdot\mathbf{x} + b)
+\]
+Inputs $x_i$ are multiplied by weights $w_i$, summed, bias $b$ added, then passed through activation $\sigma$.
+
+\section{Reinforcement Learning}
+
+\subsection{RL Loop and MDP}
+Agent observes state $s_t$, takes action $a_t$, receives reward $r_t$, transitions to $s_{t+1}$. Goal: maximise discounted return $G_t = \sum_{k=0}^\infty \gamma^k r_{t+k}$. Defined as MDP $(S, A, P, R, \gamma)$.
+
+\subsection{Values and Bellman Equations}
+\[
+V^\pi(s) = \mathbb{E}_\pi\!\left[G_t \mid s_t=s\right]
+\]
+\[
+Q^\pi(s,a) = \mathbb{E}_\pi\!\left[G_t \mid s_t=s, a_t=a\right]
+\]
+Bellman optimality: $V^*(s) = \max_a [R(s,a) + \gamma\sum_{s'} P(s'|s,a)V^*(s')]$.
+
+\subsection{Stability Tools}
+Temporal difference error (TD): $\delta_t = r_t + \gamma V(s_{t+1}) - V(s_t)$.
+
+\subsection{DQN Family}
+DQN: Deep Q-Network; experience replay; target network.\\
+Double DQN: separate networks for selection and evaluation.\\
+Dueling DQN: $Q(s,a) = V(s) + A(s,a)$.\\
+Prioritised replay: samples high-TD-error transitions more often.
+
+\subsection{Policy Gradients}
+REINFORCE: $\nabla J(\theta) = \mathbb{E}[G_t \nabla\ln\pi_\theta(a_t|s_t)]$.\\
+Actor-Critic: actor updates policy; critic estimates value function.\\
+A3C: asynchronous parallel actors; reduces correlation.\\
+PPO (Proximal Policy Optimisation): clips policy ratio to prevent large updates; widely used.\\
+SAC (Soft Actor-Critic): maximum entropy RL; adds entropy bonus.
+
+\subsection{Model-Based RL / World Models}
+Agent learns a model $\hat{P}(s'|s,a)$ of the environment; plans with it. Reduces sample complexity. Approaches: Dyna, MuZero, Dreamer.
+
+\subsection{Offline RL, GRPO, DAPO}
+\textbf{Offline RL:} Learns from fixed dataset without interaction.\\
+\textbf{GRPO} (Group Relative Policy Optimisation): RL fine-tuning of LLMs; compares outcomes within a group.\\
+\textbf{DAPO:} Decoupled clip, dynamic sampling, token-level loss; improves LLM RLHF training stability.
+
+\subsection{RLVR and LUFT for LLMs}
+\textbf{RLVR:} RL with Verifiable Rewards; verifies correctness (math, code) rather than using a reward model.\\
+\textbf{LUFT:} Large-scale Unified Fine-Tuning; combines SFT and RL stages.
+
+\section{Large Language Models and AI Infrastructure}
+
+\subsection{MCP vs A2A}
+\textbf{MCP (Model Context Protocol):} Connects an LLM to external tools, data sources, and APIs through a standardised interface. Single protocol, one scanner.\\
+\textbf{A2A (Agent-to-Agent):} Multiple agents with different roles collaborate. Two protocols (MCP + A2A), multiple scanners, specialised agents.\\
+MCP: model as orchestrator of tools. A2A: models as peers in a network.
+
+\subsection{LLM vs Agent vs Agentic Workflow vs Multi-Agent}
+LLM: single forward pass; stateless.\\
+Agent: LLM + tool use + memory; can act iteratively.\\
+Agentic workflow: multi-step, structured pipeline with tools.\\
+Multi-agent: multiple specialised agents coordinating; parallelism; role separation.
+
+\subsection{5 Techniques to Fine-Tune LLMs}
+\begin{itemize}
+\item \textbf{LoRA:} Low-Rank Adaptation; trains low-rank matrices; minimal parameters.
+\item \textbf{LoRA-FA:} LoRA with frozen matrix $A$; reduces memory further.
+\item \textbf{VeRA:} Shared random matrices; only scalar vectors trained.
+\item \textbf{Delta-LoRA:} Updates pre-trained weights incrementally.
+\item \textbf{LoRA+:} Different learning rates for $A$ and $B$ matrices.
+\end{itemize}
+Almost-LoRA (LoRA+): $r \ll \min(d_1, d_2)$; fine-tunes $W + BA$ instead of $W$ alone.
+
+\subsection{AI System Architecture}
+Data ingestion (sensors, APIs, databases) $\to$ preprocessing (cleaning, normalisation) $\to$ model training layer (algorithms, hyperparameter selection, cross-validation) $\to$ model evaluation (performance metrics, error analysis) $\to$ deployment layer (API endpoints, monitoring).
+
+\subsection{Comparing Major AI Disciplines}
+ML: statistical learning; DL: representation learning; NLP: language understanding; Computer Vision: image/video understanding; Robotics: embodied AI; RL: decision-making.
+
+\subsection{Agentic AI System Design Blueprint}
+Planning module $\to$ reasoning engine $\to$ memory (short/long term) $\to$ tool use $\to$ feedback loop. Key principles: grounding, self-reflection, goal decomposition, safety constraints.
+
+\subsection{AI Benchmark Comparison (GPT-5.5 vs Claude Mythos Preview)}
+Terminal-Bench 2.0: 82.7\% vs 82\%; SWE-Bench Pro: 58.6\% vs 77.8\%; GPQA Diamond: 93.6\% vs 94.5\%; Humanity's Last Exam (no tools): 41.4\% vs 56.8\%; Humanity's Last Exam (with tools): 52.9\% vs 64.7\%; OSWorld: 78.7\% vs 79.6\%; BrowseComp: 84.4\% vs 86.9\%; CyberGym: 81.9\% vs 83\%. (Source: OpenAI, Anthropic)
+
+\subsection{Claude Ecosystem}
+Claude Chat, Claude API, Claude Projects, Claude Code (terminal agentic coding). Claude Code has 150+ commands. Claude Mythos Preview: frontier model in restricted access (Project Glasswing).
+
+\subsection{China's Open-Source AI Company List}
+Proprietary: ByteDance (Doubao), Moonshot (Kimi), Zhipu AI, Baidu (ERNIE), Alibaba (Qwen). Open-source: DeepSeek, MiniMax, Mistral-CN, InternLM, ChatGLM. Big Tech open: Meta (LLaMA), Alibaba (Qwen).
+
+\subsection{Data Science Roadmap 2026}
+Python foundations $\to$ statistics and probability $\to$ data wrangling (pandas, SQL) $\to$ EDA and visualisation $\to$ ML algorithms $\to$ deep learning (PyTorch/TensorFlow) $\to$ MLOps (pipelines, deployment, monitoring) $\to$ specialisation (NLP, CV, time series, RL).
+
+\section{Research and Learning Methods}
+
+\subsection{How to Read a Paper (Three-Pass Approach)}
+\textbf{1st pass (5--10 min):} Title, abstract, intro, section headings, conclusions. Answer: category, context, correctness, contributions, clarity.\\
+\textbf{2nd pass (1 h):} Read carefully; examine figures; note unread references.\\
+\textbf{3rd pass (4--5 h):} Re-implement; challenge assumptions; identify implicit assumptions and limitations.
+
+\subsection{The Feynman Technique}
+1. Pick and study a topic. 2. Explain it as if to a child. 3. Identify gaps in your understanding. 4. Return to the literature to fill gaps. Richard Feynman. Simplicity reveals depth of understanding.
+
+\end{multicols}
+\end{document}

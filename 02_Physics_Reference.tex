@@ -1,0 +1,433 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+\definecolor{accent}{RGB}{160,30,30}
+\definecolor{boxbg}{RGB}{255,245,240}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\vspace{-4pt}\rule{\linewidth}{1pt}]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=*}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{accent} Physics Reference}\\[4pt]
+{\small Classical Mechanics, Quantum Mechanics, Relativity, Electromagnetism, Astrophysics, Thermodynamics}
+\end{center}
+\vspace{4pt}\hrule\vspace{6pt}
+
+\begin{multicols}{2}
+
+\section{Classical Mechanics}
+
+\subsection{Newton's Three Laws}
+\textbf{1st (Inertia):} An object remains at rest or in uniform motion unless acted upon by an external force.\\
+\textbf{2nd (F = ma):} $\sum \mathbf{F} = m\mathbf{a}$. Acceleration is directly proportional to net force and inversely proportional to mass.\\
+\textbf{3rd (Action-Reaction):} For every action there is an equal and opposite reaction.
+
+\subsection{Projectile Motion}
+\[
+x(t) = v_0\cos\theta \cdot t, \quad y(t) = v_0\sin\theta \cdot t - \tfrac{1}{2}gt^2
+\]
+Range $R = \frac{v_0^2\sin 2\theta}{g}$, max height $H = \frac{v_0^2\sin^2\theta}{2g}$, time of flight $T = \frac{2v_0\sin\theta}{g}$.
+
+\subsection{Kepler's Laws of Planetary Motion}
+\textbf{1st:} Planets orbit the Sun in ellipses with the Sun at one focus.\\
+\textbf{2nd:} Equal areas are swept in equal times.\\
+\textbf{3rd:} $T^2 \propto a^3$; specifically $T^2 = \frac{4\pi^2}{GM}a^3$.
+
+\subsection{Derivation of Kepler's Third Law}
+From gravitational force = centripetal force for circular orbit:
+$\frac{GMm}{r^2} = \frac{mv^2}{r}$, and $v = \frac{2\pi r}{T}$, giving $T^2 = \frac{4\pi^2}{GM}r^3$.
+
+\subsection{Gravitational Potential Well and Frequency Hill}
+Objects with mass create wells in spacetime curvature. Gravitational frequency shift: $\Delta f/f = gh/c^2$ (gravitational redshift/blueshift).
+
+\subsection{Rotation (Circular Motion Notes)}
+Trajectory, circular motion, angular velocity ($\omega$), angular acceleration ($\alpha$), centripetal and centrifugal force, torque ($\tau = r \times F$), moment of inertia $I$, angular momentum $L = I\omega$.
+
+\subsection{Lyapunov Stability Theory}
+$\dot{x} = f(x)$. A fixed point $x_0$ is Lyapunov stable if for every $\varepsilon>0$ there exists $\delta>0$ such that $\|x(0)-x_0\|<\delta \Rightarrow \|x(t)-x_0\|<\varepsilon$ for all $t\geq 0$.\\
+$\dot{V}(x(t)) \leq 0$ for a Lyapunov function $V(x)$ ensures stability.
+
+\subsection{Gas Laws}
+Boyle's: $P_1V_1 = P_2V_2$ (constant $T$).\\
+Charles's: $\frac{V_1}{T_1} = \frac{V_2}{T_2}$ (constant $P$).\\
+Gay-Lussac's: $\frac{P_1}{T_1} = \frac{P_2}{T_2}$ (constant $V$).\\
+Avogadro's: $\frac{V_1}{n_1} = \frac{V_2}{n_2}$ (constant $T$, $P$).\\
+Ideal gas: $PV = nRT$.
+
+\subsection{Impulse-Momentum Theorem}
+\[
+\mathbf{J} = F_\text{avg}\,\Delta t = \Delta p = m\,\Delta\mathbf{v}
+\]
+
+\subsection{Torque in Physics}
+$\tau = r \times F = rF\sin\theta$. Net torque causes angular acceleration: $\tau_\text{net} = I\alpha$.
+
+\section{Thermodynamics}
+
+\subsection{Laws of Thermodynamics}
+\textbf{0th:} Thermal equilibrium is transitive.\\
+\textbf{1st:} $\Delta U = Q - W$ (energy conservation).\\
+\textbf{2nd:} Entropy of an isolated system never decreases: $dS \geq 0$.\\
+\textbf{3rd:} Entropy approaches a constant (zero) as $T \to 0$.
+
+\subsection{Gibbs Free Energy}
+\[
+\Delta G^\circ = \Delta H^\circ - T\Delta S^\circ
+\]
+$\Delta G < 0$: spontaneous reaction. $\Delta G > 0$: non-spontaneous. $\Delta G = 0$: equilibrium.
+
+\subsection{Carnot Cycle}
+Isothermal expansion, adiabatic expansion, isothermal compression, adiabatic compression. Efficiency $\eta = 1 - T_C/T_H$. Maximum possible efficiency for any heat engine between two temperatures.
+
+\subsection{Heat Equation}
+\[
+\Delta T = \frac{\rho c}{\lambda}\frac{\partial T}{\partial t}
+\]
+$\Delta T$=change, $\rho$=density, $c$=specific heat, $\lambda$=thermal conductivity.
+
+\subsection{Clausius-Clapeyron Equation}
+\[
+\frac{dP}{dT} = \frac{L}{T\,\Delta V}
+\]
+Describes the pressure-temperature relationship at phase boundaries (solid/liquid, liquid/gas).
+
+\subsection{Fourier's Law of Thermal Conduction}
+\[
+q = -k\,\nabla T
+\]
+Heat flows in the direction of decreasing temperature. $k$ = thermal conductivity.
+
+\subsection{Prandtl Number}
+\[
+\text{Pr} = \frac{\nu}{\alpha} = \frac{\mu/\rho}{k/\rho c_p} = \frac{\mu c_p}{k}
+\]
+Ratio of momentum diffusivity to thermal diffusivity.
+
+\section{Electromagnetism}
+
+\subsection{Maxwell's Equations (Differential Form)}
+\[
+\nabla\cdot\mathbf{E} = \frac{\rho}{\varepsilon_0}, \quad \nabla\cdot\mathbf{B} = 0
+\]
+\[
+\nabla\times\mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}, \quad \nabla\times\mathbf{B} = \mu_0\mathbf{J} + \mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
+\]
+
+\subsection{Biot-Savart Law}
+\[
+d\mathbf{B} = \frac{\mu_0 I\,d\mathbf{L}\times\hat{r}}{4\pi r^2}
+\]
+Magnetic field intensity at a point due to a current element. Jean-Baptiste Biot and F\'elix Savart.
+
+\subsection{Amp\`ere's Law}
+\[
+\oint \mathbf{B}\cdot d\mathbf{s} = \mu_0 I_\text{enc} + \mu_0\varepsilon_0\frac{d\Phi_E}{dt}
+\]
+Relates the magnetic field around a closed loop to the current enclosed.
+
+\subsection{Faraday's Law}
+\[
+\mathcal{E} = -\frac{d\Phi_B}{dt}, \quad \Phi_B = \int \mathbf{B}\cdot d\mathbf{A}
+\]
+
+\subsection{Magnetism Important Formulas}
+\begin{itemize}
+\item Force on moving charge: $F = qvB\sin\theta$
+\item Force on current-carrying conductor: $F = BIL\sin\theta$
+\item Magnetic field of long straight wire: $B = \frac{\mu_0 I}{2\pi r}$
+\item Magnetic field at centre of circular wire: $B = \frac{\mu_0 I}{2R}$
+\item Magnetic field of solenoid: $B = \mu_0 nI$
+\item Torque on current loop: $\tau = NIAB\sin\theta$
+\end{itemize}
+
+\subsection{Curie's Law}
+\[
+M = C\frac{B}{T}
+\]
+The magnetisation of a paramagnetic material is directly proportional to the applied magnetic field and inversely proportional to temperature. Pierre Curie.
+
+\subsection{Important Electricity and Magnetism Formulas}
+Electric force (Coulomb): $F = k\frac{q_1 q_2}{r^2}$; Electric field: $E = F/q$; Electric potential: $V = kq/r$; Capacitance: $C = Q/V$; Current: $I = Q/t$; Resistance: $V = IR$; Power: $P = IV = I^2R = V^2/R$.
+
+\section{Quantum Mechanics}
+
+\subsection{Schr\"odinger Equation}
+Time-independent: $\hat{H}|\psi\rangle = E|\psi\rangle$\\
+Time-dependent: $i\hbar\frac{\partial}{\partial t}|\psi(t)\rangle = \hat{H}|\psi(t)\rangle$\\
+Describes how the quantum state of a system evolves. Erwin Schr\"odinger (1925).
+
+\subsection{Heisenberg Uncertainty Principle}
+\[
+\Delta x\,\Delta p \geq \frac{\hbar}{2}
+\]
+It is impossible to simultaneously determine the exact position and momentum of a particle. More precisely one is measured, the less precisely the other can be known. Werner Heisenberg (Nobel 1932).
+
+\subsection{Quantum Tunnelling}
+A quantum particle has a nonzero probability of crossing an energy barrier even if it lacks the classical energy to do so. Probability: $P \propto e^{-2\kappa L}$ where $\kappa = \sqrt{2m(V_0-E)}/\hbar$.
+
+\subsection{Canonical Commutation Relation}
+\[
+[\hat{x},\hat{p}] = i\hbar
+\]
+$\hat{x}$ = position operator, $\hat{p}$ = momentum operator. Foundation of quantum mechanics.
+
+\subsection{Momentum Operator}
+\[
+\hat{p} = -i\hbar\nabla
+\]
+
+\subsection{Unitary Transformation (Heisenberg and Schr\"odinger Pictures)}
+\[
+|\psi\rangle_H = e^{iHt}|\psi\rangle_S
+\]
+The Heisenberg picture evolves operators; the Schr\"odinger picture evolves state vectors.
+
+\subsection{Dirac Equation in Curved Spacetime}
+\[
+(i\hbar\gamma^\mu\nabla_\mu - mc)\psi = 0
+\]
+P.A.M.\ Dirac (1902--1984). Combines quantum mechanics with special relativity; predicted antimatter.
+
+\subsection{Dirac Matrix (Quantum Electrodynamics)}
+\[
+\{\gamma^\mu, \gamma^\nu\} = 2g^{\mu\nu}I
+\]
+The four gamma matrices satisfy the Clifford algebra anticommutation relation.
+
+\subsection{Dirac Delta Function}
+See Mathematics reference. The sifting property $\int f(x)\delta(x-a)\,dx = f(a)$ is fundamental in QM.
+
+\subsection{Classical Atom vs Quantum Atom}
+Classical (Bohr): electrons move in fixed circular orbits. Quantum: electrons exist as probability clouds; cannot know exact position --- Heisenberg uncertainty applies. Orbitals are described by wavefunctions $\psi$.
+
+\section{Special and General Relativity}
+
+\subsection{Einstein's Field Equations}
+\[
+R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu}
+\]
+Mass and energy tell spacetime how to curve; curved spacetime tells matter how to move. Albert Einstein (1879--1955).
+
+\subsection{Lorentz Transformation}
+\[
+\begin{pmatrix}\gamma & -\beta\gamma & 0 & 0\\-\beta\gamma & \gamma & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{pmatrix}, \quad \gamma = \frac{1}{\sqrt{1-v^2/c^2}}
+\]
+
+\subsection{Time Dilation}
+\[
+\Delta t' = \frac{\Delta t}{\sqrt{1-v^2/c^2}}
+\]
+A moving clock ticks more slowly from the perspective of a stationary observer.
+
+\subsection{Schwarzschild Metric}
+\[
+ds^2 = \left(1-\frac{2m}{r}\right)dt^2 - \left(1-\frac{2m}{r}\right)^{-1}dr^2 - r^2\,d\Omega^2
+\]
+Karl Schwarzschild (1873--1916). First exact solution to Einstein's field equations. Describes spacetime around a spherical non-rotating mass; gives the Schwarzschild radius $r_s = 2GM/c^2$.
+
+\subsection{Schwarzschild Radius (Event Horizon of a Black Hole)}
+\[
+r_s = \frac{2GM}{c^2}
+\]
+At $r = r_s$, escape velocity equals $c$.
+
+\subsection{First Law of Black Hole Mechanics}
+\[
+dE = \frac{\kappa}{8\pi}dA + \Omega\,dJ + \Phi\,dQ
+\]
+Analogous to the first law of thermodynamics.
+
+\subsection{Hawking Radiation}
+\[
+T_H = \frac{\hbar c^3}{8\pi G M k_B}
+\]
+Black holes emit thermal radiation at temperature $T_H$ (Stephen Hawking, 1974). Negative energy particles fall in; positive energy particles escape.
+
+\subsection{Black Hole Entropy}
+\[
+S = \frac{c^3 k_B A}{4G\hbar}
+\]
+Entropy of a black hole is proportional to the area of its event horizon. Entropy increases as the black hole grows larger.
+
+\subsection{Kerr Metric (Rotating Black Hole)}
+Describes spacetime around a rotating mass. Has an ergosphere outside the event horizon. Frame dragging --- spacetime itself rotates.
+
+\subsection{Rindler Horizon}
+\[
+\ell = \frac{c^2}{a}
+\]
+An accelerating observer in flat spacetime perceives a horizon at distance $\ell = c^2/a$ behind them.
+
+\subsection{Lorentz-Lorenz Equation}
+\[
+\frac{n^2-1}{n^2+2} = \frac{4\pi}{3}N\alpha_m
+\]
+Relates the refractive index $n$ to molecular polarisability $\alpha_m$ and molecular number density $N$.
+
+\section{Astrophysics and Cosmology}
+
+\subsection{Hubble's Law}
+\[
+v = H_0 d
+\]
+Edwin Hubble. Recessional velocity of galaxies is proportional to their distance. Implies an expanding universe. $H_0 \approx 70\,\text{km/s/Mpc}$.
+
+\subsection{First Friedmann Equation}
+\[
+\left(\frac{\dot{a}}{a}\right)^2 = \frac{8\pi G\rho}{3} + \frac{\Lambda c^2}{3} - \frac{kc^2}{a^2}
+\]
+Governs the expansion of the universe. $a$=scale factor, $\Lambda$=cosmological constant, $k$=curvature.
+
+\subsection{Satellite Orbits}
+Polar (low Earth, $<1000$\,km), ISS (400\,km), GPS/navigation ($20000$\,km), Geostationary ($35786$\,km), Highly Elliptical. Orbital velocity: $v = \sqrt{GM/r}$.
+
+\subsection{How Gravitational Waves Work}
+Two massive objects (e.g.\ merging black holes) produce ripples in spacetime propagating at $c$. Strain $h = \Delta L / L$ detected by LIGO interferometers.
+
+\subsection{How Black Holes Bend Spacetime}
+Light follows geodesics in curved spacetime. Gravitational lensing: background objects appear distorted or multiply-imaged. Einstein ring when source, lens, and observer are aligned.
+
+\subsection{Dark Energy vs Dark Matter}
+Dark energy ($\sim68\%$ of universe): uniform, fills space, drives accelerating expansion. Dark matter ($\sim27\%$): clumps, holds galaxies together, detected through gravitational effects only.
+
+\section{Fluid Mechanics}
+
+\subsection{Navier-Stokes Equations}
+\[
+\frac{\partial\mathbf{u}}{\partial t} + (\mathbf{u}\cdot\nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu\nabla^2\mathbf{u} + \mathbf{g}
+\]
+\[
+\nabla\cdot\mathbf{u} = 0 \quad \text{(incompressible)}
+\]
+Describe the motion of viscous fluids. Whether smooth solutions always exist is one of the Millennium Prize Problems.
+
+\subsection{Reynolds Number}
+\[
+Re = \frac{\rho u D_H}{\mu}
+\]
+$\rho$=density, $u$=velocity, $D_H$=hydraulic diameter, $\mu$=dynamic viscosity. $Re < 2300$: laminar; $Re > 4000$: turbulent.
+
+\subsection{Newton's Law of Viscosity}
+\[
+T = \mu\frac{du}{dy}
+\]
+Shear stress $T$ (Pa) is proportional to the velocity gradient through dynamic viscosity $\mu$.
+
+\subsection{Coand\u{a} Effect}
+A fluid jet attaches to a nearby curved surface. Pressure differential: $\partial P/\partial n = \rho v^2/R$. Responsible for airfoil lift augmentation.
+
+\subsection{Bernoulli's Law}
+$P + \frac{1}{2}\rho v^2 + \rho gh = \text{const}$ along a streamline (ideal, incompressible flow).
+
+\subsection{Coriolis Effect}
+\[
+\mathbf{F}_\text{Cor} = -2m(\boldsymbol{\omega}\times\mathbf{v})
+\]
+Gaspard-Gustave de Coriolis (1792--1843). In the rotating frame of Earth, moving objects deflect: right in the Northern hemisphere, left in the Southern.
+
+\section{Optics and Wave Physics}
+
+\subsection{Rayleigh Scattering}
+\[
+x = \frac{2\pi r}{\lambda}
+\]
+Size parameter. Scattering $\propto \lambda^{-4}$; short wavelengths scatter more. Explains why the sky is blue.
+
+\subsection{Cherenkov Radiation}
+\[
+\cos\theta_c = \frac{c}{nv} = \frac{1}{n\beta}
+\]
+Emitted when a charged particle moves through a medium faster than the phase velocity of light in that medium ($v > c/n$). Characteristic blue glow in nuclear reactors.
+
+\subsection{Young's Double-Slit Experiment}
+Path difference $\delta = d\sin\theta$. Constructive: $\delta = m\lambda$. Destructive: $\delta = (m+\frac{1}{2})\lambda$. Demonstrates wave-particle duality.
+
+\subsection{de Broglie Wavelength (Matter Waves)}
+\[
+\lambda = \frac{h}{p} = \frac{h}{mv}
+\]
+Louis de Broglie (1929). Every particle has an associated wavelength. Basis of electron diffraction and electron microscopy.
+
+\section{Nuclear and Particle Physics}
+
+\subsection{Important Nuclear Physics Formulas}
+$E = mc^2$ (mass-energy equivalence); $Q$-value of a nuclear reaction: $Q = (m_i - m_f)c^2$; radioactive decay: $N(t) = N_0 e^{-\lambda t}$, half-life $t_{1/2} = \ln 2/\lambda$.
+
+\subsection{Nuclear Fusion vs Fission}
+\textbf{Fusion:} combines light nuclei into heavier ones, releasing energy; requires high temperature (Tokamak/reactor). Difficult to control.\\
+\textbf{Fission:} splits a heavy nucleus (e.g.\ $^{235}$U) into lighter ones; controlled in nuclear reactors. Produces radioactive waste.
+
+\subsection{Gamow Factor}
+\[
+P_G(E) = e^{-2\pi\eta}, \quad \eta = \frac{Z_1 Z_2 e^2}{\hbar v} = \frac{\alpha Z_1 Z_2}{\sqrt{2E/m_r}}
+\]
+Probability of quantum tunnelling through the Coulomb barrier in nuclear fusion. $Z_i$=atomic numbers, $v$=relative velocity.
+
+\subsection{Sackur-Tetrode Equation}
+\[
+S = Nk_B\left[\ln\!\left(\frac{V}{N\lambda^3}\right) + \frac{5}{2}\right], \quad \lambda = \sqrt{\frac{2\pi\hbar^2}{mk_BT}}
+\]
+Entropy of an ideal monatomic gas, including quantum effects.
+
+\subsection{Planck Time}
+\[
+t_p = \sqrt{\frac{\hbar G}{c^5}} \approx 5.39\times 10^{-44}\,\text{s}
+\]
+The smallest meaningful unit of time; below this, the known laws of physics break down.
+
+\subsection{10 Mind-Blowing Physics Discoveries}
+1. Time dilation; 2. Quantum entanglement; 3. Gravity affects light; 4. Dark matter; 5. Expanding universe; 6. Matter = energy; 7. Wave-particle duality; 8. All falls at the same rate; 9. Quantum foam; 10. Double-slit experiment changes behaviour.
+
+\section{Electrostatics and Advanced Fields}
+
+\subsection{Electrostatic Potential}
+\[
+V(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}\int_{\mathcal{R}} \frac{\rho(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}\,d^3r'
+\]
+
+\subsection{Lagrangian Density (QED)}
+\[
+\mathcal{L} = \bar\psi(i\hbar\gamma^\mu D_\mu - mc)\psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+\]
+
+\subsection{Metric Line Element}
+\[
+ds^2 = g_{\mu\nu}\,dx^\mu dx^\nu
+\]
+The metric tensor $g_{\mu\nu}$ encodes the geometry of spacetime.
+
+\subsection{Stress-Energy-Momentum Tensor}
+\[
+T_{\alpha\beta} = -\frac{4\pi}{\sqrt{-g}}\frac{\partial S}{\partial g^{\alpha\beta}}
+\]
+
+\subsection{Quantised Scalar Field Operator}
+\[
+\hat\phi(x,t) = \int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega_k}}\left[\hat{a}_k e^{i(kx-\omega_k t)} + \hat{a}_k^\dagger e^{-i(kx-\omega_k t)}\right]
+\]
+
+\subsection{Wien's Displacement Law}
+\[
+\lambda_\text{max} \cdot T = b = 2.898\times10^{-3}\,\text{m\,K}
+\]
+Peak wavelength of blackbody radiation is inversely proportional to temperature.
+
+\subsection{Maxwell-Boltzmann Distribution}
+\[
+f(v) = 4\pi\left(\frac{m}{2\pi k_BT}\right)^{3/2}v^2 e^{-mv^2/(2k_BT)}
+\]
+Describes the statistical distribution of particle speeds in an ideal gas at thermal equilibrium.
+
+\end{multicols}
+\end{document}
