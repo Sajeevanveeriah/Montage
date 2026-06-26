@@ -1,414 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Circuit theory, electronics, power systems, RF, control, mechanical and automation.">
   <title>Engineering — Montage</title>
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
-  <link rel="stylesheet" href="./assets/style.css">
-  <script src="./assets/theme.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/bash.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
-
-<nav class="navbar">
-  <a href="./index.html" class="nav-brand">Montage</a>
-  <ul class="nav-links">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./mathematics.html">Maths</a></li>
-    <li><a href="./physics.html">Physics</a></li>
-    <li><a href="./engineering.html" class="active">Engineering</a></li>
-    <li><a href="./cs-ai-ml.html">CS/AI/ML</a></li>
-    <li><a href="./personal-dev.html">Personal Dev</a></li>
-    <li><a href="./career-finance.html">Career</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="search-wrap">
-      <input type="search" id="search-input" class="search-input" placeholder="Search this page…" autocomplete="off">
+<body class="domain-engineering" data-domain="engineering">
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">⬡ Montage</a>
+    <div class="nav-links" id="navLinks">
+      <a href="mathematics.html">∑ Maths</a>
+      <a href="physics.html">⚛ Physics</a>
+      <a href="engineering.html">⚡ Eng</a>
+      <a href="cs-ai-ml.html">💻 CS/AI</a>
+      <a href="personal-dev.html">🧠 Personal</a>
+      <a href="career-finance.html">📈 Career</a>
     </div>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">◑</button>
-  </div>
-</nav>
+    <div class="nav-actions">
+      <div id="searchWrap"><input id="searchInput" placeholder="Search… (/)" type="search"><div id="searchDropdown"></div></div>
+      <button id="bookmarkNav" title="Bookmarks (b)">★<span id="bmCount" hidden>0</span></button>
+      <button id="themeToggle" title="Toggle theme">☽</button>
+      <button id="helpBtn" title="Keyboard shortcuts (?)">?</button>
+      <button id="hamburger" class="mobile-only" title="Menu">☰</button>
+    </div>
+  </nav>
 
-<div class="page-wrapper">
-<div class="section-layout">
+  <div id="readProgress"></div>
 
-  <aside class="sidebar">
-    <div class="sidebar-title">Sections</div>
-    <nav>
-      <a href="#electronic">Electronic Fundamentals</a>
-      <a href="#circuits">Circuit Analysis</a>
-      <a href="#power">Power Systems</a>
-      <a href="#rf">RF and Communications</a>
-      <a href="#semiconductors">Semiconductors</a>
-      <a href="#sensors">Sensors and Transducers</a>
-      <a href="#mechanical">Mechanical Engineering</a>
-      <a href="#automation">Industrial Automation</a>
-      <a href="#networking">Networking</a>
-    </nav>
-  </aside>
-
-  <main class="main-content">
-    <h1 class="page-title">Engineering</h1>
-    <p class="page-subtitle">Electronics, power, RF, mechanical, industrial — 30 topics</p>
-
-    <div id="no-results-msg" class="no-results-msg">No subsections match your search.</div>
-
-    <!-- ELECTRONIC -->
-    <section class="content-section" id="electronic">
-      <h2>Electronic Fundamentals</h2>
-
-      <div class="subsection" id="ohms-law">
-        <h3>Ohm's Law and Power</h3>
-        <p><span class="math-inline" data-tex="V = IR"></span> &nbsp;|&nbsp; <span class="math-inline" data-tex="P = IV = I^2R = \frac{V^2}{R}"></span></p>
-      </div>
-
-      <div class="subsection" id="transistors">
-        <h3>Transistor Types: MOSFET, BJT, IGBT</h3>
-        <div class="table-wrap">
-          <table>
-            <tr><th>Feature</th><th>MOSFET</th><th>BJT</th><th>IGBT</th></tr>
-            <tr><td>Control</td><td>Voltage (gate)</td><td>Current (base)</td><td>Voltage (gate)</td></tr>
-            <tr><td>Speed</td><td>Very fast</td><td>Fast</td><td>Medium</td></tr>
-            <tr><td>Power</td><td>Low–medium</td><td>Low–medium</td><td>High</td></tr>
-            <tr><td>Use case</td><td>Switching, RF</td><td>Amplification</td><td>Motor drives, inverters</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="subsection" id="npn-pnp">
-        <h3>NPN vs PNP Transistors</h3>
-        <p><strong>NPN:</strong> Current sinks into collector; base-emitter junction forward biased with positive voltage. Most common.</p>
-        <p><strong>PNP:</strong> Current sources from emitter; requires negative base-emitter voltage. Used as high-side switches.</p>
-        <p><strong>Sziklai (Complementary Darlington):</strong> NPN + PNP combined for high-current amplification with lower saturation voltage than standard Darlington.</p>
-        <p><strong>Zener Diodes:</strong> Operate in reverse breakdown at a precise voltage — used for voltage regulation and protection.</p>
-      </div>
-    </section>
-
-    <!-- CIRCUITS -->
-    <section class="content-section" id="circuits">
-      <h2>Circuit Analysis</h2>
-
-      <div class="subsection" id="rlc">
-        <h3>RLC Series Resonance</h3>
-        <p>Resonant frequency: <span class="math-inline" data-tex="\omega_0 = \frac{1}{\sqrt{LC}}"></span></p>
-        <p>Impedance: <span class="math-inline" data-tex="Z = \sqrt{R^2 + (X_L - X_C)^2}"></span></p>
-        <p>Capacitive reactance: <span class="math-inline" data-tex="X_C = \frac{1}{\omega C}"></span> &nbsp;|&nbsp; Inductive reactance: <span class="math-inline" data-tex="X_L = \omega L"></span></p>
-      </div>
-
-      <div class="subsection" id="rc-transient">
-        <h3>RC Transient Response</h3>
-        <div class="math-block" data-tex="v(t) = V\left(1 - e^{-t/RC}\right)"></div>
-        <p>Voltage across a capacitor charging through a resistor. Time constant τ = RC: after one τ, voltage reaches 63.2% of final value.</p>
-      </div>
-
-      <div class="subsection" id="opamps">
-        <h3>Op-Amp Configurations</h3>
-        <ul>
-          <li><strong>Inverting:</strong> <span class="math-inline" data-tex="V_{out} = -\frac{R_f}{R_1}V_{in}"></span></li>
-          <li><strong>Non-inverting:</strong> <span class="math-inline" data-tex="V_{out} = \left(1 + \frac{R_f}{R_1}\right)V_{in}"></span></li>
-          <li><strong>Voltage follower (buffer):</strong> V<sub>out</sub> = V<sub>in</sub>, gain = 1, very high input impedance</li>
-          <li><strong>Summing amplifier:</strong> Output is the weighted sum of multiple inputs</li>
-          <li><strong>Difference amplifier:</strong> Amplifies the difference between two inputs, rejects common-mode signals</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- POWER -->
-    <section class="content-section" id="power">
-      <h2>Power Systems</h2>
-
-      <div class="subsection" id="kva-kw">
-        <h3>kVA vs kW</h3>
-        <p>kW (real power) does useful work. kVA (apparent power) is what flows through cables and determines heating losses, regardless of power factor. Equipment is rated in kVA because thermal limits depend on current, not just useful power.</p>
-      </div>
-
-      <div class="subsection" id="three-phase">
-        <h3>Three-Phase Power</h3>
-        <div class="math-block" data-tex="kW = \sqrt{3} \times kV \times kA \times PF"></div>
-        <p>Three-phase systems deliver more power per conductor than single-phase. PF = power factor = cos(φ).</p>
-      </div>
-
-      <div class="subsection" id="transformer">
-        <h3>Transformer Components</h3>
-        <p>Core (laminated silicon steel), primary winding, secondary winding, insulation, cooling (oil/air), tap changer, Buchholz relay (fault protection), conservator tank. Turns ratio: V₁/V₂ = N₁/N₂ = I₂/I₁.</p>
-      </div>
-
-      <div class="subsection" id="breaker-sizing">
-        <h3>Breaker Sizing Rule</h3>
-        <p>Circuit breakers must be sized at ≥125% of Full-Load Amps (FLA) for continuous loads per NEC/IEC standards, ensuring the breaker does not trip under normal sustained load.</p>
-      </div>
-
-      <div class="subsection" id="grounding">
-        <h3>Grounding vs Earthing</h3>
-        <p><strong>Grounding:</strong> Connecting electrical circuits to a common reference point (0 V) for normal circuit operation.</p>
-        <p><strong>Earthing:</strong> Connecting conductive parts to the physical earth to protect people from electric shock during faults.</p>
-      </div>
-
-      <div class="subsection" id="ups-battery">
-        <h3>UPS Types and Battery Backup</h3>
-        <p><strong>Offline/Standby:</strong> Switches to battery on mains failure (few ms delay). <strong>Line-interactive:</strong> Uses AVR to handle voltage fluctuations. <strong>Online double-conversion:</strong> Always running on inverter — zero transfer time, full isolation.</p>
-        <p>Battery runtime: <span class="math-inline" data-tex="\text{Time (h)} = \frac{A_h \times V}{W}"></span></p>
-      </div>
-    </section>
-
-    <!-- RF -->
-    <section class="content-section" id="rf">
-      <h2>RF and Communications</h2>
-
-      <div class="subsection" id="antennas">
-        <h3>Antenna Types</h3>
-        <div class="table-wrap">
-          <table>
-            <tr><th>Type</th><th>Pattern</th><th>Use Case</th></tr>
-            <tr><td>Monopole (λ/4)</td><td>Omnidirectional</td><td>AM broadcast, mobile</td></tr>
-            <tr><td>Dipole (λ/2)</td><td>Figure-8</td><td>General purpose</td></tr>
-            <tr><td>Yagi</td><td>High gain directional</td><td>TV, WiFi, amateur radio</td></tr>
-            <tr><td>Patch (microstrip)</td><td>Directional</td><td>GPS, WiFi, IoT</td></tr>
-            <tr><td>Parabolic dish</td><td>Very high gain</td><td>Satellite, radar</td></tr>
-            <tr><td>Horn</td><td>Broad directional</td><td>Microwave, calibration</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="subsection" id="rf-connectors">
-        <h3>RF Connector Types</h3>
-        <div class="table-wrap">
-          <table>
-            <tr><th>Connector</th><th>Max Frequency</th><th>Notes</th></tr>
-            <tr><td>SMA</td><td>18–26 GHz</td><td>Small, threaded; lab & PCB</td></tr>
-            <tr><td>BNC</td><td>4 GHz</td><td>Quick bayonet lock; test equipment</td></tr>
-            <tr><td>N-type</td><td>11–18 GHz</td><td>Weatherproof; outdoor/basestation</td></tr>
-            <tr><td>TNC</td><td>11 GHz</td><td>Threaded BNC; vibration-prone environments</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="subsection" id="modulation">
-        <h3>Digital Modulation Schemes</h3>
-        <div class="table-wrap">
-          <table>
-            <tr><th>Scheme</th><th>What Varies</th><th>Spectral Efficiency</th><th>Use Case</th></tr>
-            <tr><td>FSK</td><td>Frequency</td><td>Low</td><td>RFID, AFSK, IoT</td></tr>
-            <tr><td>ASK/OOK</td><td>Amplitude</td><td>Low</td><td>IR remote, RFID</td></tr>
-            <tr><td>BPSK</td><td>Phase (2 states)</td><td>1 bit/symbol</td><td>Deep space, DSSS</td></tr>
-            <tr><td>QPSK</td><td>Phase (4 states)</td><td>2 bits/symbol</td><td>Satellite, LTE</td></tr>
-            <tr><td>16-QAM</td><td>Phase + Amplitude</td><td>4 bits/symbol</td><td>WiFi, 4G</td></tr>
-            <tr><td>256-QAM</td><td>Phase + Amplitude</td><td>8 bits/symbol</td><td>Cable, 5G</td></tr>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEMICONDUCTORS -->
-    <section class="content-section" id="semiconductors">
-      <h2>Semiconductors</h2>
-
-      <div class="subsection" id="chip-process">
-        <h3>From Sand to 3 nm: Chip Manufacturing Process</h3>
-        <ol>
-          <li><strong>Czochralski process:</strong> Silicon crystals grown from molten silicon</li>
-          <li><strong>Wafer slicing:</strong> Crystal ingot cut into thin wafers and polished</li>
-          <li><strong>Photolithography:</strong> UV/EUV light exposes photoresist through mask patterns</li>
-          <li><strong>Etching:</strong> Plasma removes exposed material to create features</li>
-          <li><strong>Ion implantation (Doping):</strong> Boron/phosphorus ions modify conductivity</li>
-          <li><strong>CMP (Chemical Mechanical Planarisation):</strong> Polishes surface flat after each layer</li>
-          <li><strong>Thin-film deposition:</strong> Oxide, nitride layers grown by CVD/ALD</li>
-          <li><strong>Metallisation:</strong> Copper interconnects deposited by electroplating</li>
-          <li><strong>Testing and packaging:</strong> Wafer probing, dicing, and chip packaging</li>
-        </ol>
-      </div>
-
-      <div class="subsection" id="iphone-chips">
-        <h3>Key Chip Suppliers for Apple iPhone 15</h3>
-        <ul>
-          <li><strong>TSMC</strong> — A17 Pro SoC (3 nm process)</li>
-          <li><strong>Qualcomm</strong> — X70 modem (5G)</li>
-          <li><strong>Sony</strong> — CMOS image sensor</li>
-          <li><strong>Broadcom</strong> — WiFi/Bluetooth combo chip</li>
-          <li><strong>Texas Instruments</strong> — Power management ICs</li>
-          <li><strong>Skyworks / Qorvo</strong> — RF front-end modules</li>
-          <li><strong>SK Hynix / Micron</strong> — LPDDR5 DRAM</li>
-        </ul>
-      </div>
-
-      <div class="subsection" id="rare-earth">
-        <h3>Rare Earth Elements in Electronics</h3>
-        <ul>
-          <li><strong>Neodymium (Nd):</strong> NdFeB permanent magnets in speakers, motors, HDDs</li>
-          <li><strong>Lanthanum (La):</strong> Camera lens glass, NiMH battery electrodes</li>
-          <li><strong>Cerium (Ce):</strong> CMP polishing slurry for chip manufacturing</li>
-          <li><strong>Europium / Terbium:</strong> LED and display phosphors</li>
-          <li><strong>Yttrium (Y):</strong> Phosphors, superconductors (YBCO)</li>
-          <li><strong>Dysprosium (Dy):</strong> High-temperature magnets in EV motors</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- SENSORS -->
-    <section class="content-section" id="sensors">
-      <h2>Sensors and Transducers</h2>
-
-      <div class="subsection" id="hall-effect">
-        <h3>Hall Effect</h3>
-        <div class="math-block" data-tex="V_H = \frac{IB}{nqd}"></div>
-        <p>A current I in a conductor of thickness d, in magnetic field B, produces a transverse voltage V<sub>H</sub>. Used for current sensing, position detection, and speed measurement.</p>
-      </div>
-
-      <div class="subsection" id="piezo">
-        <h3>Piezoelectric Effect</h3>
-        <div class="math-block" data-tex="P = d \times T"></div>
-        <p>Polarisation P produced by stress T, where d is the piezoelectric coefficient. Quartz and ceramics (PZT) produce voltage under mechanical stress. The inverse effect — strain under applied field — is used in ultrasonic transducers, inkjet nozzles, and precision actuators.</p>
-      </div>
-    </section>
-
-    <!-- MECHANICAL -->
-    <section class="content-section" id="mechanical">
-      <h2>Mechanical Engineering</h2>
-
-      <div class="subsection" id="valves">
-        <h3>Valve Types</h3>
-        <div class="table-wrap">
-          <table>
-            <tr><th>Valve</th><th>Operation</th><th>Best For</th></tr>
-            <tr><td>Ball</td><td>Quarter-turn</td><td>Fast on/off, low pressure drop</td></tr>
-            <tr><td>Gate</td><td>Linear, screw</td><td>Full open/close, not throttling</td></tr>
-            <tr><td>Butterfly</td><td>Quarter-turn disc</td><td>Large diameter, low cost</td></tr>
-            <tr><td>Globe</td><td>Linear, plug</td><td>Precise throttling</td></tr>
-            <tr><td>Check</td><td>Automatic</td><td>Backflow prevention</td></tr>
-            <tr><td>Needle</td><td>Fine screw</td><td>Precise flow metering</td></tr>
-            <tr><td>Safety / Relief</td><td>Spring-loaded</td><td>Overpressure protection</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="subsection" id="gears">
-        <h3>Gear Types</h3>
-        <ul>
-          <li><strong>Spur gears:</strong> Teeth parallel to shaft axis. Simple and cheap, but noisy at high speeds.</li>
-          <li><strong>Helical gears:</strong> Teeth at an angle. Smoother and quieter, but generate axial thrust.</li>
-          <li><strong>Bevel gears:</strong> Conical shape for 90° direction change. Used in differentials.</li>
-          <li><strong>Worm gears:</strong> High reduction ratios, self-locking. Used in lifts and winches.</li>
-          <li><strong>Planetary gears:</strong> Compact, high torque density. Used in automatic gearboxes.</li>
-        </ul>
-      </div>
-
-      <div class="subsection" id="steam-engine">
-        <h3>How a Steam Engine Works</h3>
-        <p>Combustion heats water → steam pressure builds → steam enters cylinder → pushes piston → piston drives crankshaft → crankshaft rotates flywheel → flywheel smooths rotational output. Exhaust steam is either released or condensed and recycled.</p>
-      </div>
-
-      <div class="subsection" id="watch-compass">
-        <h3>Analogue Watch as Compass</h3>
-        <p><strong>Northern Hemisphere:</strong> Point the hour hand at the sun. South is halfway between the hour hand and 12 o'clock.</p>
-        <p><strong>Southern Hemisphere:</strong> Point the 12 o'clock mark at the sun. North is halfway between the hour hand and 12.</p>
-      </div>
-
-      <div class="subsection" id="concrete-failure">
-        <h3>Failure Modes in Concrete Beams</h3>
-        <ul>
-          <li><strong>Flexural failure:</strong> Tension steel yields then concrete crushes</li>
-          <li><strong>Shear failure:</strong> Diagonal cracking near supports</li>
-          <li><strong>Compression failure:</strong> Sudden crushing — brittle, avoid by under-reinforcing</li>
-          <li><strong>Bond/anchorage failure:</strong> Rebar pulls out</li>
-          <li><strong>Deflection:</strong> Excessive long-term creep under service loads</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- AUTOMATION -->
-    <section class="content-section" id="automation">
-      <h2>Industrial Automation</h2>
-
-      <div class="subsection" id="industrial-systems">
-        <h3>Industrial Control Systems</h3>
-        <ul>
-          <li><strong>PLC (Programmable Logic Controller):</strong> Rugged digital computer for machine control; runs ladder logic</li>
-          <li><strong>SCADA (Supervisory Control and Data Acquisition):</strong> Remote monitoring and control of distributed plant</li>
-          <li><strong>HMI (Human-Machine Interface):</strong> Touchscreen panels for operator interaction</li>
-          <li><strong>DCS (Distributed Control System):</strong> Process control across multiple local controllers</li>
-          <li><strong>VFD (Variable Frequency Drive):</strong> Controls AC motor speed by varying supply frequency</li>
-          <li><strong>Servo controllers:</strong> Closed-loop position/velocity control with feedback encoder</li>
-          <li><strong>Stepper controllers:</strong> Open-loop precise stepping for positioning</li>
-        </ul>
-        <p>IT/OT convergence and Industry 4.0 connect shop-floor systems to enterprise IT for real-time analytics and predictive maintenance.</p>
-      </div>
-
-      <div class="subsection" id="robot-mechanisms">
-        <h3>Robot Mechanisms</h3>
-        <ul>
-          <li><strong>Linear actuators:</strong> Convert rotation to linear motion (pneumatic, electric, hydraulic)</li>
-          <li><strong>Ball screws:</strong> Low-friction screw-nut pairs for precise linear positioning</li>
-          <li><strong>Harmonic drives:</strong> Zero-backlash, very high reduction ratio — used in robot joints</li>
-          <li><strong>Planetary gearboxes:</strong> Compact, high torque, multiple reduction stages</li>
-          <li><strong>Joint types:</strong> Revolute (rotational), prismatic (linear), spherical (ball-and-socket)</li>
-        </ul>
-      </div>
-
-      <div class="subsection" id="rpa-ipa">
-        <h3>RPA vs IPA</h3>
-        <p><strong>RPA (Robotic Process Automation):</strong> Rule-based bots that mimic human actions in UIs — clicking, copying, pasting. Brittle if UIs change.</p>
-        <p><strong>IPA (Intelligent Process Automation):</strong> RPA augmented with AI/ML — OCR, NLP, decision-making. Can handle unstructured inputs and adapt to variation.</p>
-      </div>
-    </section>
-
-    <!-- NETWORKING -->
-    <section class="content-section" id="networking">
-      <h2>Networking</h2>
-
-      <div class="subsection" id="data-centre">
-        <h3>Data Centre Rack Architecture</h3>
-        <p>Three-tier network: <strong>Access layer</strong> (connects servers) → <strong>Aggregation layer</strong> (policy and redundancy) → <strong>Core layer</strong> (high-speed backbone). PDUs (Power Distribution Units) run vertically in racks. Hot/cold aisle containment: servers draw cold air from cold aisle, exhaust to hot aisle, preventing recirculation.</p>
-      </div>
-
-      <div class="subsection" id="vlan">
-        <h3>VLAN Configuration</h3>
-        <p>VLANs logically segment a physical network. Example: VLAN 10 (Management), VLAN 20 (Users), VLAN 30 (Servers). Trunk ports carry multiple VLANs using 802.1Q tagging. Port security restricts which MAC addresses can connect to access ports.</p>
-      </div>
-
-      <div class="subsection" id="nat">
-        <h3>NAT Types</h3>
-        <ul>
-          <li><strong>Static NAT (1:1):</strong> One private IP ↔ one public IP. Used for servers needing fixed external addresses.</li>
-          <li><strong>Dynamic NAT (pool):</strong> Private IPs map to a pool of public IPs. Many-to-many but limited by pool size.</li>
-          <li><strong>PAT / NAT Overload:</strong> Many private IPs share one public IP, differentiated by source port. Most common in home routers.</li>
-        </ul>
-      </div>
-
-      <div class="subsection" id="cloud-native">
-        <h3>7 Core Layers of Cloud-Native Architecture</h3>
-        <ol>
-          <li><strong>Infrastructure:</strong> VMs, bare-metal, or containers on cloud provider</li>
-          <li><strong>Container runtime:</strong> Docker, containerd</li>
-          <li><strong>Orchestration:</strong> Kubernetes</li>
-          <li><strong>Service mesh:</strong> Istio, Linkerd — mTLS, observability, traffic management</li>
-          <li><strong>API gateway:</strong> Ingress, rate limiting, auth</li>
-          <li><strong>Observability:</strong> Prometheus, Grafana, distributed tracing (Jaeger)</li>
-          <li><strong>CI/CD:</strong> GitOps with ArgoCD, automated build and deploy pipelines</li>
-        </ol>
-      </div>
-    </section>
-
+  <main id="main">
+    <aside id="sidebar">
+      <nav id="tocNav"></nav>
+    </aside>
+    <article id="content"></article>
   </main>
-</div>
 
-<footer>Sajeevan Veeriah · Montage · 2026</footer>
-</div>
+  <div id="sidebarBackdrop"></div>
+  <button id="backToTop" title="Back to top (t)">↑</button>
 
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
-<script src="./assets/search.js"></script>
-<script>
-  function renderMath() {
-    document.querySelectorAll('.math-block[data-tex]').forEach(el => {
-      katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false });
-    });
-    document.querySelectorAll('.math-inline[data-tex]').forEach(el => {
-      katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false });
-    });
-  }
-  document.addEventListener('DOMContentLoaded', renderMath);
-</script>
+  <div id="shortcutsModal" class="modal-backdrop" hidden>
+    <div class="modal-box">
+      <h2>Keyboard shortcuts</h2>
+      <dl>
+        <dt><kbd>/</kbd></dt><dd>Focus search</dd>
+        <dt><kbd>b</kbd></dt><dd>Open bookmarks</dd>
+        <dt><kbd>t</kbd></dt><dd>Scroll to top</dd>
+        <dt><kbd>q</kbd></dt><dd>Toggle quiz mode</dd>
+        <dt><kbd>p</kbd></dt><dd>Print current section</dd>
+        <dt><kbd>?</kbd></dt><dd>This help</dd>
+        <dt><kbd>Esc</kbd></dt><dd>Close panels</dd>
+      </dl>
+      <button class="btn modal-close" type="button">Close</button>
+    </div>
+  </div>
+
+  <div id="toast" hidden></div>
+
+  <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>

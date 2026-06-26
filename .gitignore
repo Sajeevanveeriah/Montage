@@ -1,0 +1,7 @@
+# Dev-only icon generator helper (not part of the production site)
+generate-icons.html
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
