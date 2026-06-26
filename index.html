@@ -1,90 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Montage — Personal Knowledge Base</title>
+  <meta name="description" content="Montage — a personal knowledge base across Mathematics, Physics, Engineering, CS/AI/ML, Personal Development and Career & Finance.">
+  <title>Montage — Knowledge Base</title>
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/style.css">
-  <script src="./assets/theme.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/bash.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body data-page="index">
-
-<nav class="navbar">
-  <a href="./index.html" class="nav-brand">Montage</a>
-  <ul class="nav-links">
-    <li><a href="./index.html" class="active">Home</a></li>
-    <li><a href="./mathematics.html">Maths</a></li>
-    <li><a href="./physics.html">Physics</a></li>
-    <li><a href="./engineering.html">Engineering</a></li>
-    <li><a href="./cs-ai-ml.html">CS/AI/ML</a></li>
-    <li><a href="./personal-dev.html">Personal Dev</a></li>
-    <li><a href="./career-finance.html">Career</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="search-wrap">
-      <input type="search" id="search-input" class="search-input" placeholder="Search all topics…" autocomplete="off">
-      <div id="search-dropdown" class="search-dropdown"></div>
+<body>
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">⬡ Montage</a>
+    <div class="nav-links" id="navLinks">
+      <a href="mathematics.html">∑ Maths</a>
+      <a href="physics.html">⚛ Physics</a>
+      <a href="engineering.html">⚡ Eng</a>
+      <a href="cs-ai-ml.html">💻 CS/AI</a>
+      <a href="personal-dev.html">🧠 Personal</a>
+      <a href="career-finance.html">📈 Career</a>
     </div>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">◑</button>
-  </div>
-</nav>
+    <div class="nav-actions">
+      <div id="searchWrap"><input id="searchInput" placeholder="Search… (/)" type="search"><div id="searchDropdown"></div></div>
+      <button id="bookmarkNav" title="Bookmarks (b)">★<span id="bmCount" hidden>0</span></button>
+      <button id="themeToggle" title="Toggle theme">☽</button>
+      <button id="helpBtn" title="Keyboard shortcuts (?)">?</button>
+      <button id="hamburger" class="mobile-only" title="Menu">☰</button>
+    </div>
+  </nav>
 
-<div class="page-wrapper">
-  <section class="hero">
-    <h1>Your <span>Knowledge</span> Base</h1>
-    <p>Six curated reference documents synthesised from hundreds of STEM and personal development resources.</p>
-  </section>
+  <main id="main">
+    <div id="domainContent">
+      <div class="landing-wrap">
+        <header class="hero">
+          <div class="logo">⬡</div>
+          <h1>Montage</h1>
+          <p>A personal knowledge base synthesised from saved references across six domains of study and practice.</p>
+        </header>
+        <div class="card-grid" id="cardGrid"></div>
+        <div class="stats-bar" id="statsBar"></div>
+      </div>
+    </div>
+    <div class="bookmarks-view" id="bookmarksView"></div>
+  </main>
 
-  <div class="cards-grid">
-    <a class="card" href="./mathematics.html">
-      <div class="card-icon">∑</div>
-      <div class="card-title">Mathematics</div>
-      <div class="card-desc">Pure maths from calculus to topology</div>
-      <div class="card-meta"><span>32 topics</span><span class="arrow">→</span></div>
-    </a>
+  <button id="backToTop" title="Back to top (t)">↑</button>
 
-    <a class="card" href="./physics.html">
-      <div class="card-icon">⚛</div>
-      <div class="card-title">Physics</div>
-      <div class="card-desc">Classical to quantum, relativity, astrophysics</div>
-      <div class="card-meta"><span>38 topics</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./engineering.html">
-      <div class="card-icon">⚡</div>
-      <div class="card-title">Engineering</div>
-      <div class="card-desc">Electronics, power, RF, mechanical, industrial</div>
-      <div class="card-meta"><span>30 topics</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./cs-ai-ml.html">
-      <div class="card-icon">💻</div>
-      <div class="card-title">CS / AI / ML</div>
-      <div class="card-desc">Algorithms, Python, deep learning, LLMs</div>
-      <div class="card-meta"><span>28 topics</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./personal-dev.html">
-      <div class="card-icon">🧠</div>
-      <div class="card-title">Personal Dev</div>
-      <div class="card-desc">Habits, mindset, learning, wellbeing</div>
-      <div class="card-meta"><span>26 topics</span><span class="arrow">→</span></div>
-    </a>
-
-    <a class="card" href="./career-finance.html">
-      <div class="card-icon">📈</div>
-      <div class="card-title">Career &amp; Finance</div>
-      <div class="card-desc">Strategy, communication, money, leadership</div>
-      <div class="card-meta"><span>24 topics</span><span class="arrow">→</span></div>
-    </a>
+  <div id="shortcutsModal" class="modal-backdrop" hidden>
+    <div class="modal-box">
+      <h2>Keyboard shortcuts</h2>
+      <dl>
+        <dt><kbd>/</kbd></dt><dd>Focus search</dd>
+        <dt><kbd>b</kbd></dt><dd>Open bookmarks</dd>
+        <dt><kbd>t</kbd></dt><dd>Scroll to top</dd>
+        <dt><kbd>q</kbd></dt><dd>Toggle quiz mode (domain pages)</dd>
+        <dt><kbd>p</kbd></dt><dd>Print section (domain pages)</dd>
+        <dt><kbd>?</kbd></dt><dd>This help</dd>
+        <dt><kbd>Esc</kbd></dt><dd>Close panels</dd>
+      </dl>
+      <button class="btn modal-close" type="button">Close</button>
+    </div>
   </div>
 
-  <footer>Sajeevan Veeriah · Montage · 2026</footer>
-</div>
+  <div id="toast" hidden></div>
 
-<script src="./assets/search.js"></script>
+  <script type="module" src="assets/js/landing.js"></script>
 </body>
 </html>

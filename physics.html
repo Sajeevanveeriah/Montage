@@ -1,410 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Classical &amp; quantum mechanics, relativity, electromagnetism, astrophysics and thermodynamics.">
   <title>Physics — Montage</title>
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
-  <link rel="stylesheet" href="./assets/style.css">
-  <script src="./assets/theme.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/bash.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
-
-<nav class="navbar">
-  <a href="./index.html" class="nav-brand">Montage</a>
-  <ul class="nav-links">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./mathematics.html">Maths</a></li>
-    <li><a href="./physics.html" class="active">Physics</a></li>
-    <li><a href="./engineering.html">Engineering</a></li>
-    <li><a href="./cs-ai-ml.html">CS/AI/ML</a></li>
-    <li><a href="./personal-dev.html">Personal Dev</a></li>
-    <li><a href="./career-finance.html">Career</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="search-wrap">
-      <input type="search" id="search-input" class="search-input" placeholder="Search this page…" autocomplete="off">
+<body class="domain-physics" data-domain="physics">
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">⬡ Montage</a>
+    <div class="nav-links" id="navLinks">
+      <a href="mathematics.html">∑ Maths</a>
+      <a href="physics.html">⚛ Physics</a>
+      <a href="engineering.html">⚡ Eng</a>
+      <a href="cs-ai-ml.html">💻 CS/AI</a>
+      <a href="personal-dev.html">🧠 Personal</a>
+      <a href="career-finance.html">📈 Career</a>
     </div>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">◑</button>
-  </div>
-</nav>
+    <div class="nav-actions">
+      <div id="searchWrap"><input id="searchInput" placeholder="Search… (/)" type="search"><div id="searchDropdown"></div></div>
+      <button id="bookmarkNav" title="Bookmarks (b)">★<span id="bmCount" hidden>0</span></button>
+      <button id="themeToggle" title="Toggle theme">☽</button>
+      <button id="helpBtn" title="Keyboard shortcuts (?)">?</button>
+      <button id="hamburger" class="mobile-only" title="Menu">☰</button>
+    </div>
+  </nav>
 
-<div class="page-wrapper">
-<div class="section-layout">
+  <div id="readProgress"></div>
 
-  <aside class="sidebar">
-    <div class="sidebar-title">Sections</div>
-    <nav>
-      <a href="#classical">Classical Mechanics</a>
-      <a href="#thermo">Thermodynamics</a>
-      <a href="#em">Electromagnetism</a>
-      <a href="#quantum">Quantum Mechanics</a>
-      <a href="#relativity">Relativity &amp; Cosmology</a>
-      <a href="#fluids">Fluid Mechanics</a>
-      <a href="#optics">Optics and Waves</a>
-      <a href="#nuclear">Nuclear &amp; Particle Physics</a>
-    </nav>
-  </aside>
-
-  <main class="main-content">
-    <h1 class="page-title">Physics</h1>
-    <p class="page-subtitle">Classical to quantum, relativity, astrophysics — 38 topics</p>
-
-    <div id="no-results-msg" class="no-results-msg">No subsections match your search.</div>
-
-    <!-- CLASSICAL -->
-    <section class="content-section" id="classical">
-      <h2>Classical Mechanics</h2>
-
-      <div class="subsection" id="newtons-laws">
-        <h3>Newton's Laws of Motion</h3>
-        <p><strong>1st (Inertia):</strong> An object at rest stays at rest, and an object in motion stays in motion, unless acted upon by an external force.</p>
-        <p><strong>2nd:</strong> <span class="math-inline" data-tex="\sum \mathbf{F} = m\mathbf{a}"></span></p>
-        <p><strong>3rd (Action–Reaction):</strong> For every action there is an equal and opposite reaction.</p>
-      </div>
-
-      <div class="subsection" id="projectile">
-        <h3>Projectile Motion</h3>
-        <p>Range: <span class="math-inline" data-tex="R = \frac{v_0^2 \sin 2\theta}{g}"></span></p>
-        <p>Maximum height: <span class="math-inline" data-tex="H = \frac{v_0^2 \sin^2\theta}{2g}"></span></p>
-      </div>
-
-      <div class="subsection" id="kepler">
-        <h3>Kepler's Third Law</h3>
-        <div class="math-block" data-tex="T^2 = \frac{4\pi^2}{GM}a^3"></div>
-        <p>The square of the orbital period is proportional to the cube of the semi-major axis a.</p>
-      </div>
-
-      <div class="subsection" id="impulse-torque">
-        <h3>Impulse and Torque</h3>
-        <p>Impulse: <span class="math-inline" data-tex="\mathbf{J} = \Delta p = \int \mathbf{F}\,dt"></span></p>
-        <p>Torque: <span class="math-inline" data-tex="\boldsymbol{\tau} = \mathbf{r} \times \mathbf{F}"></span></p>
-      </div>
-
-      <div class="subsection" id="gas-laws">
-        <h3>Ideal Gas Laws</h3>
-        <p>Ideal Gas Law: <span class="math-inline" data-tex="PV = nRT"></span></p>
-        <ul>
-          <li><strong>Boyle's Law:</strong> P ∝ 1/V at constant T</li>
-          <li><strong>Charles's Law:</strong> V ∝ T at constant P</li>
-          <li><strong>Gay-Lussac's Law:</strong> P ∝ T at constant V</li>
-          <li><strong>Avogadro's Law:</strong> V ∝ n at constant T, P</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- THERMODYNAMICS -->
-    <section class="content-section" id="thermo">
-      <h2>Thermodynamics</h2>
-
-      <div class="subsection" id="thermo-laws">
-        <h3>Laws of Thermodynamics</h3>
-        <ul>
-          <li><strong>0th:</strong> If A is in thermal equilibrium with B, and B with C, then A and C are in equilibrium.</li>
-          <li><strong>1st:</strong> Energy is conserved: ΔU = Q − W.</li>
-          <li><strong>2nd:</strong> Entropy of an isolated system never decreases: <span class="math-inline" data-tex="dS \geq 0"></span>.</li>
-          <li><strong>3rd:</strong> Entropy approaches a minimum (zero) as temperature approaches absolute zero.</li>
-        </ul>
-      </div>
-
-      <div class="subsection" id="gibbs">
-        <h3>Gibbs Free Energy</h3>
-        <div class="math-block" data-tex="\Delta G^\circ = \Delta H^\circ - T\Delta S^\circ"></div>
-        <p>Spontaneous at constant T and P when ΔG &lt; 0. Carnot efficiency: <span class="math-inline" data-tex="\eta = 1 - T_C/T_H"></span></p>
-      </div>
-
-      <div class="subsection" id="heat-equation">
-        <h3>Heat Equation</h3>
-        <div class="math-block" data-tex="\frac{\partial T}{\partial t} = \frac{\lambda}{\rho c} \nabla^2 T"></div>
-        <p>Describes how temperature diffuses through a medium. λ = thermal conductivity, ρ = density, c = specific heat.</p>
-      </div>
-
-      <div class="subsection" id="clausius-clapeyron">
-        <h3>Clausius–Clapeyron Equation</h3>
-        <div class="math-block" data-tex="\frac{dP}{dT} = \frac{L}{T\,\Delta V}"></div>
-        <p>Describes how the saturation vapour pressure of a substance changes with temperature. L = latent heat.</p>
-      </div>
-
-      <div class="subsection" id="fourier-conduction">
-        <h3>Fourier's Law of Heat Conduction</h3>
-        <div class="math-block" data-tex="\mathbf{q} = -k\,\nabla T"></div>
-        <p>Heat flux is proportional to the negative temperature gradient; heat flows from hot to cold.</p>
-      </div>
-    </section>
-
-    <!-- ELECTROMAGNETISM -->
-    <section class="content-section" id="em">
-      <h2>Electromagnetism</h2>
-
-      <div class="subsection" id="maxwell">
-        <h3>Maxwell's Equations</h3>
-        <p>Gauss's Law (electric): <span class="math-inline" data-tex="\nabla \cdot \mathbf{E} = \rho/\varepsilon_0"></span></p>
-        <p>Gauss's Law (magnetic): <span class="math-inline" data-tex="\nabla \cdot \mathbf{B} = 0"></span></p>
-        <p>Faraday's Law: <span class="math-inline" data-tex="\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}"></span></p>
-        <p>Ampère–Maxwell Law: <span class="math-inline" data-tex="\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}"></span></p>
-      </div>
-
-      <div class="subsection" id="biot-savart">
-        <h3>Biot–Savart Law</h3>
-        <div class="math-block" data-tex="d\mathbf{B} = \frac{\mu_0 I\,d\mathbf{L}\times\hat{r}}{4\pi r^2}"></div>
-        <p>Gives the magnetic field contribution from a current element I·dL.</p>
-      </div>
-
-      <div class="subsection" id="ampere">
-        <h3>Ampère's Law (Integral Form)</h3>
-        <div class="math-block" data-tex="\oint \mathbf{B}\cdot d\mathbf{s} = \mu_0 I_\text{enc} + \mu_0\varepsilon_0\frac{d\Phi_E}{dt}"></div>
-      </div>
-
-      <div class="subsection" id="faraday">
-        <h3>Faraday's Law of Induction</h3>
-        <div class="math-block" data-tex="\mathcal{E} = -\frac{d\Phi_B}{dt}"></div>
-        <p>An EMF is induced in a circuit equal to the negative rate of change of magnetic flux through it.</p>
-      </div>
-
-      <div class="subsection" id="curie">
-        <h3>Curie's Law</h3>
-        <div class="math-block" data-tex="M = C\frac{B}{T}"></div>
-        <p>Magnetisation M of a paramagnetic material is proportional to applied field B and inversely proportional to temperature T.</p>
-      </div>
-
-      <div class="subsection" id="wien">
-        <h3>Wien's Displacement Law</h3>
-        <div class="math-block" data-tex="\lambda_\text{max} \cdot T = 2.898 \times 10^{-3}\,\text{m\,K}"></div>
-        <p>The peak wavelength of black-body radiation is inversely proportional to temperature.</p>
-      </div>
-
-      <div class="subsection" id="maxwell-boltzmann">
-        <h3>Maxwell–Boltzmann Distribution</h3>
-        <div class="math-block" data-tex="f(v) = 4\pi\left(\frac{m}{2\pi k_BT}\right)^{3/2}v^2 e^{-mv^2/(2k_BT)}"></div>
-        <p>Gives the distribution of molecular speeds in an ideal gas at thermal equilibrium.</p>
-      </div>
-    </section>
-
-    <!-- QUANTUM -->
-    <section class="content-section" id="quantum">
-      <h2>Quantum Mechanics</h2>
-
-      <div class="subsection" id="schrodinger">
-        <h3>Schrödinger Equation (Time-Dependent)</h3>
-        <div class="math-block" data-tex="i\hbar\frac{\partial}{\partial t}|\psi\rangle = \hat{H}|\psi\rangle"></div>
-        <p>Governs the evolution of a quantum state |ψ⟩ under Hamiltonian Ĥ.</p>
-      </div>
-
-      <div class="subsection" id="heisenberg">
-        <h3>Heisenberg Uncertainty Principle</h3>
-        <div class="math-block" data-tex="\Delta x\,\Delta p \geq \frac{\hbar}{2}"></div>
-        <p>Nobel Prize 1932. Position and momentum cannot both be precisely known simultaneously.</p>
-      </div>
-
-      <div class="subsection" id="commutation">
-        <h3>Canonical Commutation Relation</h3>
-        <div class="math-block" data-tex="[\hat{x},\hat{p}] = i\hbar"></div>
-        <p>The fundamental commutator between position and momentum operators underlies the uncertainty principle.</p>
-      </div>
-
-      <div class="subsection" id="momentum-op">
-        <h3>Momentum Operator</h3>
-        <div class="math-block" data-tex="\hat{p} = -i\hbar\nabla"></div>
-      </div>
-
-      <div class="subsection" id="dirac">
-        <h3>Dirac Equation</h3>
-        <div class="math-block" data-tex="(i\hbar\gamma^\mu\nabla_\mu - mc)\psi = 0"></div>
-        <p>Relativistic wave equation for spin-½ particles. Predicted the existence of antimatter.</p>
-      </div>
-
-      <div class="subsection" id="tunnelling">
-        <h3>Quantum Tunnelling</h3>
-        <p>Transmission probability through a potential barrier of height V and width L:</p>
-        <div class="math-block" data-tex="P \propto e^{-2\kappa L}, \quad \kappa = \frac{\sqrt{2m(V-E)}}{\hbar}"></div>
-      </div>
-
-      <div class="subsection" id="de-broglie">
-        <h3>de Broglie Wavelength</h3>
-        <div class="math-block" data-tex="\lambda = \frac{h}{p}"></div>
-        <p>Every particle has an associated wavelength inversely proportional to its momentum.</p>
-      </div>
-    </section>
-
-    <!-- RELATIVITY -->
-    <section class="content-section" id="relativity">
-      <h2>Relativity and Cosmology</h2>
-
-      <div class="subsection" id="einstein-field">
-        <h3>Einstein Field Equations</h3>
-        <div class="math-block" data-tex="R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu}"></div>
-        <p>Relate the geometry of spacetime (left side) to the energy-momentum content (right side).</p>
-      </div>
-
-      <div class="subsection" id="time-dilation">
-        <h3>Time Dilation</h3>
-        <div class="math-block" data-tex="\Delta t' = \frac{\Delta t}{\sqrt{1-v^2/c^2}}"></div>
-        <p>A moving clock runs slower. At v → c, the time dilation factor diverges.</p>
-      </div>
-
-      <div class="subsection" id="schwarzschild">
-        <h3>Schwarzschild Radius</h3>
-        <div class="math-block" data-tex="r_s = \frac{2GM}{c^2}"></div>
-        <p>The radius within which an object's escape velocity exceeds c — the event horizon of a non-rotating black hole.</p>
-      </div>
-
-      <div class="subsection" id="hawking">
-        <h3>Hawking Temperature</h3>
-        <div class="math-block" data-tex="T_H = \frac{\hbar c^3}{8\pi G M k_B}"></div>
-        <p>Black holes emit thermal radiation. Larger black holes are colder.</p>
-      </div>
-
-      <div class="subsection" id="bh-entropy">
-        <h3>Black Hole Entropy (Bekenstein–Hawking)</h3>
-        <div class="math-block" data-tex="S = \frac{c^3 k_B A}{4G\hbar}"></div>
-        <p>Entropy of a black hole is proportional to its horizon area A, not its volume.</p>
-      </div>
-
-      <div class="subsection" id="hubble">
-        <h3>Hubble's Law</h3>
-        <div class="math-block" data-tex="v = H_0 d"></div>
-        <p>Galaxies recede at a speed proportional to their distance. H₀ ≈ 70 km/s/Mpc.</p>
-      </div>
-
-      <div class="subsection" id="friedmann">
-        <h3>First Friedmann Equation</h3>
-        <div class="math-block" data-tex="\left(\frac{\dot{a}}{a}\right)^2 = \frac{8\pi G\rho}{3} + \frac{\Lambda c^2}{3} - \frac{kc^2}{a^2}"></div>
-        <p>Governs the expansion rate ȧ/a of the universe. k = curvature, Λ = cosmological constant.</p>
-      </div>
-    </section>
-
-    <!-- FLUIDS -->
-    <section class="content-section" id="fluids">
-      <h2>Fluid Mechanics</h2>
-
-      <div class="subsection" id="navier-stokes">
-        <h3>Navier–Stokes Equation</h3>
-        <div class="math-block" data-tex="\frac{\partial\mathbf{u}}{\partial t} + (\mathbf{u}\cdot\nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu\nabla^2\mathbf{u}"></div>
-        <p>Describes the motion of viscous fluid. One of the Millennium Prize Problems — global smooth solutions unproven.</p>
-      </div>
-
-      <div class="subsection" id="reynolds">
-        <h3>Reynolds Number</h3>
-        <div class="math-block" data-tex="Re = \frac{\rho u D_H}{\mu}"></div>
-        <p>Ratio of inertial to viscous forces. Re &lt; 2300: laminar; Re &gt; 4000: turbulent.</p>
-      </div>
-
-      <div class="subsection" id="viscosity">
-        <h3>Newton's Law of Viscosity</h3>
-        <div class="math-block" data-tex="\tau = \mu\,\frac{du}{dy}"></div>
-        <p>Shear stress τ is proportional to the velocity gradient perpendicular to flow.</p>
-      </div>
-
-      <div class="subsection" id="coanda">
-        <h3>Coandă Effect</h3>
-        <div class="math-block" data-tex="\frac{\partial P}{\partial n} = \frac{\rho v^2}{R}"></div>
-        <p>The tendency of a fluid jet to adhere to a convex surface. Normal pressure gradient provides centripetal force.</p>
-      </div>
-
-      <div class="subsection" id="bernoulli">
-        <h3>Bernoulli's Equation</h3>
-        <div class="math-block" data-tex="P + \frac{1}{2}\rho v^2 + \rho gh = \text{const}"></div>
-        <p>Energy conservation along a streamline in inviscid flow: pressure + kinetic + potential energy per unit volume is constant.</p>
-      </div>
-    </section>
-
-    <!-- OPTICS -->
-    <section class="content-section" id="optics">
-      <h2>Optics and Waves</h2>
-
-      <div class="subsection" id="rayleigh">
-        <h3>Rayleigh Scattering</h3>
-        <p>Size parameter: <span class="math-inline" data-tex="x = 2\pi r/\lambda"></span>. Scattering intensity ∝ λ⁻⁴.</p>
-        <p>Shorter (blue) wavelengths scatter far more than longer (red) ones — explaining the blue sky and red sunsets.</p>
-      </div>
-
-      <div class="subsection" id="cherenkov">
-        <h3>Cherenkov Radiation</h3>
-        <div class="math-block" data-tex="\cos\theta_c = \frac{c}{nv}"></div>
-        <p>Emitted when a charged particle travels faster than light in the medium. Produces the characteristic blue glow in nuclear reactors.</p>
-      </div>
-
-      <div class="subsection" id="double-slit">
-        <h3>Young's Double-Slit Interference</h3>
-        <p>Constructive (bright fringes): <span class="math-inline" data-tex="\delta = m\lambda"></span></p>
-        <p>Destructive (dark fringes): <span class="math-inline" data-tex="\delta = \left(m+\tfrac{1}{2}\right)\lambda"></span></p>
-      </div>
-    </section>
-
-    <!-- NUCLEAR -->
-    <section class="content-section" id="nuclear">
-      <h2>Nuclear and Particle Physics</h2>
-
-      <div class="subsection" id="mass-energy">
-        <h3>Mass–Energy Equivalence</h3>
-        <div class="math-block" data-tex="E = mc^2"></div>
-        <p>A small mass corresponds to an enormous amount of energy; the basis for both nuclear power and weapons.</p>
-      </div>
-
-      <div class="subsection" id="radioactive-decay">
-        <h3>Radioactive Decay</h3>
-        <div class="math-block" data-tex="N(t) = N_0\,e^{-\lambda t}"></div>
-        <p>Half-life: <span class="math-inline" data-tex="t_{1/2} = \frac{\ln 2}{\lambda}"></span> — the time for half the nuclei to decay.</p>
-      </div>
-
-      <div class="subsection" id="fission-fusion">
-        <h3>Fission vs Fusion</h3>
-        <ul>
-          <li><strong>Fission:</strong> Heavy nucleus splits (e.g. U-235 → Kr + Ba + neutrons). Used in current nuclear reactors.</li>
-          <li><strong>Fusion:</strong> Light nuclei combine (e.g. D + T → He-4 + n). Powers the Sun; promising for clean energy.</li>
-        </ul>
-      </div>
-
-      <div class="subsection" id="gamow">
-        <h3>Gamow Factor</h3>
-        <div class="math-block" data-tex="P_G = e^{-2\pi\eta}"></div>
-        <p>Quantum tunnelling probability through the Coulomb barrier in nuclear fusion reactions. η is the Sommerfeld parameter.</p>
-      </div>
-
-      <div class="subsection" id="planck-time">
-        <h3>Planck Time</h3>
-        <div class="math-block" data-tex="t_p = \sqrt{\frac{\hbar G}{c^5}} \approx 5.39 \times 10^{-44}\,\text{s}"></div>
-        <p>The smallest meaningful unit of time; below this scale current physics breaks down.</p>
-      </div>
-
-      <div class="subsection" id="discoveries">
-        <h3>10 Mind-Blowing Physics Discoveries</h3>
-        <ol>
-          <li>Quantum entanglement — instantaneous correlation at any distance</li>
-          <li>Dark energy — 68% of the universe, causing accelerating expansion</li>
-          <li>Dark matter — 27% of the universe, detected only by gravity</li>
-          <li>The Higgs boson — confirmed at CERN in 2012</li>
-          <li>Gravitational waves — spacetime ripples detected by LIGO, 2015</li>
-          <li>The double-slit experiment — particles behave as waves until observed</li>
-          <li>Time dilation — verified with atomic clocks on aeroplanes</li>
-          <li>The Big Bang — the universe is ~13.8 billion years old</li>
-          <li>Hawking radiation — black holes slowly evaporate</li>
-          <li>Neutron stars — a teaspoon weighs ~10 million tonnes</li>
-        </ol>
-      </div>
-    </section>
-
+  <main id="main">
+    <aside id="sidebar">
+      <nav id="tocNav"></nav>
+    </aside>
+    <article id="content"></article>
   </main>
-</div>
 
-<footer>Sajeevan Veeriah · Montage · 2026</footer>
-</div>
+  <div id="sidebarBackdrop"></div>
+  <button id="backToTop" title="Back to top (t)">↑</button>
 
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
-<script src="./assets/search.js"></script>
-<script>
-  function renderMath() {
-    document.querySelectorAll('.math-block[data-tex]').forEach(el => {
-      katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false });
-    });
-    document.querySelectorAll('.math-inline[data-tex]').forEach(el => {
-      katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false });
-    });
-  }
-  document.addEventListener('DOMContentLoaded', renderMath);
-</script>
+  <div id="shortcutsModal" class="modal-backdrop" hidden>
+    <div class="modal-box">
+      <h2>Keyboard shortcuts</h2>
+      <dl>
+        <dt><kbd>/</kbd></dt><dd>Focus search</dd>
+        <dt><kbd>b</kbd></dt><dd>Open bookmarks</dd>
+        <dt><kbd>t</kbd></dt><dd>Scroll to top</dd>
+        <dt><kbd>q</kbd></dt><dd>Toggle quiz mode</dd>
+        <dt><kbd>p</kbd></dt><dd>Print current section</dd>
+        <dt><kbd>?</kbd></dt><dd>This help</dd>
+        <dt><kbd>Esc</kbd></dt><dd>Close panels</dd>
+      </dl>
+      <button class="btn modal-close" type="button">Close</button>
+    </div>
+  </div>
+
+  <div id="toast" hidden></div>
+
+  <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
